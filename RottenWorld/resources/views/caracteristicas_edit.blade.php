@@ -16,90 +16,90 @@
             <section class="flex gap-4 *:flex-1 *:*:first:flex-1 *:*:p-2">
                 <section class="flex gap-4">
                     <h3>Força</h3>
-                    <select name="AFOR" id="AFOR" value="{{ old('AFOR', $caracteristicas->AFOR) }}"
+                    <select name="AFOR" id="AFOR"
                         class="w-50 bg-bg-tertiary rounded-lg"
                         >
-                        <option value="0">Nível 0</option>
-                        <option value="1">Nível 1</option>
-                        <option value="2">Nível 2</option>
-                        <option value="3">Nível 3</option>
-                        <option value="4">Nível 4</option>
-                        <option value="5">Nível 5</option>
-                        <option value="6">Nível 6</option>
+                        <option value="0" {{ old('AFOR', $caracteristicas->AFOR) == 0 ? 'selected' : '' }}>Nível 0</option>
+                        <option value="1" {{ old('AFOR', $caracteristicas->AFOR) == 1 ? 'selected' : '' }}>Nível 1</option>
+                        <option value="2" {{ old('AFOR', $caracteristicas->AFOR) == 2 ? 'selected' : '' }}>Nível 2</option>
+                        <option value="3" {{ old('AFOR', $caracteristicas->AFOR) == 3 ? 'selected' : '' }}>Nível 3</option>
+                        <option value="4" {{ old('AFOR', $caracteristicas->AFOR) == 4 ? 'selected' : '' }}>Nível 4</option>
+                        <option value="5" {{ old('AFOR', $caracteristicas->AFOR) == 5 ? 'selected' : '' }}>Nível 5</option>
+                        <option value="6" {{ old('AFOR', $caracteristicas->AFOR) == 6 ? 'selected' : '' }}>Nível 6</option>
                     </select>
                 </section>
                 <section class="flex gap-4">
                     <h3>Destreza</h3>
-                    <select name="ADES" id="ADES" value="{{ old('ADES', $caracteristicas->ADES) }}"
+                    <select name="ADES" id="ADES"
                         class="w-50 bg-bg-tertiary rounded-lg"
                         >
-                        <option value="0">Nível 0</option>
-                        <option value="1">Nível 1</option>
-                        <option value="2">Nível 2</option>
-                        <option value="3">Nível 3</option>
-                        <option value="4">Nível 4</option>
-                        <option value="5">Nível 5</option>
-                        <option value="6">Nível 6</option>
+                        <option value="0" {{ old('ADES', $caracteristicas->ADES) == 0 ? 'selected' : '' }}>Nível 0</option>
+                        <option value="1" {{ old('ADES', $caracteristicas->ADES) == 1 ? 'selected' : '' }}>Nível 1</option>
+                        <option value="2" {{ old('ADES', $caracteristicas->ADES) == 2 ? 'selected' : '' }}>Nível 2</option>
+                        <option value="3" {{ old('ADES', $caracteristicas->ADES) == 3 ? 'selected' : '' }}>Nível 3</option>
+                        <option value="4" {{ old('ADES', $caracteristicas->ADES) == 4 ? 'selected' : '' }}>Nível 4</option>
+                        <option value="5" {{ old('ADES', $caracteristicas->ADES) == 5 ? 'selected' : '' }}>Nível 5</option>
+                        <option value="6" {{ old('ADES', $caracteristicas->ADES) == 6 ? 'selected' : '' }}>Nível 6</option>
                     </select>
                 </section>
             </section>
             <section class="flex gap-4 *:flex-1 *:*:first:flex-1 *:*:p-2">
                 <section class="flex gap-4">
                     <h3>Constituição</h3>
-                    <select name="ACON" id="ACON" value="{{ old('ACON', $caracteristicas->ACON) }}"
+                    <select name="ACON" id="ACON"
                         class="w-50 bg-bg-tertiary rounded-lg"
                         >
-                        <option value="0">Nível 0</option>
-                        <option value="1">Nível 1</option>
-                        <option value="2">Nível 2</option>
-                        <option value="3">Nível 3</option>
-                        <option value="4">Nível 4</option>
-                        <option value="5">Nível 5</option>
-                        <option value="6">Nível 6</option>
+                        <option value="0" {{ old('ACON', $caracteristicas->ACON) == 0 ? 'selected' : '' }}>Nível 0</option>
+                        <option value="1" {{ old('ACON', $caracteristicas->ACON) == 1 ? 'selected' : '' }}>Nível 1</option>
+                        <option value="2" {{ old('ACON', $caracteristicas->ACON) == 2 ? 'selected' : '' }}>Nível 2</option>
+                        <option value="3" {{ old('ACON', $caracteristicas->ACON) == 3 ? 'selected' : '' }}>Nível 3</option>
+                        <option value="4" {{ old('ACON', $caracteristicas->ACON) == 4 ? 'selected' : '' }}>Nível 4</option>
+                        <option value="5" {{ old('ACON', $caracteristicas->ACON) == 5 ? 'selected' : '' }}>Nível 5</option>
+                        <option value="6" {{ old('ACON', $caracteristicas->ACON) == 6 ? 'selected' : '' }}>Nível 6</option>
                     </select>
                 </section>
                 <section class="flex gap-4">
                     <h3>Inteligência</h3>
-                    <select name="AINT" id="AINT" value="{{ old('AINT', $caracteristicas->AINT) }}"
+                    <select name="AINT" id="AINT"
                         class="w-50 bg-bg-tertiary rounded-lg"
                         >
-                        <option value="0">Nível 0</option>
-                        <option value="1">Nível 1</option>
-                        <option value="2">Nível 2</option>
-                        <option value="3">Nível 3</option>
-                        <option value="4">Nível 4</option>
-                        <option value="5">Nível 5</option>
-                        <option value="6">Nível 6</option>
+                        <option value="0" {{ old('AINT', $caracteristicas->AINT) == 0 ? 'selected' : '' }}>Nível 0</option>
+                        <option value="1" {{ old('AINT', $caracteristicas->AINT) == 1 ? 'selected' : '' }}>Nível 1</option>
+                        <option value="2" {{ old('AINT', $caracteristicas->AINT) == 2 ? 'selected' : '' }}>Nível 2</option>
+                        <option value="3" {{ old('AINT', $caracteristicas->AINT) == 3 ? 'selected' : '' }}>Nível 3</option>
+                        <option value="4" {{ old('AINT', $caracteristicas->AINT) == 4 ? 'selected' : '' }}>Nível 4</option>
+                        <option value="5" {{ old('AINT', $caracteristicas->AINT) == 5 ? 'selected' : '' }}>Nível 5</option>
+                        <option value="6" {{ old('AINT', $caracteristicas->AINT) == 6 ? 'selected' : '' }}>Nível 6</option>
                     </select>
                 </section>
             </section>
             <section class="flex gap-4 *:flex-1 *:*:first:flex-1 *:*:p-2">
                 <section class="flex gap-4">
                     <h3>Percepção</h3>
-                    <select name="APER" id="APER" value="{{ old('APER', $caracteristicas->APER) }}"
+                    <select name="APER" id="APER"
                         class="w-50 bg-bg-tertiary rounded-lg"
                         >
-                        <option value="0">Nível 0</option>
-                        <option value="1">Nível 1</option>
-                        <option value="2">Nível 2</option>
-                        <option value="3">Nível 3</option>
-                        <option value="4">Nível 4</option>
-                        <option value="5">Nível 5</option>
-                        <option value="6">Nível 6</option>
+                        <option value="0" {{ old('APER', $caracteristicas->APER) == 0 ? 'selected' : '' }}>Nível 0</option>
+                        <option value="1" {{ old('APER', $caracteristicas->APER) == 1 ? 'selected' : '' }}>Nível 1</option>
+                        <option value="2" {{ old('APER', $caracteristicas->APER) == 2 ? 'selected' : '' }}>Nível 2</option>
+                        <option value="3" {{ old('APER', $caracteristicas->APER) == 3 ? 'selected' : '' }}>Nível 3</option>
+                        <option value="4" {{ old('APER', $caracteristicas->APER) == 4 ? 'selected' : '' }}>Nível 4</option>
+                        <option value="5" {{ old('APER', $caracteristicas->APER) == 5 ? 'selected' : '' }}>Nível 5</option>
+                        <option value="6" {{ old('APER', $caracteristicas->APER) == 6 ? 'selected' : '' }}>Nível 6</option>
                     </select>
                 </section>
                 <section class="flex gap-4">
                     <h3>Força de Vontade</h3>
-                    <select name="AVON" id="AVON" value="{{ old('AVON', $caracteristicas->AVON) }}"
+                    <select name="AVON" id="AVON"
                         class="w-50 bg-bg-tertiary rounded-lg"
                         >
-                        <option value="0">Nível 0</option>
-                        <option value="1">Nível 1</option>
-                        <option value="2">Nível 2</option>
-                        <option value="3">Nível 3</option>
-                        <option value="4">Nível 4</option>
-                        <option value="5">Nível 5</option>
-                        <option value="6">Nível 6</option>
+                        <option value="0" {{ old('AVON', $caracteristicas->AVON) == 0 ? 'selected' : '' }}>Nível 0</option>
+                        <option value="1" {{ old('AVON', $caracteristicas->AVON) == 1 ? 'selected' : '' }}>Nível 1</option>
+                        <option value="2" {{ old('AVON', $caracteristicas->AVON) == 2 ? 'selected' : '' }}>Nível 2</option>
+                        <option value="3" {{ old('AVON', $caracteristicas->AVON) == 3 ? 'selected' : '' }}>Nível 3</option>
+                        <option value="4" {{ old('AVON', $caracteristicas->AVON) == 4 ? 'selected' : '' }}>Nível 4</option>
+                        <option value="5" {{ old('AVON', $caracteristicas->AVON) == 5 ? 'selected' : '' }}>Nível 5</option>
+                        <option value="6" {{ old('AVON', $caracteristicas->AVON) == 6 ? 'selected' : '' }}>Nível 6</option>
                     </select>
                 </section>
             </section>
@@ -108,106 +108,106 @@
             <section class="flex gap-4 *:flex-1 *:*:first:flex-1 *:*:p-2">
                 <section class="flex gap-4">
                     <h3>Armas Brancas</h3>
-                    <select name="PAMB" id="PAMB" value="{{ old('PAMB', $caracteristicas->PAMB) }}"
+                    <select name="PAMB" id="PAMB"
                         class="w-50 bg-bg-tertiary rounded-lg"
                         >
-                        <option value="0">Nível 0</option>
-                        <option value="1">Nível 1</option>
-                        <option value="2">Nível 2</option>
-                        <option value="3">Nível 3</option>
-                        <option value="4">Nível 4</option>
-                        <option value="5">Nível 5</option>
-                        <option value="6">Nível 6</option>
+                        <option value="0" {{ old('PAMB', $caracteristicas->PAMB) == 0 ? 'selected' : '' }}>Nível 0</option>
+                        <option value="1" {{ old('PAMB', $caracteristicas->PAMB) == 1 ? 'selected' : '' }}>Nível 1</option>
+                        <option value="2" {{ old('PAMB', $caracteristicas->PAMB) == 2 ? 'selected' : '' }}>Nível 2</option>
+                        <option value="3" {{ old('PAMB', $caracteristicas->PAMB) == 3 ? 'selected' : '' }}>Nível 3</option>
+                        <option value="4" {{ old('PAMB', $caracteristicas->PAMB) == 4 ? 'selected' : '' }}>Nível 4</option>
+                        <option value="5" {{ old('PAMB', $caracteristicas->PAMB) == 5 ? 'selected' : '' }}>Nível 5</option>
+                        <option value="6" {{ old('PAMB', $caracteristicas->PAMB) == 6 ? 'selected' : '' }}>Nível 6</option>
                     </select>
                 </section>
                 <section class="flex gap-4">
                     <h3>Armas de Fogo</h3>
-                    <select name="PAMF" id="PAMF" value="{{ old('PAMF', $caracteristicas->PAMF) }}"
+                    <select name="PAMF" id="PAMF"
                         class="w-50 bg-bg-tertiary rounded-lg"
                         >
-                        <option value="0">Nível 0</option>
-                        <option value="1">Nível 1</option>
-                        <option value="2">Nível 2</option>
-                        <option value="3">Nível 3</option>
-                        <option value="4">Nível 4</option>
-                        <option value="5">Nível 5</option>
-                        <option value="6">Nível 6</option>
+                        <option value="0" {{ old('PAMF', $caracteristicas->PAMF) == 0 ? 'selected' : '' }}>Nível 0</option>
+                        <option value="1" {{ old('PAMF', $caracteristicas->PAMF) == 1 ? 'selected' : '' }}>Nível 1</option>
+                        <option value="2" {{ old('PAMF', $caracteristicas->PAMF) == 2 ? 'selected' : '' }}>Nível 2</option>
+                        <option value="3" {{ old('PAMF', $caracteristicas->PAMF) == 3 ? 'selected' : '' }}>Nível 3</option>
+                        <option value="4" {{ old('PAMF', $caracteristicas->PAMF) == 4 ? 'selected' : '' }}>Nível 4</option>
+                        <option value="5" {{ old('PAMF', $caracteristicas->PAMF) == 5 ? 'selected' : '' }}>Nível 5</option>
+                        <option value="6" {{ old('PAMF', $caracteristicas->PAMF) == 6 ? 'selected' : '' }}>Nível 6</option>
                     </select>
                 </section>
             </section>
             <section class="flex gap-4 *:flex-1 *:*:first:flex-1 *:*:p-2">
                 <section class="flex gap-4">
                     <h3>Acrobacia</h3>
-                    <select name="PACR" id="PACR" value="{{ old('PACR', $caracteristicas->PACR) }}"
+                    <select name="PACR" id="PACR"
                         class="w-50 bg-bg-tertiary rounded-lg"
                         >
-                        <option value="0">Nível 0</option>
-                        <option value="1">Nível 1</option>
-                        <option value="2">Nível 2</option>
-                        <option value="3">Nível 3</option>
-                        <option value="4">Nível 4</option>
-                        <option value="5">Nível 5</option>
-                        <option value="6">Nível 6</option>
+                        <option value="0" {{ old('PACR', $caracteristicas->PACR) == 0 ? 'selected' : '' }}>Nível 0</option>
+                        <option value="1" {{ old('PACR', $caracteristicas->PACR) == 1 ? 'selected' : '' }}>Nível 1</option>
+                        <option value="2" {{ old('PACR', $caracteristicas->PACR) == 2 ? 'selected' : '' }}>Nível 2</option>
+                        <option value="3" {{ old('PACR', $caracteristicas->PACR) == 3 ? 'selected' : '' }}>Nível 3</option>
+                        <option value="4" {{ old('PACR', $caracteristicas->PACR) == 4 ? 'selected' : '' }}>Nível 4</option>
+                        <option value="5" {{ old('PACR', $caracteristicas->PACR) == 5 ? 'selected' : '' }}>Nível 5</option>
+                        <option value="6" {{ old('PACR', $caracteristicas->PACR) == 6 ? 'selected' : '' }}>Nível 6</option>
                     </select>
                 </section>
                 <section class="flex gap-4">
                     <h3>Atletismo</h3>
-                    <select name="PATL" id="PATL" value="{{ old('PATL', $caracteristicas->PATL) }}"
+                    <select name="PATL" id="PATL"
                         class="w-50 bg-bg-tertiary rounded-lg"
                         >
-                        <option value="0">Nível 0</option>
-                        <option value="1">Nível 1</option>
-                        <option value="2">Nível 2</option>
-                        <option value="3">Nível 3</option>
-                        <option value="4">Nível 4</option>
-                        <option value="5">Nível 5</option>
-                        <option value="6">Nível 6</option>
+                        <option value="0" {{ old('PATL', $caracteristicas->PATL) == 0 ? 'selected' : '' }}>Nível 0</option>
+                        <option value="1" {{ old('PATL', $caracteristicas->PATL) == 1 ? 'selected' : '' }}>Nível 1</option>
+                        <option value="2" {{ old('PATL', $caracteristicas->PATL) == 2 ? 'selected' : '' }}>Nível 2</option>
+                        <option value="3" {{ old('PATL', $caracteristicas->PATL) == 3 ? 'selected' : '' }}>Nível 3</option>
+                        <option value="4" {{ old('PATL', $caracteristicas->PATL) == 4 ? 'selected' : '' }}>Nível 4</option>
+                        <option value="5" {{ old('PATL', $caracteristicas->PATL) == 5 ? 'selected' : '' }}>Nível 5</option>
+                        <option value="6" {{ old('PATL', $caracteristicas->PATL) == 6 ? 'selected' : '' }}>Nível 6</option>
                     </select>
                 </section>
             </section>
             <section class="flex gap-4 *:flex-1 *:*:first:flex-1 *:*:p-2">
                 <section class="flex gap-4">
                     <h3>Briga</h3>
-                    <select name="PBRI" id="PBRI" value="{{ old('PBRI', $caracteristicas->PBRI) }}"
+                    <select name="PBRI" id="PBRI"
                         class="w-50 bg-bg-tertiary rounded-lg"
                         >
-                        <option value="0">Nível 0</option>
-                        <option value="1">Nível 1</option>
-                        <option value="2">Nível 2</option>
-                        <option value="3">Nível 3</option>
-                        <option value="4">Nível 4</option>
-                        <option value="5">Nível 5</option>
-                        <option value="6">Nível 6</option>
+                        <option value="0" {{ old('PBRI', $caracteristicas->PBRI) == 0 ? 'selected' : '' }}>Nível 0</option>
+                        <option value="1" {{ old('PBRI', $caracteristicas->PBRI) == 1 ? 'selected' : '' }}>Nível 1</option>
+                        <option value="2" {{ old('PBRI', $caracteristicas->PBRI) == 2 ? 'selected' : '' }}>Nível 2</option>
+                        <option value="3" {{ old('PBRI', $caracteristicas->PBRI) == 3 ? 'selected' : '' }}>Nível 3</option>
+                        <option value="4" {{ old('PBRI', $caracteristicas->PBRI) == 4 ? 'selected' : '' }}>Nível 4</option>
+                        <option value="5" {{ old('PBRI', $caracteristicas->PBRI) == 5 ? 'selected' : '' }}>Nível 5</option>
+                        <option value="6" {{ old('PBRI', $caracteristicas->PBRI) == 6 ? 'selected' : '' }}>Nível 6</option>
                     </select>
                 </section>
                 <section class="flex gap-4">
                     <h3>Esquiva</h3>
-                    <select name="PESQ" id="PESQ" value="{{ old('PESQ', $caracteristicas->PESQ) }}"
+                    <select name="PESQ" id="PESQ"
                         class="w-50 bg-bg-tertiary rounded-lg"
                         >
-                        <option value="0">Nível 0</option>
-                        <option value="1">Nível 1</option>
-                        <option value="2">Nível 2</option>
-                        <option value="3">Nível 3</option>
-                        <option value="4">Nível 4</option>
-                        <option value="5">Nível 5</option>
-                        <option value="6">Nível 6</option>
+                        <option value="0" {{ old('PESQ', $caracteristicas->PESQ) == 0 ? 'selected' : '' }}>Nível 0</option>
+                        <option value="1" {{ old('PESQ', $caracteristicas->PESQ) == 1 ? 'selected' : '' }}>Nível 1</option>
+                        <option value="2" {{ old('PESQ', $caracteristicas->PESQ) == 2 ? 'selected' : '' }}>Nível 2</option>
+                        <option value="3" {{ old('PESQ', $caracteristicas->PESQ) == 3 ? 'selected' : '' }}>Nível 3</option>
+                        <option value="4" {{ old('PESQ', $caracteristicas->PESQ) == 4 ? 'selected' : '' }}>Nível 4</option>
+                        <option value="5" {{ old('PESQ', $caracteristicas->PESQ) == 5 ? 'selected' : '' }}>Nível 5</option>
+                        <option value="6" {{ old('PESQ', $caracteristicas->PESQ) == 6 ? 'selected' : '' }}>Nível 6</option>
                     </select>
                 </section>
             </section>
             <section class="relative flex justify-center gap-4 *:flex-1 *:*:first:flex-1 *:*:p-2">
                 <section class="flex gap-4 max-w-1/2">
                     <h3>Furtividade</h3>
-                    <select name="PFUR" id="PFUR" value="{{ old('PFUR', $caracteristicas->PFUR) }}"
+                    <select name="PFUR" id="PFUR"
                         class="w-50 bg-bg-tertiary rounded-lg"
                         >
-                        <option value="0">Nível 0</option>
-                        <option value="1">Nível 1</option>
-                        <option value="2">Nível 2</option>
-                        <option value="3">Nível 3</option>
-                        <option value="4">Nível 4</option>
-                        <option value="5">Nível 5</option>
-                        <option value="6">Nível 6</option>
+                        <option value="0" {{ old('PFUR', $caracteristicas->PFUR) == 0 ? 'selected' : '' }}>Nível 0</option>
+                        <option value="1" {{ old('PFUR', $caracteristicas->PFUR) == 1 ? 'selected' : '' }}>Nível 1</option>
+                        <option value="2" {{ old('PFUR', $caracteristicas->PFUR) == 2 ? 'selected' : '' }}>Nível 2</option>
+                        <option value="3" {{ old('PFUR', $caracteristicas->PFUR) == 3 ? 'selected' : '' }}>Nível 3</option>
+                        <option value="4" {{ old('PFUR', $caracteristicas->PFUR) == 4 ? 'selected' : '' }}>Nível 4</option>
+                        <option value="5" {{ old('PFUR', $caracteristicas->PFUR) == 5 ? 'selected' : '' }}>Nível 5</option>
+                        <option value="6" {{ old('PFUR', $caracteristicas->PFUR) == 6 ? 'selected' : '' }}>Nível 6</option>
                     </select>
                 </section>
             </section>
@@ -216,106 +216,106 @@
             <section class="flex gap-4 *:flex-1 *:*:first:flex-1 *:*:p-2">
                 <section class="flex gap-4">
                     <h3>Artesanato</h3>
-                    <select name="PART" id="PART" value="{{ old('PART', $caracteristicas->PART) }}"
+                    <select name="PART" id="PART"
                         class="w-50 bg-bg-tertiary rounded-lg"
                         >
-                        <option value="0">Nível 0</option>
-                        <option value="1">Nível 1</option>
-                        <option value="2">Nível 2</option>
-                        <option value="3">Nível 3</option>
-                        <option value="4">Nível 4</option>
-                        <option value="5">Nível 5</option>
-                        <option value="6">Nível 6</option>
+                        <option value="0" {{ old('PART', $caracteristicas->PART) == 0 ? 'selected' : '' }}>Nível 0</option>
+                        <option value="1" {{ old('PART', $caracteristicas->PART) == 1 ? 'selected' : '' }}>Nível 1</option>
+                        <option value="2" {{ old('PART', $caracteristicas->PART) == 2 ? 'selected' : '' }}>Nível 2</option>
+                        <option value="3" {{ old('PART', $caracteristicas->PART) == 3 ? 'selected' : '' }}>Nível 3</option>
+                        <option value="4" {{ old('PART', $caracteristicas->PART) == 4 ? 'selected' : '' }}>Nível 4</option>
+                        <option value="5" {{ old('PART', $caracteristicas->PART) == 5 ? 'selected' : '' }}>Nível 5</option>
+                        <option value="6" {{ old('PART', $caracteristicas->PART) == 6 ? 'selected' : '' }}>Nível 6</option>
                     </select>
                 </section>
                 <section class="flex gap-4">
                     <h3>Concentração</h3>
-                    <select name="PCOC" id="PCOC" value="{{ old('PCOC', $caracteristicas->PCOC) }}"
+                    <select name="PCOC" id="PCOC"
                         class="w-50 bg-bg-tertiary rounded-lg"
                         >
-                        <option value="0">Nível 0</option>
-                        <option value="1">Nível 1</option>
-                        <option value="2">Nível 2</option>
-                        <option value="3">Nível 3</option>
-                        <option value="4">Nível 4</option>
-                        <option value="5">Nível 5</option>
-                        <option value="6">Nível 6</option>
+                        <option value="0" {{ old('PCOC', $caracteristicas->PCOC) == 0 ? 'selected' : '' }}>Nível 0</option>
+                        <option value="1" {{ old('PCOC', $caracteristicas->PCOC) == 1 ? 'selected' : '' }}>Nível 1</option>
+                        <option value="2" {{ old('PCOC', $caracteristicas->PCOC) == 2 ? 'selected' : '' }}>Nível 2</option>
+                        <option value="3" {{ old('PCOC', $caracteristicas->PCOC) == 3 ? 'selected' : '' }}>Nível 3</option>
+                        <option value="4" {{ old('PCOC', $caracteristicas->PCOC) == 4 ? 'selected' : '' }}>Nível 4</option>
+                        <option value="5" {{ old('PCOC', $caracteristicas->PCOC) == 5 ? 'selected' : '' }}>Nível 5</option>
+                        <option value="6" {{ old('PCOC', $caracteristicas->PCOC) == 6 ? 'selected' : '' }}>Nível 6</option>
                     </select>
                 </section>
             </section>
             <section class="flex gap-4 *:flex-1 *:*:first:flex-1 *:*:p-2">
                 <section class="flex gap-4">
                     <h3>Condução</h3>
-                    <select name="PCOD" id="PCOD" value="{{ old('PCOD', $caracteristicas->PCOD) }}"
+                    <select name="PCOD" id="PCOD"
                         class="w-50 bg-bg-tertiary rounded-lg"
                         >
-                        <option value="0">Nível 0</option>
-                        <option value="1">Nível 1</option>
-                        <option value="2">Nível 2</option>
-                        <option value="3">Nível 3</option>
-                        <option value="4">Nível 4</option>
-                        <option value="5">Nível 5</option>
-                        <option value="6">Nível 6</option>
+                        <option value="0" {{ old('PCOD', $caracteristicas->PCOD) == 0 ? 'selected' : '' }}>Nível 0</option>
+                        <option value="1" {{ old('PCOD', $caracteristicas->PCOD) == 1 ? 'selected' : '' }}>Nível 1</option>
+                        <option value="2" {{ old('PCOD', $caracteristicas->PCOD) == 2 ? 'selected' : '' }}>Nível 2</option>
+                        <option value="3" {{ old('PCOD', $caracteristicas->PCOD) == 3 ? 'selected' : '' }}>Nível 3</option>
+                        <option value="4" {{ old('PCOD', $caracteristicas->PCOD) == 4 ? 'selected' : '' }}>Nível 4</option>
+                        <option value="5" {{ old('PCOD', $caracteristicas->PCOD) == 5 ? 'selected' : '' }}>Nível 5</option>
+                        <option value="6" {{ old('PCOD', $caracteristicas->PCOD) == 6 ? 'selected' : '' }}>Nível 6</option>
                     </select>
                 </section>
                 <section class="flex gap-4">
                     <h3>Exploração</h3>
-                    <select name="PEPL" id="PEPL" value="{{ old('PEPL', $caracteristicas->PEPL) }}"
+                    <select name="PEPL" id="PEPL"
                         class="w-50 bg-bg-tertiary rounded-lg"
                         >
-                        <option value="0">Nível 0</option>
-                        <option value="1">Nível 1</option>
-                        <option value="2">Nível 2</option>
-                        <option value="3">Nível 3</option>
-                        <option value="4">Nível 4</option>
-                        <option value="5">Nível 5</option>
-                        <option value="6">Nível 6</option>
+                        <option value="0" {{ old('PEPL', $caracteristicas->PEPL) == 0 ? 'selected' : '' }}>Nível 0</option>
+                        <option value="1" {{ old('PEPL', $caracteristicas->PEPL) == 1 ? 'selected' : '' }}>Nível 1</option>
+                        <option value="2" {{ old('PEPL', $caracteristicas->PEPL) == 2 ? 'selected' : '' }}>Nível 2</option>
+                        <option value="3" {{ old('PEPL', $caracteristicas->PEPL) == 3 ? 'selected' : '' }}>Nível 3</option>
+                        <option value="4" {{ old('PEPL', $caracteristicas->PEPL) == 4 ? 'selected' : '' }}>Nível 4</option>
+                        <option value="5" {{ old('PEPL', $caracteristicas->PEPL) == 5 ? 'selected' : '' }}>Nível 5</option>
+                        <option value="6" {{ old('PEPL', $caracteristicas->PEPL) == 6 ? 'selected' : '' }}>Nível 6</option>
                     </select>
                 </section>
             </section>
             <section class="flex gap-4 *:flex-1 *:*:first:flex-1 *:*:p-2">
                 <section class="flex gap-4">
                     <h3>Investigação</h3>
-                    <select name="PINV" id="PINV" value="{{ old('PINV', $caracteristicas->PINV) }}"
+                    <select name="PINV" id="PINV"
                         class="w-50 bg-bg-tertiary rounded-lg"
                         >
-                        <option value="0">Nível 0</option>
-                        <option value="1">Nível 1</option>
-                        <option value="2">Nível 2</option>
-                        <option value="3">Nível 3</option>
-                        <option value="4">Nível 4</option>
-                        <option value="5">Nível 5</option>
-                        <option value="6">Nível 6</option>
+                        <option value="0" {{ old('PINV', $caracteristicas->PINV) == 0 ? 'selected' : '' }}>Nível 0</option>
+                        <option value="1" {{ old('PINV', $caracteristicas->PINV) == 1 ? 'selected' : '' }}>Nível 1</option>
+                        <option value="2" {{ old('PINV', $caracteristicas->PINV) == 2 ? 'selected' : '' }}>Nível 2</option>
+                        <option value="3" {{ old('PINV', $caracteristicas->PINV) == 3 ? 'selected' : '' }}>Nível 3</option>
+                        <option value="4" {{ old('PINV', $caracteristicas->PINV) == 4 ? 'selected' : '' }}>Nível 4</option>
+                        <option value="5" {{ old('PINV', $caracteristicas->PINV) == 5 ? 'selected' : '' }}>Nível 5</option>
+                        <option value="6" {{ old('PINV', $caracteristicas->PINV) == 6 ? 'selected' : '' }}>Nível 6</option>
                     </select>
                 </section>
                 <section class="flex gap-4">
                     <h3>Ladinagem</h3>
-                    <select name="PLAD" id="PLAD" value="{{ old('PLAD', $caracteristicas->PLAD) }}"
+                    <select name="PLAD" id="PLAD"
                         class="w-50 bg-bg-tertiary rounded-lg"
                         >
-                        <option value="0">Nível 0</option>
-                        <option value="1">Nível 1</option>
-                        <option value="2">Nível 2</option>
-                        <option value="3">Nível 3</option>
-                        <option value="4">Nível 4</option>
-                        <option value="5">Nível 5</option>
-                        <option value="6">Nível 6</option>
+                        <option value="0" {{ old('PLAD', $caracteristicas->PLAD) == 0 ? 'selected' : '' }}>Nível 0</option>
+                        <option value="1" {{ old('PLAD', $caracteristicas->PLAD) == 1 ? 'selected' : '' }}>Nível 1</option>
+                        <option value="2" {{ old('PLAD', $caracteristicas->PLAD) == 2 ? 'selected' : '' }}>Nível 2</option>
+                        <option value="3" {{ old('PLAD', $caracteristicas->PLAD) == 3 ? 'selected' : '' }}>Nível 3</option>
+                        <option value="4" {{ old('PLAD', $caracteristicas->PLAD) == 4 ? 'selected' : '' }}>Nível 4</option>
+                        <option value="5" {{ old('PLAD', $caracteristicas->PLAD) == 5 ? 'selected' : '' }}>Nível 5</option>
+                        <option value="6" {{ old('PLAD', $caracteristicas->PLAD) == 6 ? 'selected' : '' }}>Nível 6</option>
                     </select>
                 </section>
             </section>
             <section class="relative flex justify-center gap-4 *:flex-1 *:*:first:flex-1 *:*:p-2">
                 <section class="flex gap-4 max-w-1/2">
                     <h3>Primeiros Socorros</h3>
-                    <select name="PPRS" id="PPRS" value="{{ old('PPRS', $caracteristicas->PPRS) }}"
+                    <select name="PPRS" id="PPRS"
                         class="w-50 bg-bg-tertiary rounded-lg"
                         >
-                        <option value="0">Nível 0</option>
-                        <option value="1">Nível 1</option>
-                        <option value="2">Nível 2</option>
-                        <option value="3">Nível 3</option>
-                        <option value="4">Nível 4</option>
-                        <option value="5">Nível 5</option>
-                        <option value="6">Nível 6</option>
+                        <option value="0" {{ old('PPRS', $caracteristicas->PPRS) == 0 ? 'selected' : '' }}>Nível 0</option>
+                        <option value="1" {{ old('PPRS', $caracteristicas->PPRS) == 1 ? 'selected' : '' }}>Nível 1</option>
+                        <option value="2" {{ old('PPRS', $caracteristicas->PPRS) == 2 ? 'selected' : '' }}>Nível 2</option>
+                        <option value="3" {{ old('PPRS', $caracteristicas->PPRS) == 3 ? 'selected' : '' }}>Nível 3</option>
+                        <option value="4" {{ old('PPRS', $caracteristicas->PPRS) == 4 ? 'selected' : '' }}>Nível 4</option>
+                        <option value="5" {{ old('PPRS', $caracteristicas->PPRS) == 5 ? 'selected' : '' }}>Nível 5</option>
+                        <option value="6" {{ old('PPRS', $caracteristicas->PPRS) == 6 ? 'selected' : '' }}>Nível 6</option>
                     </select>
                 </section>
             </section>
@@ -324,90 +324,90 @@
             <section class="flex gap-4 *:flex-1 *:*:first:flex-1 *:*:p-2">
                 <section class="flex gap-4">
                     <h3>Conhec. Acadêmico</h3>
-                    <select name="PCAC" id="PCAC" value="{{ old('PCAC', $caracteristicas->PCAC) }}"
+                    <select name="PCAC" id="PCAC"
                         class="w-50 bg-bg-tertiary rounded-lg"
                         >
-                        <option value="0">Nível 0</option>
-                        <option value="1">Nível 1</option>
-                        <option value="2">Nível 2</option>
-                        <option value="3">Nível 3</option>
-                        <option value="4">Nível 4</option>
-                        <option value="5">Nível 5</option>
-                        <option value="6">Nível 6</option>
+                        <option value="0" {{ old('PCAC', $caracteristicas->PCAC) == 0 ? 'selected' : '' }}>Nível 0</option>
+                        <option value="1" {{ old('PCAC', $caracteristicas->PCAC) == 1 ? 'selected' : '' }}>Nível 1</option>
+                        <option value="2" {{ old('PCAC', $caracteristicas->PCAC) == 2 ? 'selected' : '' }}>Nível 2</option>
+                        <option value="3" {{ old('PCAC', $caracteristicas->PCAC) == 3 ? 'selected' : '' }}>Nível 3</option>
+                        <option value="4" {{ old('PCAC', $caracteristicas->PCAC) == 4 ? 'selected' : '' }}>Nível 4</option>
+                        <option value="5" {{ old('PCAC', $caracteristicas->PCAC) == 5 ? 'selected' : '' }}>Nível 5</option>
+                        <option value="6" {{ old('PCAC', $caracteristicas->PCAC) == 6 ? 'selected' : '' }}>Nível 6</option>
                     </select>
                 </section>
                 <section class="flex gap-4">
                     <h3>Conhec. Informático</h3>
-                    <select name="PCIN" id="PCIN" value="{{ old('PCIN', $caracteristicas->PCIN) }}"
+                    <select name="PCIN" id="PCIN"
                         class="w-50 bg-bg-tertiary rounded-lg"
                         >
-                        <option value="0">Nível 0</option>
-                        <option value="1">Nível 1</option>
-                        <option value="2">Nível 2</option>
-                        <option value="3">Nível 3</option>
-                        <option value="4">Nível 4</option>
-                        <option value="5">Nível 5</option>
-                        <option value="6">Nível 6</option>
+                        <option value="0" {{ old('PCIN', $caracteristicas->PCIN) == 0 ? 'selected' : '' }}>Nível 0</option>
+                        <option value="1" {{ old('PCIN', $caracteristicas->PCIN) == 1 ? 'selected' : '' }}>Nível 1</option>
+                        <option value="2" {{ old('PCIN', $caracteristicas->PCIN) == 2 ? 'selected' : '' }}>Nível 2</option>
+                        <option value="3" {{ old('PCIN', $caracteristicas->PCIN) == 3 ? 'selected' : '' }}>Nível 3</option>
+                        <option value="4" {{ old('PCIN', $caracteristicas->PCIN) == 4 ? 'selected' : '' }}>Nível 4</option>
+                        <option value="5" {{ old('PCIN', $caracteristicas->PCIN) == 5 ? 'selected' : '' }}>Nível 5</option>
+                        <option value="6" {{ old('PCIN', $caracteristicas->PCIN) == 6 ? 'selected' : '' }}>Nível 6</option>
                     </select>
                 </section>
             </section>
             <section class="flex gap-4 *:flex-1 *:*:first:flex-1 *:*:p-2">
                 <section class="flex gap-4">
                     <h3>Conhec. Médico</h3>
-                    <select name="PCME" id="PCME" value="{{ old('PCME', $caracteristicas->PCME) }}"
+                    <select name="PCME" id="PCME"
                         class="w-50 bg-bg-tertiary rounded-lg"
                         >
-                        <option value="0">Nível 0</option>
-                        <option value="1">Nível 1</option>
-                        <option value="2">Nível 2</option>
-                        <option value="3">Nível 3</option>
-                        <option value="4">Nível 4</option>
-                        <option value="5">Nível 5</option>
-                        <option value="6">Nível 6</option>
+                        <option value="0" {{ old('PCME', $caracteristicas->PCME) == 0 ? 'selected' : '' }}>Nível 0</option>
+                        <option value="1" {{ old('PCME', $caracteristicas->PCME) == 1 ? 'selected' : '' }}>Nível 1</option>
+                        <option value="2" {{ old('PCME', $caracteristicas->PCME) == 2 ? 'selected' : '' }}>Nível 2</option>
+                        <option value="3" {{ old('PCME', $caracteristicas->PCME) == 3 ? 'selected' : '' }}>Nível 3</option>
+                        <option value="4" {{ old('PCME', $caracteristicas->PCME) == 4 ? 'selected' : '' }}>Nível 4</option>
+                        <option value="5" {{ old('PCME', $caracteristicas->PCME) == 5 ? 'selected' : '' }}>Nível 5</option>
+                        <option value="6" {{ old('PCME', $caracteristicas->PCME) == 6 ? 'selected' : '' }}>Nível 6</option>
                     </select>
                 </section>
                 <section class="flex gap-4">
                     <h3>Conhec. Mental</h3>
-                    <select name="PCMA" id="PCMA" value="{{ old('PCMA', $caracteristicas->PCMA) }}"
+                    <select name="PCMA" id="PCMA"
                         class="w-50 bg-bg-tertiary rounded-lg"
                         >
-                        <option value="0">Nível 0</option>
-                        <option value="1">Nível 1</option>
-                        <option value="2">Nível 2</option>
-                        <option value="3">Nível 3</option>
-                        <option value="4">Nível 4</option>
-                        <option value="5">Nível 5</option>
-                        <option value="6">Nível 6</option>
+                        <option value="0" {{ old('PCMA', $caracteristicas->PCMA) == 0 ? 'selected' : '' }}>Nível 0</option>
+                        <option value="1" {{ old('PCMA', $caracteristicas->PCMA) == 1 ? 'selected' : '' }}>Nível 1</option>
+                        <option value="2" {{ old('PCMA', $caracteristicas->PCMA) == 2 ? 'selected' : '' }}>Nível 2</option>
+                        <option value="3" {{ old('PCMA', $caracteristicas->PCMA) == 3 ? 'selected' : '' }}>Nível 3</option>
+                        <option value="4" {{ old('PCMA', $caracteristicas->PCMA) == 4 ? 'selected' : '' }}>Nível 4</option>
+                        <option value="5" {{ old('PCMA', $caracteristicas->PCMA) == 5 ? 'selected' : '' }}>Nível 5</option>
+                        <option value="6" {{ old('PCMA', $caracteristicas->PCMA) == 6 ? 'selected' : '' }}>Nível 6</option>
                     </select>
                 </section>
             </section>
             <section class="flex gap-4 *:flex-1 *:*:first:flex-1 *:*:p-2">
                 <section class="flex gap-4">
                     <h3>Conhec. Militar</h3>
-                    <select name="PCMI" id="PCMI" value="{{ old('PCMI', $caracteristicas->PCMI) }}"
+                    <select name="PCMI" id="PCMI"
                         class="w-50 bg-bg-tertiary rounded-lg"
                         >
-                        <option value="0">Nível 0</option>
-                        <option value="1">Nível 1</option>
-                        <option value="2">Nível 2</option>
-                        <option value="3">Nível 3</option>
-                        <option value="4">Nível 4</option>
-                        <option value="5">Nível 5</option>
-                        <option value="6">Nível 6</option>
+                        <option value="0" {{ old('PCMI', $caracteristicas->PCMI) == 0 ? 'selected' : '' }}>Nível 0</option>
+                        <option value="1" {{ old('PCMI', $caracteristicas->PCMI) == 1 ? 'selected' : '' }}>Nível 1</option>
+                        <option value="2" {{ old('PCMI', $caracteristicas->PCMI) == 2 ? 'selected' : '' }}>Nível 2</option>
+                        <option value="3" {{ old('PCMI', $caracteristicas->PCMI) == 3 ? 'selected' : '' }}>Nível 3</option>
+                        <option value="4" {{ old('PCMI', $caracteristicas->PCMI) == 4 ? 'selected' : '' }}>Nível 4</option>
+                        <option value="5" {{ old('PCMI', $caracteristicas->PCMI) == 5 ? 'selected' : '' }}>Nível 5</option>
+                        <option value="6" {{ old('PCMI', $caracteristicas->PCMI) == 6 ? 'selected' : '' }}>Nível 6</option>
                     </select>
                 </section>
                 <section class="flex gap-4">
                     <h3>Conhec. Popular</h3>
-                    <select name="PCPO" id="PCPO" value="{{ old('PCPO', $caracteristicas->PCPO) }}"
+                    <select name="PCPO" id="PCPO"
                         class="w-50 bg-bg-tertiary rounded-lg"
                         >
-                        <option value="0">Nível 0</option>
-                        <option value="1">Nível 1</option>
-                        <option value="2">Nível 2</option>
-                        <option value="3">Nível 3</option>
-                        <option value="4">Nível 4</option>
-                        <option value="5">Nível 5</option>
-                        <option value="6">Nível 6</option>
+                        <option value="0" {{ old('PCPO', $caracteristicas->PCPO) == 0 ? 'selected' : '' }}>Nível 0</option>
+                        <option value="1" {{ old('PCPO', $caracteristicas->PCPO) == 1 ? 'selected' : '' }}>Nível 1</option>
+                        <option value="2" {{ old('PCPO', $caracteristicas->PCPO) == 2 ? 'selected' : '' }}>Nível 2</option>
+                        <option value="3" {{ old('PCPO', $caracteristicas->PCPO) == 3 ? 'selected' : '' }}>Nível 3</option>
+                        <option value="4" {{ old('PCPO', $caracteristicas->PCPO) == 4 ? 'selected' : '' }}>Nível 4</option>
+                        <option value="5" {{ old('PCPO', $caracteristicas->PCPO) == 5 ? 'selected' : '' }}>Nível 5</option>
+                        <option value="6" {{ old('PCPO', $caracteristicas->PCPO) == 6 ? 'selected' : '' }}>Nível 6</option>
                     </select>
                 </section>
             </section>
@@ -416,90 +416,90 @@
             <section class="flex gap-4 *:flex-1 *:*:first:flex-1 *:*:p-2">
                 <section class="flex gap-4">
                     <h3>Blefe</h3>
-                    <select name="PBLE" id="PBLE" value="{{ old('PBLE', $caracteristicas->PBLE) }}"
+                    <select name="PBLE" id="PBLE"
                         class="w-50 bg-bg-tertiary rounded-lg"
                         >
-                        <option value="0">Nível 0</option>
-                        <option value="1">Nível 1</option>
-                        <option value="2">Nível 2</option>
-                        <option value="3">Nível 3</option>
-                        <option value="4">Nível 4</option>
-                        <option value="5">Nível 5</option>
-                        <option value="6">Nível 6</option>
+                        <option value="0" {{ old('PBLE', $caracteristicas->PBLE) == 0 ? 'selected' : '' }}>Nível 0</option>
+                        <option value="1" {{ old('PBLE', $caracteristicas->PBLE) == 1 ? 'selected' : '' }}>Nível 1</option>
+                        <option value="2" {{ old('PBLE', $caracteristicas->PBLE) == 2 ? 'selected' : '' }}>Nível 2</option>
+                        <option value="3" {{ old('PBLE', $caracteristicas->PBLE) == 3 ? 'selected' : '' }}>Nível 3</option>
+                        <option value="4" {{ old('PBLE', $caracteristicas->PBLE) == 4 ? 'selected' : '' }}>Nível 4</option>
+                        <option value="5" {{ old('PBLE', $caracteristicas->PBLE) == 5 ? 'selected' : '' }}>Nível 5</option>
+                        <option value="6" {{ old('PBLE', $caracteristicas->PBLE) == 6 ? 'selected' : '' }}>Nível 6</option>
                     </select>
                 </section>
                 <section class="flex gap-4">
                     <h3>Carisma</h3>
-                    <select name="PCRI" id="PCRI" value="{{ old('PCRI', $caracteristicas->PCRI) }}"
+                    <select name="PCRI" id="PCRI"
                         class="w-50 bg-bg-tertiary rounded-lg"
                         >
-                        <option value="0">Nível 0</option>
-                        <option value="1">Nível 1</option>
-                        <option value="2">Nível 2</option>
-                        <option value="3">Nível 3</option>
-                        <option value="4">Nível 4</option>
-                        <option value="5">Nível 5</option>
-                        <option value="6">Nível 6</option>
+                        <option value="0" {{ old('PCRI', $caracteristicas->PCRI) == 0 ? 'selected' : '' }}>Nível 0</option>
+                        <option value="1" {{ old('PCRI', $caracteristicas->PCRI) == 1 ? 'selected' : '' }}>Nível 1</option>
+                        <option value="2" {{ old('PCRI', $caracteristicas->PCRI) == 2 ? 'selected' : '' }}>Nível 2</option>
+                        <option value="3" {{ old('PCRI', $caracteristicas->PCRI) == 3 ? 'selected' : '' }}>Nível 3</option>
+                        <option value="4" {{ old('PCRI', $caracteristicas->PCRI) == 4 ? 'selected' : '' }}>Nível 4</option>
+                        <option value="5" {{ old('PCRI', $caracteristicas->PCRI) == 5 ? 'selected' : '' }}>Nível 5</option>
+                        <option value="6" {{ old('PCRI', $caracteristicas->PCRI) == 6 ? 'selected' : '' }}>Nível 6</option>
                     </select>
                 </section>
             </section>
             <section class="flex gap-4 *:flex-1 *:*:first:flex-1 *:*:p-2">
                 <section class="flex gap-4">
                     <h3>Diplomacia</h3>
-                    <select name="PDIP" id="PDIP" value="{{ old('PDIP', $caracteristicas->PDIP) }}"
+                    <select name="PDIP" id="PDIP"
                         class="w-50 bg-bg-tertiary rounded-lg"
                         >
-                        <option value="0">Nível 0</option>
-                        <option value="1">Nível 1</option>
-                        <option value="2">Nível 2</option>
-                        <option value="3">Nível 3</option>
-                        <option value="4">Nível 4</option>
-                        <option value="5">Nível 5</option>
-                        <option value="6">Nível 6</option>
+                        <option value="0" {{ old('PDIP', $caracteristicas->PDIP) == 0 ? 'selected' : '' }}>Nível 0</option>
+                        <option value="1" {{ old('PDIP', $caracteristicas->PDIP) == 1 ? 'selected' : '' }}>Nível 1</option>
+                        <option value="2" {{ old('PDIP', $caracteristicas->PDIP) == 2 ? 'selected' : '' }}>Nível 2</option>
+                        <option value="3" {{ old('PDIP', $caracteristicas->PDIP) == 3 ? 'selected' : '' }}>Nível 3</option>
+                        <option value="4" {{ old('PDIP', $caracteristicas->PDIP) == 4 ? 'selected' : '' }}>Nível 4</option>
+                        <option value="5" {{ old('PDIP', $caracteristicas->PDIP) == 5 ? 'selected' : '' }}>Nível 5</option>
+                        <option value="6" {{ old('PDIP', $caracteristicas->PDIP) == 6 ? 'selected' : '' }}>Nível 6</option>
                     </select>
                 </section>
                 <section class="flex gap-4">
                     <h3>Intimidação</h3>
-                    <select name="PTIM" id="PTIM" value="{{ old('PTIM', $caracteristicas->PTIM) }}"
+                    <select name="PTIM" id="PTIM"
                         class="w-50 bg-bg-tertiary rounded-lg"
                         >
-                        <option value="0">Nível 0</option>
-                        <option value="1">Nível 1</option>
-                        <option value="2">Nível 2</option>
-                        <option value="3">Nível 3</option>
-                        <option value="4">Nível 4</option>
-                        <option value="5">Nível 5</option>
-                        <option value="6">Nível 6</option>
+                        <option value="0" {{ old('PTIM', $caracteristicas->PTIM) == 0 ? 'selected' : '' }}>Nível 0</option>
+                        <option value="1" {{ old('PTIM', $caracteristicas->PTIM) == 1 ? 'selected' : '' }}>Nível 1</option>
+                        <option value="2" {{ old('PTIM', $caracteristicas->PTIM) == 2 ? 'selected' : '' }}>Nível 2</option>
+                        <option value="3" {{ old('PTIM', $caracteristicas->PTIM) == 3 ? 'selected' : '' }}>Nível 3</option>
+                        <option value="4" {{ old('PTIM', $caracteristicas->PTIM) == 4 ? 'selected' : '' }}>Nível 4</option>
+                        <option value="5" {{ old('PTIM', $caracteristicas->PTIM) == 5 ? 'selected' : '' }}>Nível 5</option>
+                        <option value="6" {{ old('PTIM', $caracteristicas->PTIM) == 6 ? 'selected' : '' }}>Nível 6</option>
                     </select>
                 </section>
             </section>
             <section class="flex gap-4 *:flex-1 *:*:first:flex-1 *:*:p-2">
                 <section class="flex gap-4">
                     <h3>Intuição</h3>
-                    <select name="PTUI" id="PTUI" value="{{ old('PTUI', $caracteristicas->PTUI) }}"
+                    <select name="PTUI" id="PTUI"
                         class="w-50 bg-bg-tertiary rounded-lg"
                         >
-                        <option value="0">Nível 0</option>
-                        <option value="1">Nível 1</option>
-                        <option value="2">Nível 2</option>
-                        <option value="3">Nível 3</option>
-                        <option value="4">Nível 4</option>
-                        <option value="5">Nível 5</option>
-                        <option value="6">Nível 6</option>
+                        <option value="0" {{ old('PTUI', $caracteristicas->PTUI) == 0 ? 'selected' : '' }}>Nível 0</option>
+                        <option value="1" {{ old('PTUI', $caracteristicas->PTUI) == 1 ? 'selected' : '' }}>Nível 1</option>
+                        <option value="2" {{ old('PTUI', $caracteristicas->PTUI) == 2 ? 'selected' : '' }}>Nível 2</option>
+                        <option value="3" {{ old('PTUI', $caracteristicas->PTUI) == 3 ? 'selected' : '' }}>Nível 3</option>
+                        <option value="4" {{ old('PTUI', $caracteristicas->PTUI) == 4 ? 'selected' : '' }}>Nível 4</option>
+                        <option value="5" {{ old('PTUI', $caracteristicas->PTUI) == 5 ? 'selected' : '' }}>Nível 5</option>
+                        <option value="6" {{ old('PTUI', $caracteristicas->PTUI) == 6 ? 'selected' : '' }}>Nível 6</option>
                     </select>
                 </section>
                 <section class="flex gap-4">
                     <h3>Liderança</h3>
-                    <select name="PLID" id="PLID" value="{{ old('PLID', $caracteristicas->PLID) }}"
+                    <select name="PLID" id="PLID"
                         class="w-50 bg-bg-tertiary rounded-lg"
                         >
-                        <option value="0">Nível 0</option>
-                        <option value="1">Nível 1</option>
-                        <option value="2">Nível 2</option>
-                        <option value="3">Nível 3</option>
-                        <option value="4">Nível 4</option>
-                        <option value="5">Nível 5</option>
-                        <option value="6">Nível 6</option>
+                        <option value="0" {{ old('PLID', $caracteristicas->PLID) == 0 ? 'selected' : '' }}>Nível 0</option>
+                        <option value="1" {{ old('PLID', $caracteristicas->PLID) == 1 ? 'selected' : '' }}>Nível 1</option>
+                        <option value="2" {{ old('PLID', $caracteristicas->PLID) == 2 ? 'selected' : '' }}>Nível 2</option>
+                        <option value="3" {{ old('PLID', $caracteristicas->PLID) == 3 ? 'selected' : '' }}>Nível 3</option>
+                        <option value="4" {{ old('PLID', $caracteristicas->PLID) == 4 ? 'selected' : '' }}>Nível 4</option>
+                        <option value="5" {{ old('PLID', $caracteristicas->PLID) == 5 ? 'selected' : '' }}>Nível 5</option>
+                        <option value="6" {{ old('PLID', $caracteristicas->PLID) == 6 ? 'selected' : '' }}>Nível 6</option>
                     </select>
                 </section>
             </section>
@@ -508,189 +508,189 @@
             <section class="flex gap-4 *:flex-1 *:*:first:flex-1 *:*:p-2">
                 <section class="flex gap-4">
                     <h3>Artes Marciais</h3>
-                    <select name="QARM" id="QARM" value="{{ old('QARM', $caracteristicas->QARM) }}"
+                    <select name="QARM" id="QARM"
                         class="w-50 bg-bg-tertiary rounded-lg"
                         >
-                        <option value="0">Valor 0</option>
-                        <option value="1">Valor 1</option>
-                        <option value="2">Valor 2</option>
-                        <option value="3">Valor 3</option>
-                        <option value="4">Valor 4</option>
-                        <option value="5">Valor 5</option>
+                        <option value="0" {{ old('QARM', $caracteristicas->QARM) == 0 ? 'selected' : '' }}>Valor 0</option>
+                        <option value="1" {{ old('QARM', $caracteristicas->QARM) == 1 ? 'selected' : '' }}>Valor 1</option>
+                        <option value="2" {{ old('QARM', $caracteristicas->QARM) == 2 ? 'selected' : '' }}>Valor 2</option>
+                        <option value="3" {{ old('QARM', $caracteristicas->QARM) == 3 ? 'selected' : '' }}>Valor 3</option>
+                        <option value="4" {{ old('QARM', $caracteristicas->QARM) == 4 ? 'selected' : '' }}>Valor 4</option>
+                        <option value="5" {{ old('QARM', $caracteristicas->QARM) == 5 ? 'selected' : '' }}>Valor 5</option>
                     </select>
                 </section>
                 <section class="flex gap-4">
                     <h3>Beleza</h3>
-                    <select name="QBEL" id="QBEL" value="{{ old('QBEL', $caracteristicas->QBEL) }}"
+                    <select name="QBEL" id="QBEL"
                         class="w-50 bg-bg-tertiary rounded-lg"
                         >
-                        <option value="0">Valor 0</option>
-                        <option value="1">Valor 1</option>
-                        <option value="2">Valor 2</option>
-                        <option value="3">Valor 3</option>
-                        <option value="4">Valor 4</option>
-                        <option value="5">Valor 5</option>
+                        <option value="0" {{ old('QBEL', $caracteristicas->QBEL) == 0 ? 'selected' : '' }}>Valor 0</option>
+                        <option value="1" {{ old('QBEL', $caracteristicas->QBEL) == 1 ? 'selected' : '' }}>Valor 1</option>
+                        <option value="2" {{ old('QBEL', $caracteristicas->QBEL) == 2 ? 'selected' : '' }}>Valor 2</option>
+                        <option value="3" {{ old('QBEL', $caracteristicas->QBEL) == 3 ? 'selected' : '' }}>Valor 3</option>
+                        <option value="4" {{ old('QBEL', $caracteristicas->QBEL) == 4 ? 'selected' : '' }}>Valor 4</option>
+                        <option value="5" {{ old('QBEL', $caracteristicas->QBEL) == 5 ? 'selected' : '' }}>Valor 5</option>
                     </select>
                 </section>
             </section>
             <section class="flex gap-4 *:flex-1 *:*:first:flex-1 *:*:p-2">
                 <section class="flex gap-4">
                     <h3>Corajoso</h3>
-                    <select name="QCOR" id="QCOR" value="{{ old('QCOR', $caracteristicas->QCOR) }}"
+                    <select name="QCOR" id="QCOR"
                         class="w-50 bg-bg-tertiary rounded-lg"
                         >
-                        <option value="0">Valor 0</option>
-                        <option value="1">Valor 1</option>
-                        <option value="2">Valor 2</option>
-                        <option value="3">Valor 3</option>
-                        <option value="4">Valor 4</option>
-                        <option value="5">Valor 5</option>
+                        <option value="0" {{ old('QCOR', $caracteristicas->QCOR) == 0 ? 'selected' : '' }}>Valor 0</option>
+                        <option value="1" {{ old('QCOR', $caracteristicas->QCOR) == 1 ? 'selected' : '' }}>Valor 1</option>
+                        <option value="2" {{ old('QCOR', $caracteristicas->QCOR) == 2 ? 'selected' : '' }}>Valor 2</option>
+                        <option value="3" {{ old('QCOR', $caracteristicas->QCOR) == 3 ? 'selected' : '' }}>Valor 3</option>
+                        <option value="4" {{ old('QCOR', $caracteristicas->QCOR) == 4 ? 'selected' : '' }}>Valor 4</option>
+                        <option value="5" {{ old('QCOR', $caracteristicas->QCOR) == 5 ? 'selected' : '' }}>Valor 5</option>
                     </select>
                 </section>
                 <section class="flex gap-4">
                     <h3>Casos Criminais</h3>
-                    <select name="QCAS" id="QCAS" value="{{ old('QCAS', $caracteristicas->QCAS) }}"
+                    <select name="QCAS" id="QCAS"
                         class="w-50 bg-bg-tertiary rounded-lg"
                         >
-                        <option value="0">Valor 0</option>
-                        <option value="1">Valor 1</option>
-                        <option value="2">Valor 2</option>
-                        <option value="3">Valor 3</option>
+                        <option value="0" {{ old('QCAS', $caracteristicas->QCAS) == 0 ? 'selected' : '' }}>Valor 0</option>
+                        <option value="1" {{ old('QCAS', $caracteristicas->QCAS) == 1 ? 'selected' : '' }}>Valor 1</option>
+                        <option value="2" {{ old('QCAS', $caracteristicas->QCAS) == 2 ? 'selected' : '' }}>Valor 2</option>
+                        <option value="3" {{ old('QCAS', $caracteristicas->QCAS) == 3 ? 'selected' : '' }}>Valor 3</option>
                     </select>
                 </section>
             </section>
             <section class="flex gap-4 *:flex-1 *:*:first:flex-1 *:*:p-2">
                 <section class="flex gap-4">
                     <h3>Duro de Matar</h3>
-                    <select name="QDDM" id="QDDM" value="{{ old('QDDM', $caracteristicas->QDDM) }}"
+                    <select name="QDDM" id="QDDM"
                         class="w-50 bg-bg-tertiary rounded-lg"
                         >
-                        <option value="0">Valor 0</option>
-                        <option value="1">Valor 1</option>
-                        <option value="2">Valor 2</option>
-                        <option value="3">Valor 3</option>
+                        <option value="0" {{ old('QDDM', $caracteristicas->QDDM) == 0 ? 'selected' : '' }}>Valor 0</option>
+                        <option value="1" {{ old('QDDM', $caracteristicas->QDDM) == 1 ? 'selected' : '' }}>Valor 1</option>
+                        <option value="2" {{ old('QDDM', $caracteristicas->QDDM) == 2 ? 'selected' : '' }}>Valor 2</option>
+                        <option value="3" {{ old('QDDM', $caracteristicas->QDDM) == 3 ? 'selected' : '' }}>Valor 3</option>
                     </select>
                 </section>
                 <section class="flex gap-4">
                     <h3>Bom Reflexo</h3>
-                    <select name="QBRX" id="QBRX" value="{{ old('QBRX', $caracteristicas->QBRX) }}"
+                    <select name="QBRX" id="QBRX"
                         class="w-50 bg-bg-tertiary rounded-lg"
                         >
-                        <option value="0">Valor 0</option>
-                        <option value="1">Valor 1</option>
-                        <option value="2">Valor 2</option>
-                        <option value="3">Valor 3</option>
+                        <option value="0" {{ old('QBRX', $caracteristicas->QBRX) == 0 ? 'selected' : '' }}>Valor 0</option>
+                        <option value="1" {{ old('QBRX', $caracteristicas->QBRX) == 1 ? 'selected' : '' }}>Valor 1</option>
+                        <option value="2" {{ old('QBRX', $caracteristicas->QBRX) == 2 ? 'selected' : '' }}>Valor 2</option>
+                        <option value="3" {{ old('QBRX', $caracteristicas->QBRX) == 3 ? 'selected' : '' }}>Valor 3</option>
                     </select>
                 </section>
             </section>
             <section class="flex gap-4 *:flex-1 *:*:first:flex-1 *:*:p-2">
                 <section class="flex gap-4">
                     <h3>Genialidade</h3>
-                    <select name="QGEL" id="QGEL" value="{{ old('QGEL', $caracteristicas->QGEL) }}"
+                    <select name="QGEL" id="QGEL"
                         class="w-50 bg-bg-tertiary rounded-lg"
                         >
-                        <option value="0">Valor 0</option>
-                        <option value="3">Valor 4</option>
+                        <option value="0" {{ old('QGEL', $caracteristicas->QGEL) == 0 ? 'selected' : '' }}>Valor 0</option>
+                        <option value="4" {{ old('QGEL', $caracteristicas->QGEL) == 4 ? 'selected' : '' }}>Valor 4</option>
                     </select>
                 </section>
                 <section class="flex gap-4">
                     <h3>Genética Boa</h3>
-                    <select name="QGEN" id="QGEN" value="{{ old('QGEN', $caracteristicas->QGEN) }}"
+                    <select name="QGEN" id="QGEN"
                         class="w-50 bg-bg-tertiary rounded-lg"
                         >
-                        <option value="0">Valor 0</option>
-                        <option value="3">Valor 3</option>
+                        <option value="0" {{ old('QGEN', $caracteristicas->QGEN) == 0 ? 'selected' : '' }}>Valor 0</option>
+                        <option value="3" {{ old('QGEN', $caracteristicas->QGEN) == 3 ? 'selected' : '' }}>Valor 3</option>
                     </select>
                 </section>
             </section>
             <section class="flex gap-4 *:flex-1 *:*:first:flex-1 *:*:p-2">
                 <section class="flex gap-4">
                     <h3>Tranquilidade</h3>
-                    <select name="QTRA" id="QTRA" value="{{ old('QTRA', $caracteristicas->QTRA) }}"
+                    <select name="QTRA" id="QTRA"
                         class="w-50 bg-bg-tertiary rounded-lg"
                         >
-                        <option value="0">Valor 0</option>
-                        <option value="3">Valor 3</option>
+                        <option value="0" {{ old('QTRA', $caracteristicas->QTRA) == 0 ? 'selected' : '' }}>Valor 0</option>
+                        <option value="3" {{ old('QTRA', $caracteristicas->QTRA) == 3 ? 'selected' : '' }}>Valor 3</option>
                     </select>
                 </section>
                 <section class="flex gap-4">
                     <h3>Sentido Aguçado</h3>
-                    <select name="QSEA" id="QSEA" value="{{ old('QSEA', $caracteristicas->QSEA) }}"
+                    <select name="QSEA" id="QSEA"
                         class="w-50 bg-bg-tertiary rounded-lg"
                         >
-                        <option value="0">Valor 0</option>
-                        <option value="3">Valor 3</option>
+                        <option value="0" {{ old('QSEA', $caracteristicas->QSEA) == 0 ? 'selected' : '' }}>Valor 0</option>
+                        <option value="3" {{ old('QSEA', $caracteristicas->QSEA) == 3 ? 'selected' : '' }}>Valor 3</option>
                     </select>
                 </section>
             </section>
             <section class="flex gap-4 *:flex-1 *:*:first:flex-1 *:*:p-2">
                 <section class="flex gap-4">
                     <h3>Adaptabilidade</h3>
-                    <select name="QADA" id="QADA" value="{{ old('QADA', $caracteristicas->QADA) }}"
+                    <select name="QADA" id="QADA"
                         class="w-50 bg-bg-tertiary rounded-lg"
                         >
-                        <option value="0">Valor 0</option>
-                        <option value="2">Valor 2</option>
+                        <option value="0" {{ old('QADA', $caracteristicas->QADA) == 0 ? 'selected' : '' }}>Valor 0</option>
+                        <option value="2" {{ old('QADA', $caracteristicas->QADA) == 2 ? 'selected' : '' }}>Valor 2</option>
                     </select>
                 </section>
                 <section class="flex gap-4">
                     <h3>Filmes de Ação</h3>
-                    <select name="QFDA" id="QFDA" value="{{ old('QFDA', $caracteristicas->QFDA) }}"
+                    <select name="QFDA" id="QFDA"
                         class="w-50 bg-bg-tertiary rounded-lg"
                         >
-                        <option value="0">Valor 0</option>
-                        <option value="2">Valor 2</option>
+                        <option value="0" {{ old('QFDA', $caracteristicas->QFDA) == 0 ? 'selected' : '' }}>Valor 0</option>
+                        <option value="2" {{ old('QFDA', $caracteristicas->QFDA) == 2 ? 'selected' : '' }}>Valor 2</option>
                     </select>
                 </section>
             </section>
             <section class="flex gap-4 *:flex-1 *:*:first:flex-1 *:*:p-2">
                 <section class="flex gap-4">
                     <h3>Jogador de Poker</h3>
-                    <select name="QJDP" id="QJDP" value="{{ old('QJDP', $caracteristicas->QJDP) }}"
+                    <select name="QJDP" id="QJDP"
                         class="w-50 bg-bg-tertiary rounded-lg"
                         >
-                        <option value="0">Valor 0</option>
-                        <option value="2">Valor 2</option>
+                        <option value="0" {{ old('QJDP', $caracteristicas->QJDP) == 0 ? 'selected' : '' }}>Valor 0</option>
+                        <option value="2" {{ old('QJDP', $caracteristicas->QJDP) == 2 ? 'selected' : '' }}>Valor 2</option>
                     </select>
                 </section>
                 <section class="flex gap-4">
                     <h3>Lábia</h3>
-                    <select name="QLAB" id="QLAB" value="{{ old('QLAB', $caracteristicas->QLAB) }}"
+                    <select name="QLAB" id="QLAB"
                         class="w-50 bg-bg-tertiary rounded-lg"
                         >
-                        <option value="0">Valor 0</option>
-                        <option value="2">Valor 2</option>
+                        <option value="0" {{ old('QLAB', $caracteristicas->QLAB) == 0 ? 'selected' : '' }}>Valor 0</option>
+                        <option value="2" {{ old('QLAB', $caracteristicas->QLAB) == 2 ? 'selected' : '' }}>Valor 2</option>
                     </select>
                 </section>
             </section>
             <section class="flex gap-4 *:flex-1 *:*:first:flex-1 *:*:p-2">
                 <section class="flex gap-4">
                     <h3>Malandragem</h3>
-                    <select name="QMAL" id="QMAL" value="{{ old('QMAL', $caracteristicas->QMAL) }}"
+                    <select name="QMAL" id="QMAL"
                         class="w-50 bg-bg-tertiary rounded-lg"
                         >
-                        <option value="0">Valor 0</option>
-                        <option value="2">Valor 2</option>
+                        <option value="0" {{ old('QMAL', $caracteristicas->QMAL) == 0 ? 'selected' : '' }}>Valor 0</option>
+                        <option value="2" {{ old('QMAL', $caracteristicas->QMAL) == 2 ? 'selected' : '' }}>Valor 2</option>
                     </select>
                 </section>
                 <section class="flex gap-4">
                     <h3>Carteira de Motorista</h3>
-                    <select name="QCNH" id="QCNH" value="{{ old('QCNH', $caracteristicas->QCNH) }}"
+                    <select name="QCNH" id="QCNH"
                         class="w-50 bg-bg-tertiary rounded-lg"
                         >
-                        <option value="0">Valor 0</option>
-                        <option value="2">Valor 2</option>
+                        <option value="0" {{ old('QCNH', $caracteristicas->QCNH) == 0 ? 'selected' : '' }}>Valor 0</option>
+                        <option value="2" {{ old('QCNH', $caracteristicas->QCNH) == 2 ? 'selected' : '' }}>Valor 2</option>
                     </select>
                 </section>
             </section>
             <section class="relative flex justify-center gap-4 *:flex-1 *:*:first:flex-1 *:*:p-2">
                 <section class="flex gap-4 max-w-1/2">
                     <h3>Memória Fotográfica</h3>
-                    <select name="QMMF" id="QMMF" value="{{ old('QMMF', $caracteristicas->QMMF) }}"
+                    <select name="QMMF" id="QMMF"
                         class="w-50 bg-bg-tertiary rounded-lg"
                         >
-                        <option value="0">Valor 0</option>
-                        <option value="2">Valor 2</option>
+                        <option value="0" {{ old('QMMF', $caracteristicas->QMMF) == 0 ? 'selected' : '' }}>Valor 0</option>
+                        <option value="2" {{ old('QMMF', $caracteristicas->QMMF) == 2 ? 'selected' : '' }}>Valor 2</option>
                     </select>
                 </section>
             </section>
@@ -699,184 +699,184 @@
             <section class="flex gap-4 *:flex-1 *:*:first:flex-1 *:*:p-2">
                 <section class="flex gap-4">
                     <h3>Antipatia</h3>
-                    <select name="DANT" id="DANT" value="{{ old('DANT', $caracteristicas->DANT) }}"
+                    <select name="DANT" id="DANT"
                         class="w-50 bg-bg-tertiary rounded-lg"
                         >
-                        <option value="0">Valor 0</option>
-                        <option value="1">Valor 1</option>
-                        <option value="2">Valor 2</option>
-                        <option value="3">Valor 3</option>
-                        <option value="4">Valor 4</option>
-                        <option value="5">Valor 5</option>
+                        <option value="0" {{ old('DANT', $caracteristicas->DANT) == 0 ? 'selected' : '' }}>Valor 0</option>
+                        <option value="1" {{ old('DANT', $caracteristicas->DANT) == 1 ? 'selected' : '' }}>Valor 1</option>
+                        <option value="2" {{ old('DANT', $caracteristicas->DANT) == 2 ? 'selected' : '' }}>Valor 2</option>
+                        <option value="3" {{ old('DANT', $caracteristicas->DANT) == 3 ? 'selected' : '' }}>Valor 3</option>
+                        <option value="4" {{ old('DANT', $caracteristicas->DANT) == 4 ? 'selected' : '' }}>Valor 4</option>
+                        <option value="5" {{ old('DANT', $caracteristicas->DANT) == 5 ? 'selected' : '' }}>Valor 5</option>
                     </select>
                 </section>
                 <section class="flex gap-4">
                     <h3>Azarado</h3>
-                    <select name="DAZA" id="DAZA" value="{{ old('DAZA', $caracteristicas->DAZA) }}"
+                    <select name="DAZA" id="DAZA"
                         class="w-50 bg-bg-tertiary rounded-lg"
                         >
-                        <option value="0">Valor 0</option>
-                        <option value="1">Valor 1</option>
-                        <option value="2">Valor 2</option>
-                        <option value="3">Valor 3</option>
-                        <option value="4">Valor 4</option>
-                        <option value="5">Valor 5</option>
+                        <option value="0" {{ old('DAZA', $caracteristicas->DAZA) == 0 ? 'selected' : '' }}>Valor 0</option>
+                        <option value="1" {{ old('DAZA', $caracteristicas->DAZA) == 1 ? 'selected' : '' }}>Valor 1</option>
+                        <option value="2" {{ old('DAZA', $caracteristicas->DAZA) == 2 ? 'selected' : '' }}>Valor 2</option>
+                        <option value="3" {{ old('DAZA', $caracteristicas->DAZA) == 3 ? 'selected' : '' }}>Valor 3</option>
+                        <option value="4" {{ old('DAZA', $caracteristicas->DAZA) == 4 ? 'selected' : '' }}>Valor 4</option>
+                        <option value="5" {{ old('DAZA', $caracteristicas->DAZA) == 5 ? 'selected' : '' }}>Valor 5</option>
                     </select>
                 </section>
             </section>
             <section class="flex gap-4 *:flex-1 *:*:first:flex-1 *:*:p-2">
                 <section class="flex gap-4">
                     <h3>Feiura</h3>
-                    <select name="DFEI" id="DFEI" value="{{ old('DFEI', $caracteristicas->DFEI) }}"
+                    <select name="DFEI" id="DFEI"
                         class="w-50 bg-bg-tertiary rounded-lg"
                         >
-                        <option value="0">Valor 0</option>
-                        <option value="1">Valor 1</option>
-                        <option value="2">Valor 2</option>
-                        <option value="3">Valor 3</option>
-                        <option value="4">Valor 4</option>
-                        <option value="5">Valor 5</option>
+                        <option value="0" {{ old('DFEI', $caracteristicas->DFEI) == 0 ? 'selected' : '' }}>Valor 0</option>
+                        <option value="1" {{ old('DFEI', $caracteristicas->DFEI) == 1 ? 'selected' : '' }}>Valor 1</option>
+                        <option value="2" {{ old('DFEI', $caracteristicas->DFEI) == 2 ? 'selected' : '' }}>Valor 2</option>
+                        <option value="3" {{ old('DFEI', $caracteristicas->DFEI) == 3 ? 'selected' : '' }}>Valor 3</option>
+                        <option value="4" {{ old('DFEI', $caracteristicas->DFEI) == 4 ? 'selected' : '' }}>Valor 4</option>
+                        <option value="5" {{ old('DFEI', $caracteristicas->DFEI) == 5 ? 'selected' : '' }}>Valor 5</option>
                     </select>
                 </section>
                 <section class="flex gap-4">
                     <h3>Problemas Crônicos</h3>
-                    <select name="DPCR" id="DPCR" value="{{ old('DPCR', $caracteristicas->DPCR) }}"
+                    <select name="DPCR" id="DPCR"
                         class="w-50 bg-bg-tertiary rounded-lg"
                         >
-                        <option value="0">Valor 0</option>
-                        <option value="1">Valor 1</option>
-                        <option value="2">Valor 2</option>
-                        <option value="3">Valor 3</option>
-                        <option value="4">Valor 4</option>
-                        <option value="5">Valor 5</option>
+                        <option value="0" {{ old('DPCR', $caracteristicas->DPCR) == 0 ? 'selected' : '' }}>Valor 0</option>
+                        <option value="1" {{ old('DPCR', $caracteristicas->DPCR) == 1 ? 'selected' : '' }}>Valor 1</option>
+                        <option value="2" {{ old('DPCR', $caracteristicas->DPCR) == 2 ? 'selected' : '' }}>Valor 2</option>
+                        <option value="3" {{ old('DPCR', $caracteristicas->DPCR) == 3 ? 'selected' : '' }}>Valor 3</option>
+                        <option value="4" {{ old('DPCR', $caracteristicas->DPCR) == 4 ? 'selected' : '' }}>Valor 4</option>
+                        <option value="5" {{ old('DPCR', $caracteristicas->DPCR) == 5 ? 'selected' : '' }}>Valor 5</option>
                     </select>
                 </section>
             </section>
             <section class="flex gap-4 *:flex-1 *:*:first:flex-1 *:*:p-2">
                 <section class="flex gap-4">
                     <h3>Covarde</h3>
-                    <select name="DCOV" id="DCOV" value="{{ old('DCOV', $caracteristicas->DCOV) }}"
+                    <select name="DCOV" id="DCOV"
                         class="w-50 bg-bg-tertiary rounded-lg"
                         >
-                        <option value="0">Valor 0</option>
-                        <option value="1">Valor 1</option>
-                        <option value="2">Valor 2</option>
-                        <option value="3">Valor 3</option>
+                        <option value="0" {{ old('DCOV', $caracteristicas->DCOV) == 0 ? 'selected' : '' }}>Valor 0</option>
+                        <option value="1" {{ old('DCOV', $caracteristicas->DCOV) == 1 ? 'selected' : '' }}>Valor 1</option>
+                        <option value="2" {{ old('DCOV', $caracteristicas->DCOV) == 2 ? 'selected' : '' }}>Valor 2</option>
+                        <option value="3" {{ old('DCOV', $caracteristicas->DCOV) == 3 ? 'selected' : '' }}>Valor 3</option>
                     </select>
                 </section>
                 <section class="flex gap-4">
                     <h3>Crenças Estranhas</h3>
-                    <select name="DCRE" id="DCRE" value="{{ old('DCRE', $caracteristicas->DCRE) }}"
+                    <select name="DCRE" id="DCRE"
                         class="w-50 bg-bg-tertiary rounded-lg"
                         >
-                        <option value="0">Valor 0</option>
-                        <option value="1">Valor 1</option>
-                        <option value="2">Valor 2</option>
-                        <option value="3">Valor 3</option>
+                        <option value="0" {{ old('DCRE', $caracteristicas->DCRE) == 0 ? 'selected' : '' }}>Valor 0</option>
+                        <option value="1" {{ old('DCRE', $caracteristicas->DCRE) == 1 ? 'selected' : '' }}>Valor 1</option>
+                        <option value="2" {{ old('DCRE', $caracteristicas->DCRE) == 2 ? 'selected' : '' }}>Valor 2</option>
+                        <option value="3" {{ old('DCRE', $caracteristicas->DCRE) == 3 ? 'selected' : '' }}>Valor 3</option>
                     </select>
                 </section>
             </section>
             <section class="flex gap-4 *:flex-1 *:*:first:flex-1 *:*:p-2">
                 <section class="flex gap-4">
                     <h3>Medo de Sangue</h3>
-                    <select name="DMDS" id="DMDS" value="{{ old('DMDS', $caracteristicas->DMDS) }}"
+                    <select name="DMDS" id="DMDS"
                         class="w-50 bg-bg-tertiary rounded-lg"
                         >
-                        <option value="0">Valor 0</option>
-                        <option value="1">Valor 1</option>
-                        <option value="2">Valor 2</option>
-                        <option value="3">Valor 3</option>
+                        <option value="0" {{ old('DMDS', $caracteristicas->DMDS) == 0 ? 'selected' : '' }}>Valor 0</option>
+                        <option value="1" {{ old('DMDS', $caracteristicas->DMDS) == 1 ? 'selected' : '' }}>Valor 1</option>
+                        <option value="2" {{ old('DMDS', $caracteristicas->DMDS) == 2 ? 'selected' : '' }}>Valor 2</option>
+                        <option value="3" {{ old('DMDS', $caracteristicas->DMDS) == 3 ? 'selected' : '' }}>Valor 3</option>
                     </select>
                 </section>
                 <section class="flex gap-4">
                     <h3>Problemas Psicológicos</h3>
-                    <select name="DPSI" id="DPSI" value="{{ old('DPSI', $caracteristicas->DPSI) }}"
+                    <select name="DPSI" id="DPSI"
                         class="w-50 bg-bg-tertiary rounded-lg"
                         >
-                        <option value="0">Valor 0</option>
-                        <option value="1">Valor 1</option>
-                        <option value="2">Valor 2</option>
-                        <option value="3">Valor 3</option>
+                        <option value="0" {{ old('DPSI', $caracteristicas->DPSI) == 0 ? 'selected' : '' }}>Valor 0</option>
+                        <option value="1" {{ old('DPSI', $caracteristicas->DPSI) == 1 ? 'selected' : '' }}>Valor 1</option>
+                        <option value="2" {{ old('DPSI', $caracteristicas->DPSI) == 2 ? 'selected' : '' }}>Valor 2</option>
+                        <option value="3" {{ old('DPSI', $caracteristicas->DPSI) == 3 ? 'selected' : '' }}>Valor 3</option>
                     </select>
                 </section>
             </section>
             <section class="flex gap-4 *:flex-1 *:*:first:flex-1 *:*:p-2">
                 <section class="flex gap-4">
                     <h3>Pesadelos Frequentes</h3>
-                    <select name="DPSE" id="DPSE" value="{{ old('DPSE', $caracteristicas->DPSE) }}"
+                    <select name="DPSE" id="DPSE"
                         class="w-50 bg-bg-tertiary rounded-lg"
                         >
-                        <option value="0">Valor 0</option>
-                        <option value="3">Valor 3</option>
+                        <option value="0" {{ old('DPSE', $caracteristicas->DPSE) == 0 ? 'selected' : '' }}>Valor 0</option>
+                        <option value="3" {{ old('DPSE', $caracteristicas->DPSE) == 3 ? 'selected' : '' }}>Valor 3</option>
                     </select>
                 </section>
                 <section class="flex gap-4">
                     <h3>Preguiçoso</h3>
-                    <select name="DPRE" id="DPRE" value="{{ old('DPRE', $caracteristicas->DPRE) }}"
+                    <select name="DPRE" id="DPRE"
                         class="w-50 bg-bg-tertiary rounded-lg"
                         >
-                        <option value="0">Valor 0</option>
-                        <option value="3">Valor 3</option>
+                        <option value="0" {{ old('DPRE', $caracteristicas->DPRE) == 0 ? 'selected' : '' }}>Valor 0</option>
+                        <option value="3" {{ old('DPRE', $caracteristicas->DPRE) == 3 ? 'selected' : '' }}>Valor 3</option>
                     </select>
                 </section>
             </section>
             <section class="flex gap-4 *:flex-1 *:*:first:flex-1 *:*:p-2">
                 <section class="flex gap-4">
                     <h3>Procastinador</h3>
-                    <select name="DPRO" id="DPRO" value="{{ old('DPRO', $caracteristicas->DPRO) }}"
+                    <select name="DPRO" id="DPRO"
                         class="w-50 bg-bg-tertiary rounded-lg"
                         >
-                        <option value="0">Valor 0</option>
-                        <option value="3">Valor 3</option>
+                        <option value="0" {{ old('DPRO', $caracteristicas->DPRO) == 0 ? 'selected' : '' }}>Valor 0</option>
+                        <option value="3" {{ old('DPRO', $caracteristicas->DPRO) == 3 ? 'selected' : '' }}>Valor 3</option>
                     </select>
                 </section>
                 <section class="flex gap-4">
                     <h3>TDAH</h3>
-                    <select name="DTDA" id="DTDA" value="{{ old('DTDA', $caracteristicas->DTDA) }}"
+                    <select name="DTDA" id="DTDA"
                         class="w-50 bg-bg-tertiary rounded-lg"
                         >
-                        <option value="0">Valor 0</option>
-                        <option value="3">Valor 3</option>
+                        <option value="0" {{ old('DTDA', $caracteristicas->DTDA) == 0 ? 'selected' : '' }}>Valor 0</option>
+                        <option value="3" {{ old('DTDA', $caracteristicas->DTDA) == 3 ? 'selected' : '' }}>Valor 3</option>
                     </select>
                 </section>
             </section>
             <section class="flex gap-4 *:flex-1 *:*:first:flex-1 *:*:p-2">
                 <section class="flex gap-4">
                     <h3>Irresponsável</h3>
-                    <select name="DIRR" id="DIRR" value="{{ old('DIRR', $caracteristicas->DIRR) }}"
+                    <select name="DIRR" id="DIRR"
                         class="w-50 bg-bg-tertiary rounded-lg"
                         >
-                        <option value="0">Valor 0</option>
-                        <option value="2">Valor 2</option>
+                        <option value="0" {{ old('DIRR', $caracteristicas->DIRR) == 0 ? 'selected' : '' }}>Valor 0</option>
+                        <option value="2" {{ old('DIRR', $caracteristicas->DIRR) == 2 ? 'selected' : '' }}>Valor 2</option>
                     </select>
                 </section>
                 <section class="flex gap-4">
                     <h3>Palhaço</h3>
-                    <select name="DPLH" id="DPLH" value="{{ old('DPLH', $caracteristicas->DPLH) }}"
+                    <select name="DPLH" id="DPLH"
                         class="w-50 bg-bg-tertiary rounded-lg"
                         >
-                        <option value="0">Valor 0</option>
-                        <option value="2">Valor 2</option>
+                        <option value="0" {{ old('DPLH', $caracteristicas->DPLH) == 0 ? 'selected' : '' }}>Valor 0</option>
+                        <option value="2" {{ old('DPLH', $caracteristicas->DPLH) == 2 ? 'selected' : '' }}>Valor 2</option>
                     </select>
                 </section>
             </section>
             <section class="flex gap-4 *:flex-1 *:*:first:flex-1 *:*:p-2">
                 <section class="flex gap-4">
                     <h3>Sem Noção</h3>
-                    <select name="DSNO" id="DSNO" value="{{ old('DSNO', $caracteristicas->DSNO) }}"
+                    <select name="DSNO" id="DSNO"
                         class="w-50 bg-bg-tertiary rounded-lg"
                         >
-                        <option value="0">Valor 0</option>
-                        <option value="2">Valor 2</option>
+                        <option value="0" {{ old('DSNO', $caracteristicas->DSNO) == 0 ? 'selected' : '' }}>Valor 0</option>
+                        <option value="2" {{ old('DSNO', $caracteristicas->DSNO) == 2 ? 'selected' : '' }}>Valor 2</option>
                     </select>
                 </section>
                 <section class="flex gap-4">
                     <h3>Visão Ruim</h3>
-                    <select name="DVRU" id="DVRU" value="{{ old('DVRU', $caracteristicas->DVRU) }}"
+                    <select name="DVRU" id="DVRU"
                         class="w-50 bg-bg-tertiary rounded-lg"
                         >
-                        <option value="0">Valor 0</option>
-                        <option value="2">Valor 2</option>
+                        <option value="0" {{ old('DVRU', $caracteristicas->DVRU) == 0 ? 'selected' : '' }}>Valor 0</option>
+                        <option value="2" {{ old('DVRU', $caracteristicas->DVRU) == 2 ? 'selected' : '' }}>Valor 2</option>
                     </select>
                 </section>
             </section>

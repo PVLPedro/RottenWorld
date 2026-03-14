@@ -9,8 +9,20 @@ class Sheets extends Model
     public $timestamps = false;
 
     protected $fillable = [
-        'nome','idade','aniversario','alcunha','profissao_atual',
-        'ex_profissoes','experiencias','hobbies','aparencia','resumo','historia'
+        'tipo',
+        'nome',
+        'idade',
+        'aniversario',
+        'alcunha',
+        'profissao_atual',
+         'ex_profissoes',
+        'experiencias',
+        'hobbies',
+        'aparencia',
+        'resumo',
+        'historia',
+        'habilidade_um',
+        'habilidade_dois'
     ];
 
     public function getRouteKeyName()

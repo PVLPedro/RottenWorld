@@ -3,13 +3,19 @@
 @section('content')
     <main id="main-form" class="relative bg-bg-secondary min-h-[calc(100dvh-120px)] p-4 flex justify-center items-center gap-4">
         <form class=" relative bg-bg-primary flex-1 max-h-[calc(100dvh-160px)] max-w-250 rounded-lg p-4 overflow-y-auto [&_h1]:text-2xl [&_h2]:text-xl [&_h1,h2]:font-bold [&_h1]:text-center [&_h2,input,textarea]:py-2 [&_h2]:px-2 [&_input,textarea]:px-4 [&_input,textarea]:bg-bg-tertiary [&_input,textarea]:rounded-lg [&_input,textarea]:w-full [&_input,textarea]:outline-0"
-        method="POST" action="{{ route('confirmAdd') }}">
+        method="POST" action="{{ route('sheets.addUpdate') }}">
             <a href="{{ url()->previous() }}" class="absolute top-4 left-4 bg-bg-tertiary hover:bg-bg-tertiary-hover cursor-pointer p-2 rounded-lg flex gap-2">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-left-icon lucide-arrow-left"><path d="m12 19-7-7 7-7"/><path d="M19 12H5"/></svg>
                 <span>Voltar</span>
             </a>
         @csrf
             <h1 class="mb-8">Adição de Personagem</h1>
+            <h2>Tipo</h2>
+            <select required name="tipo" class="w-50 p-2 bg-bg-tertiary rounded-lg">
+                <option value="1">Jogador</option>
+                <option value="2">NPC</option>
+                <option value="3">Putrefato</option>
+            </select>
             <h2>Nome e Sobrenome</h2>
             <input required name="nome" type="text" placeholder="Nome e Sobrenome">
             <h2>Idade</h2>
@@ -32,6 +38,10 @@
             <input required name="resumo" type="text" placeholder="Resumo">
             <h2>História</h2>
             <textarea required name="historia" placeholder="História" class="h-20 text-wrap resize-none"></textarea>
+            <h2>Habilidade Primária</h2>
+            <textarea required name="habilidade_um" placeholder="Habilidade Primária" class="h-20 text-wrap resize-none"></textarea>
+            <h2>Habilidade Secundária</h2>
+            <textarea required name="habilidade_dois" placeholder="Habilidade Secundária" class="h-20 text-wrap resize-none"></textarea>
             <hr class="border border-bg-tertiary mt-6 mb-8">
             <section class="flex gap-4 *:flex-1 *:p-2 *:rounded-lg *:cursor-pointer *:flex *:gap-4 *:justify-center">
                 <button type="reset" class="bg-attention hover:bg-attention-hover">

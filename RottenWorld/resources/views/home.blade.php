@@ -3,7 +3,7 @@
 @section('content')
     <main class="relative bg-bg-secondary min-h-[calc(100dvh-120px)] p-4 flex flex-col justify-center gap-4">
         <section class="relative flex gap-4 items-center justify-center">
-            <section class="bg-bg-primary w-full flex justify-between p-2 rounded-lg">
+            <section class="bg-bg-primary w-full flex justify-between h-15 p-2 rounded-lg">
                 <section class="flex justify-center *:flex *:items-center *:justify-center gap-2 *:gap-2 *:rounded-lg w-80 *:flex-1">
                     <section class="bg-bg-tertiary hover:bg-bg-tertiary-hover cursor-pointer p-2">
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m11 19-6-6"/><path d="m5 21-2-2"/><path d="m8 16-4 4"/><path d="M9.5 17.5 21 6V3h-3L6.5 14.5"/></svg>
@@ -14,9 +14,9 @@
                         <span>Mapa</span>
                     </section>
                 </section>
-                <section class="flex justify-center *:flex *:items-center *:justify-center gap-2 *:gap-2 *:rounded-lg">
+                <section class="flex justify-center *:flex *:items-center *:justify-center gap-2 *:rounded-lg">
                     <span>Atributo</span>
-                    <select name="roll-attribute" id="roll-attribute" class="p-2 bg-bg-tertiary hover:bg-bg-tertiary-hover max-w-50 rounded-lg">
+                    <select name="roll-attribute" id="roll-attribute" class="bg-bg-tertiary hover:bg-bg-tertiary-hover p-2 max-w-50 rounded-lg">
                         <option value="AFOR">Força</option>
                         <option value="ADES">Destreza</option>
                         <option value="ACON">Constituição</option>
@@ -25,7 +25,7 @@
                         <option value="AVON">Força de Vontade</option>
                     </select>
                     <span>Perícia</span>
-                    <select name="roll-skill" id="roll-skill" class="p-2 bg-bg-tertiary hover:bg-bg-tertiary-hover max-w-50 rounded-lg">
+                    <select name="roll-skill" id="roll-skill" class="bg-bg-tertiary hover:bg-bg-tertiary-hover p-2 max-w-50 rounded-lg">
                         <optgroup label="Outros">
                             <option value="TSEM">Nenhum</option>
                             <option value="TINI">Iniciativa</option>
@@ -84,14 +84,15 @@
             </section>
         </section>
         <section class="relative h-[calc(100dvh-230px)] flex gap-4 flex-1 *:flex-1 *:rounded-lg *:overflow-hidden *:relative list-none">
-            <section id="characters-one" data-list="one" class="characters-lists bg-bg-primary">
-                <ul class="h-10 bg-highlight-secondary flex items-center justify-center">
+            <section id="characters-one" data-list="one" class="characters-lists bg-bg-primary flex flex-col h-[calc(100dvh-230px)]">
+                <ul class="py-2 bg-highlight-secondary flex items-center justify-center">
                     <span class="text-black text-xl font-bold">Personagens</span>
                 </ul>
-                <ul class="list-decimal h-[calc(100%-40px)] overflow-y-auto">
+                <ul class="list-decimal h-[calc(100%-40px)] overflow-y-auto flex flex-col gap-0.5">
                     @forelse ($sheets as $index => $p)
-                        <li class="add-character-btn character-item odd:bg-bg-tertiary-variant even:bg-bg-tertiary hover:bg-bg-secondary-hover flex items-center justify-start *:py-3 *:min-w-10 *:first:text-center *:last:justify-center *:first:font-bold *:nth-[2]:flex-1 hover:*:last:flex" data-name="{{ $p->nome }}">
-                            <span class="item-order"> {{ $index + 1 }} </span>
+                        <li class="add-character-btn character-item bg-bg-tertiary hover:bg-bg-tertiary-hover flex items-center justify-start *:py-3 *:min-w-10 *:last:justify-center *:first:flex-1 *:first:px-4 hover:*:last:flex" data-name="{{ $p->nome }}" data-type="{{ $p->tipo }}">
+                        {{-- <li add-character-btn character-item odd:bg-bg-tertiary-variant even:bg-bg-tertiary hover:bg-bg-secondary-hover flex-1 flex items-center justify-start *:py-3 *:min-w-10 *:first:text-center *:first:font-bold *:nth-[2]:flex-1 *:last:p hover:*:last:flex --}}
+                            {{-- <span class="item-order"> {{ $index + 1 }} </span> --}}
                             <span class="item-name"> {{ $p->nome }} </span>
                             <span class="item-icon hidden">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12h18"/><path d="M12 3v18"/></svg>
@@ -103,27 +104,36 @@
                         </li>
                     @endforelse
                 </ul>
+                <ul class="py-2 bg-bg-primary flex justify-center *:flex *:items-center *:justify-center gap-2 border-t-2 border-highlight-secondary">
+                    <span>Filtro</span>
+                    <select id="filter-list-one" class="bg-bg-tertiary hover:bg-bg-tertiary-hover p-2 max-w-50 rounded-lg">
+                        <option value="1">Jogador</option>
+                        <option value="2">NPC</option>
+                        <option value="3">Putrefato</option>
+                    </select>
+                    <span id="filtered-list-one" class="min-w-20"></span>
+                </ul>
             </section>
-            <section id="roll-list-one" class="bg-bg-primary">
-                <ul class="h-10 bg-highlight-secondary flex items-center justify-center">
+            <section id="roll-list-one" class="bg-bg-primary flex flex-col h-[calc(100dvh-230px)]">
+                <ul class="py-2 bg-highlight-secondary flex items-center justify-center">
                     <span class="text-black text-xl font-bold">Rolagem</span>
                 </ul>
-                <ul class="list-decimal h-[calc(100%-40px)] overflow-y-auto"></ul>
+                <ul class="list-decimal h-[calc(100%-40px)] overflow-y-auto flex flex-col gap-0.5"></ul>
             </section>
-            <section id="roll-list-two" class="bg-bg-primary">
-                <ul class="h-10 bg-highlight-tertiary flex items-center justify-center">
+            <section id="roll-list-two" class="bg-bg-primary flex flex-col h-[calc(100dvh-230px)]">
+                <ul class="py-2 bg-highlight-tertiary flex items-center justify-center">
                     <span class="text-black text-xl font-bold">Rolagem</span>
                 </ul>
-                <ul class="list-decimal h-[calc(100%-40px)] overflow-y-auto"></ul>
+                <ul class="list-decimal h-[calc(100%-40px)] overflow-y-auto flex flex-col gap-0.5"></ul>
             </section>
-            <section id="characters-two" data-list="two" class="characters-lists bg-bg-primary">
-                <ul class="h-10 bg-highlight-tertiary flex items-center justify-center">
+            <section id="characters-two" data-list="two" class="characters-lists bg-bg-primary flex flex-col h-[calc(100dvh-230px)]">
+                <ul class="py-2 bg-highlight-tertiary flex items-center justify-center">
                     <span class="text-black text-xl font-bold">Personagens</span>
                 </ul>
-                <ul class="list-decimal h-[calc(100%-40px)] overflow-y-auto">
+                <ul class="list-decimal h-[calc(100%-40px)] overflow-y-auto flex flex-col gap-0.5">
                     @forelse ($sheets as $index => $p)
-                        <li class="add-character-btn character-item odd:bg-bg-tertiary-variant even:bg-bg-tertiary hover:bg-bg-secondary-hover flex-1 flex items-center justify-start *:py-3 *:min-w-10 *:first:text-center *:first:font-bold *:nth-[2]:flex-1 *:last:p hover:*:last:flex" data-name="{{ $p->nome }}">
-                            <span class="item-order"> {{ $index + 1 }} </span>
+                        <li class="add-character-btn character-item bg-bg-tertiary hover:bg-bg-tertiary-hover flex items-center justify-start *:py-3 *:min-w-10 *:last:justify-center *:first:flex-1 *:first:px-4 hover:*:last:flex" data-name="{{ $p->nome }}" data-type="{{ $p->tipo }}">
+                            {{-- <span class="item-order"> {{ $index + 1 }} </span> --}}
                             <span class="item-name"> {{ $p->nome }} </span>
                             <span class="item-icon hidden">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12h18"/><path d="M12 3v18"/></svg>
@@ -134,6 +144,15 @@
                             <span>Nenhum Personagem</span>
                         </li>
                     @endforelse
+                </ul>
+                <ul class="py-2 bg-bg-primary flex justify-center *:flex *:items-center *:justify-center gap-2 border-t-2 border-highlight-tertiary">
+                    <span>Filtro</span>
+                    <select id="filter-list-two" class="bg-bg-tertiary hover:bg-bg-tertiary-hover p-2 max-w-50 rounded-lg">
+                        <option value="1">Jogador</option>
+                        <option value="2">NPC</option>
+                        <option value="3">Putrefato</option>
+                    </select>
+                    <span id="filtered-list-two" class="min-w-20"></span>
                 </ul>
             </section>
         </section>
@@ -142,6 +161,52 @@
 
 @push('scripts')
     <script>
+
+const filterListOne = document.getElementById('filter-list-one');
+const charactersListOne = document.querySelectorAll('#characters-one .character-item');
+const filteredListOne = document.getElementById('filtered-list-one');
+
+function applyFilterListOne() {
+    const selectedType = filterListOne.value;
+    let filteredCount = 0;
+
+    charactersListOne.forEach(item => {
+        if (item.dataset.type === selectedType) {
+            item.classList.remove('hidden');
+            filteredCount++;
+        }
+        else {
+            item.classList.add('hidden');
+        }
+        filteredListOne.textContent = `Total: ${filteredCount}`;
+    });
+}
+
+filterListOne.addEventListener('change', applyFilterListOne);
+applyFilterListOne();
+
+const filterListTwo = document.getElementById('filter-list-two');
+const charactersListTwo = document.querySelectorAll('#characters-two .character-item');
+const filteredListTwo = document.getElementById('filtered-list-two');
+
+function applyFilterListTwo() {
+    const selectedType = filterListTwo.value;
+    let filteredCount = 0;
+
+    charactersListTwo.forEach(item => {
+        if (item.dataset.type === selectedType) {
+            item.classList.remove('hidden');
+            filteredCount++;
+        }
+        else {
+            item.classList.add('hidden');
+        }
+        filteredListTwo.textContent = `Total: ${filteredCount}`;
+    });
+}
+
+filterListTwo.addEventListener('change', applyFilterListTwo);
+applyFilterListTwo();
 
 const rollListOne = document.querySelector('#roll-list-one ul:nth-child(2)');
 const rollListTwo = document.querySelector('#roll-list-two ul:nth-child(2)');
@@ -198,7 +263,7 @@ function updateRolls(event) {
 
     templateSpanResultGroup.classList = 'item-result-group flex gap-2';
 
-    templateLi.classList = 'character-roll remove-character-btn odd:bg-bg-tertiary-variant even:bg-bg-tertiary hover:bg-bg-secondary-hover flex flex-col justify-center p-3 gap-2 hover:*:*:last:flex';
+    templateLi.classList = 'character-roll remove-character-btn bg-bg-tertiary hover:bg-bg-tertiary-hover flex flex-col justify-center p-3 gap-2 hover:*:*:last:flex';
     templateLi.dataset.name = characterName;
 
     if (characterId) {
@@ -323,28 +388,28 @@ const skillModifiersMap = {
     },
 
     TFOR: {
-        bonus: [''],
+        bonus: ['AFOR'],
         penalty: ['']
     },
     TDES: {
-        bonus: ['QCNH'],
+        bonus: ['ADES', 'QCNH'],
         penalty: ['']
     },
     TCON: {
-        bonus: ['QDDM'],
+        bonus: ['ACON', 'QDDM'],
         penalty: ['DPCR']
     },
     TINT: {
-        bonus: [''],
+        bonus: ['AINT'],
         penalty: ['']
     },
     TPER: {
-        bonus: [''],
+        bonus: ['APER'],
         penalty: ['DVRU']
     },
     TVON: {
-        bonus: [''],
-        penalty: ['']
+        bonus: ['AVON'],
+        penalty: ['DCOV', 'DPSI']
     },
 
     TMED: {
@@ -476,5 +541,6 @@ roll.addEventListener('click', () => {
         };
     });
 });
+
     </script>
 @endpush

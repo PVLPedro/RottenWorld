@@ -2,15 +2,36 @@
     <ul class="flex items-center text-black text-2xl font-bold h-full">
         <img src="/imgs/RottenWorld.png" class="h-12">
     </ul>
-    <ul class="flex items-center gap-2 text-black h-full *:h-full *:w-15">
+    <ul class="flex items-center *:flex *:items-center text-black h-full *:h-full">
         <li>
-            <span>Teste</span>
+            <ul class="flex items-center justify-center *:items-center *:justify-center *:px-4 h-full *:h-full  *:hover:bg-highlight-transparent-hover">
+                <button class="flex" id="start-btn">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 5a2 2 0 0 1 3.008-1.728l11.997 6.998a2 2 0 0 1 .003 3.458l-12 7A2 2 0 0 1 5 19z"/></svg>
+                </button>
+                <button class="hidden" id="pause-btn">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="14" y="3" width="5" height="18" rx="1"/><rect x="5" y="3" width="5" height="18" rx="1"/></svg>
+                </button>
+                <button class="hidden" id="resume-btn">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 5a2 2 0 0 1 3.008-1.728l11.997 6.998a2 2 0 0 1 .003 3.458l-12 7A2 2 0 0 1 5 19z"/></svg>
+                </button>
+            </ul>
         </li>
         <li>
-            <span>Teste</span>
+            <ul class="flex items-center justify-center *:flex *:items-center *:justify-center gap-2 px-2 font-bold min-w-50 border-b-2 border-b-highlight-transparent">
+                <span class="flex-1" id="hours">00</span>
+                <span class="min-w-5">h</span>
+                <span class="flex-1" id="minutes">00</span>
+                <span class="min-w-5">m</span>
+                <span class="flex-1" id="seconds">00</span>
+                <span class="min-w-5">s</span>
+            </ul>
         </li>
         <li>
-            <span>Teste</span>
+            <ul class="flex items-center justify-center *:flex *:items-center *:justify-center *:px-4 h-full *:h-full *:hover:bg-highlight-transparent-hover">
+                <button class="flex" id="reset-btn">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/><path d="M3 3v5h5"/></svg>
+                </button>
+            </ul>
         </li>
     </ul>
 </header>
@@ -28,7 +49,7 @@
         </a>
     </li>
     <li class="nav-link {{ request()->routeIs('rules') ? 'bg-bg-primary-hover' : '' }} flex items-center justify-center *:h-full *:w-full *:flex *:items-center *:justify-center *:gap-2 hover:bg-bg-primary-hover">
-        <a href="#">
+        <a href="/rules">
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-scale-icon lucide-scale"><path d="M12 3v18"/><path d="m19 8 3 8a5 5 0 0 1-6 0zV7"/><path d="M3 7h1a17 17 0 0 0 8-2 17 17 0 0 0 8 2h1"/><path d="m5 8 3 8a5 5 0 0 1-6 0zV7"/><path d="M7 21h10"/></svg>
             <span>Regras</span>
         </a>

@@ -15,6 +15,7 @@ class SheetsController extends Controller
     public function confirmAdd(Request $request)
     {
         $validated = $request->validate([
+            'tipo' => 'required|integer|in:1,2,3',
             'nome' => 'required|string',
             'idade' => 'required|string',
             'aniversario' => 'required|string',
@@ -25,7 +26,9 @@ class SheetsController extends Controller
             'hobbies' => 'required|string',
             'aparencia' => 'required|string',
             'resumo' => 'required|string',
-            'historia' => 'required|string'
+            'historia' => 'required|string',
+            'habilidade_um' => 'required|string',
+            'habilidade_dois' => 'required|string',
         ]);
 
         Sheets::create($validated);
@@ -45,7 +48,7 @@ class SheetsController extends Controller
 
     public function getDataSheets(?Sheets $sheet = null)
     {
-        $sheets = Sheets::orderBy('nome', 'asc')->get();
+        $sheets = Sheets::orderBy('nome', 'desc')->get();
         $selected = $sheet;
 
         return view('sheets', compact('sheets', 'selected'));
@@ -60,17 +63,20 @@ class SheetsController extends Controller
     public function confirmEdit(Request $request, Sheets $sheet)
     {
         $validated = $request->validate([
+            'tipo' => 'required|integer|in:1,2,3',
             'nome' => 'required|string',
             'idade' => 'required|string',
             'aniversario' => 'required|string',
-            'alcunha' => 'nullable|string',
+            'alcunha' => 'string',
             'profissao_atual' => 'required|string',
             'ex_profissoes' => 'required|string',
             'experiencias' => 'required|string',
             'hobbies' => 'required|string',
             'aparencia' => 'required|string',
             'resumo' => 'required|string',
-            'historia' => 'required|string'
+            'historia' => 'required|string',
+            'habilidade_um' => 'required|string',
+            'habilidade_dois' => 'required|string',
         ]);
 
         $sheet->update($validated);
