@@ -30,6 +30,8 @@
     --color-highlight-transparent: hsl(0, 0%, 20%, 30%);
     --color-highlight-transparent-hover: hsl(0, 0%, 40%, 30%);
     --color-highlight-transparent-muted: hsl(0, 0%, 0%, 30%);
+    --color-white-muted: hsl(0, 0%, 60%);
+    --color-black-muted: hsl(0, 0%, 40%);
     --color-alert: hsl(0, 100%, 60%);
     --color-alert-hover: hsl(0, 95%, 70%);
     --color-alert-muted: hsl(0, 75%, 40%);

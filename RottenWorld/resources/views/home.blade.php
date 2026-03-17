@@ -4,15 +4,15 @@
     <main class="relative bg-bg-secondary min-h-[calc(100dvh-120px)] p-4 flex flex-col justify-center gap-4">
         <section class="relative flex gap-4 items-center justify-center">
             <section class="bg-bg-primary w-full flex justify-between h-15 p-2 rounded-lg">
-                <section class="flex justify-center *:flex *:items-center *:justify-center gap-2 *:gap-2 *:rounded-lg w-80 *:flex-1">
-                    <section class="bg-bg-tertiary hover:bg-bg-tertiary-hover cursor-pointer p-2">
+                <section class="flex justify-center *:flex *:items-center *:justify-center gap-2 *:gap-2 *:rounded-lg *:w-40">
+                    <button popovertarget="damage-component" class="bg-bg-tertiary hover:bg-bg-tertiary-hover cursor-pointer p-2">
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m11 19-6-6"/><path d="m5 21-2-2"/><path d="m8 16-4 4"/><path d="M9.5 17.5 21 6V3h-3L6.5 14.5"/></svg>
                         <span>Dano</span>
-                    </section>
-                    <section class="bg-bg-tertiary hover:bg-bg-tertiary-hover cursor-pointer p-2">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-map-pinned-icon lucide-map-pinned"><path d="M18 8c0 3.613-3.869 7.429-5.393 8.795a1 1 0 0 1-1.214 0C9.87 15.429 6 11.613 6 8a6 6 0 0 1 12 0"/><circle cx="12" cy="8" r="2"/><path d="M8.714 14h-3.71a1 1 0 0 0-.948.683l-2.004 6A1 1 0 0 0 3 22h18a1 1 0 0 0 .948-1.316l-2-6a1 1 0 0 0-.949-.684h-3.712"/></svg>
+                    </button>
+                    <button {{-- popovertarget="mapComponent" --}} class="bg-bg-tertiary hover:bg-bg-tertiary-hover cursor-pointer p-2">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8c0 3.613-3.869 7.429-5.393 8.795a1 1 0 0 1-1.214 0C9.87 15.429 6 11.613 6 8a6 6 0 0 1 12 0"/><circle cx="12" cy="8" r="2"/><path d="M8.714 14h-3.71a1 1 0 0 0-.948.683l-2.004 6A1 1 0 0 0 3 22h18a1 1 0 0 0 .948-1.316l-2-6a1 1 0 0 0-.949-.684h-3.712"/></svg>
                         <span>Mapa</span>
-                    </section>
+                    </button>
                 </section>
                 <section class="flex justify-center *:flex *:items-center *:justify-center gap-2 *:rounded-lg">
                     <span>Atributo</span>
@@ -24,7 +24,7 @@
                         <option value="APER">Percepção</option>
                         <option value="AVON">Força de Vontade</option>
                     </select>
-                    <span>Perícia</span>
+                    <span>Teste</span>
                     <select name="roll-skill" id="roll-skill" class="bg-bg-tertiary hover:bg-bg-tertiary-hover p-2 max-w-50 rounded-lg">
                         <optgroup label="Outros">
                             <option value="TSEM">Nenhum</option>
@@ -75,11 +75,15 @@
                         </optgroup>
                     </select>
                 </section>
-                <section class="flex justify-center *:flex *:items-center *:justify-center gap-2 *:gap-2 *:rounded-lg w-80 *:flex-1">
-                    <section id="roll" class="bg-bg-tertiary hover:bg-bg-tertiary-hover cursor-pointer p-2">
+                <section class="flex justify-center *:flex *:items-center *:justify-center gap-2 *:gap-2 *:rounded-lg *:w-40">
+                    <button popovertarget="variants-component" class="bg-bg-tertiary hover:bg-bg-tertiary-hover cursor-pointer p-2">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m11 10 3 3"/><path d="M6.5 21A3.5 3.5 0 1 0 3 17.5a2.62 2.62 0 0 1-.708 1.792A1 1 0 0 0 3 21z"/><path d="M9.969 17.031 21.378 5.624a1 1 0 0 0-3.002-3.002L6.967 14.031"/></svg>
+                        <span>Variantes</span>
+                    </button>
+                    <button id="roll-btn" class="bg-bg-tertiary hover:bg-bg-tertiary-hover disabled:text-white-muted disabled:bg-bg-secondary disabled:cursor-default cursor-pointer p-2">
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="12" height="12" x="2" y="10" rx="2" ry="2"/><path d="m17.92 14 3.5-3.5a2.24 2.24 0 0 0 0-3l-5-4.92a2.24 2.24 0 0 0-3 0L10 6"/><path d="M6 18h.01"/><path d="M10 14h.01"/><path d="M15 6h.01"/><path d="M18 9h.01"/></svg>
                         <span>Rolar</span>
-                    </section>
+                    </button>
                 </section>
             </section>
         </section>
@@ -157,6 +161,10 @@
             </section>
         </section>
     </main>
+@include('components.damage')
+{{-- @include('components.map') --}}
+@include('components.variants')
+
 @endsection
 
 @push('scripts')
@@ -450,9 +458,7 @@ function updateDices() {
         const attributeValue = Number(sheet.caracteristicas?.[attribute] ?? 0);
 
         let skillValue = 0;
-        if (skill !== 'TINI') {
-            skillValue = Number(sheet.caracteristicas?.[skill] ?? 0);
-        }
+        skillValue = Number(sheet.caracteristicas?.[skill] ?? 0);
 
         let qualityBonus = 0;
         let defectPenalty = 0;
@@ -471,7 +477,7 @@ function updateDices() {
 
         const totalModifier = attributeValue + skillValue + qualityBonus - defectPenalty;
 
-        modifier.textContent = `(Atri. ${attributeValue} + Peri. ${2 * skillValue}${qualityBonus ? ' + ' + qualityBonus : ''}${defectPenalty ? ' - ' + defectPenalty : ''})`;
+        modifier.textContent = `(Atri: ${attributeValue} | Peri: ${skillValue} | Total: ${2 * skillValue + qualityBonus - defectPenalty})`;
 
         let diceCount = attributeValue === 0 ? 2 : attributeValue;
 
@@ -506,22 +512,23 @@ rollListTwo.addEventListener('click', (event) => {
     }
 });
 
-const roll = document.querySelector('#roll');
+const rollBtn = document.getElementById('roll-btn');
 
-roll.addEventListener('click', () => {
+rollBtn.addEventListener('click', () => {
     const result = document.querySelectorAll('.item-result-span');
 
-    roll.disabled = true;
+    rollBtn.disabled = true ? result.length : false;
 
     result.forEach(display => {
         const sleep = (ms) => new Promise(resolve => setTimeout(resolve, ms));
+
+        display.classList.remove('text-green-400');
+        display.classList.remove('text-red-400');
+
         rollDice();
-        display.classList.remove('text-green-600');
-        display.classList.remove('text-red-600');
         
         async function rollDice() {
             const resultadoFinal = Math.floor(Math.random() * 20) + 1;
-            display.textContent = `(${resultadoFinal})`;
             const totalRolagens = 10;
 
             for (let i = 0; i < totalRolagens; i++) {
@@ -529,14 +536,15 @@ roll.addEventListener('click', () => {
 
                 await sleep(50 + i * 20); 
             }
-            roll.disabled = false;
             
+            rollBtn.disabled = false;
+
             display.textContent = `(${resultadoFinal})`;
             if (resultadoFinal == 20) {
-                display.classList.add('text-green-600');
+                display.classList.add('text-green-400');
             }
             if (resultadoFinal == 1) {
-                display.classList.add('text-red-600');
+                display.classList.add('text-red-400');
             }
         };
     });
