@@ -13,9 +13,25 @@ let hours = 0;
 let isPaused = false;
 let isStarted = false;
 
-startBtn.addEventListener('click', startTimer);
-pauseBtn.addEventListener('click', pauseTimer);
-resumeBtn.addEventListener('click', resumeTimer);
+applaySavedTimer();
+
+function applaySavedTimer() {
+    seconds = parseFloat(localStorage.getItem('seconds'));
+    minutes = parseFloat(localStorage.getItem('minutes'));
+    hours = parseFloat(localStorage.getItem('hours'));
+
+    updateDisplay();
+}
+
+applaySavedStates();
+
+function applaySavedStates() {
+    if (localStorage.getItem('isPaused') == 'false') toggleTimer();
+}
+
+startBtn.addEventListener('click', toggleTimer);
+pauseBtn.addEventListener('click', toggleTimer);
+resumeBtn.addEventListener('click', toggleTimer);
 resetBtn.addEventListener('click', resetTimer);
 
 document.addEventListener('keydown', (event) => {
@@ -44,6 +60,8 @@ function toggleTimer() {
     } else {
         resumeTimer();
     }
+
+    saveTimerStates(isPaused);
 }
 
 function startTimer() {
@@ -67,6 +85,7 @@ function startTimer() {
             }
 
             updateDisplay();
+            saveTimerValues(seconds, minutes, hours);
         }
     }, 1000);
 
@@ -108,12 +127,27 @@ function resetTimer() {
     startBtn.classList = 'flex';
     pauseBtn.classList = 'hidden';
     resumeBtn.classList = 'hidden';
+
+    localStorage.setItem('seconds', seconds);
+    localStorage.setItem('minutes', minutes);
+    localStorage.setItem('hours', hours);
+    localStorage.setItem('isPaused', 'true');
 }
 
 function updateDisplay() {
     secondsEl.textContent = formatTime(seconds);
     minutesEl.textContent = formatTime(minutes);
     hoursEl.textContent = formatTime(hours);
+}
+
+function saveTimerValues(seconds, minutes, hours) {
+    localStorage.setItem('seconds', seconds);
+    localStorage.setItem('minutes', minutes);
+    localStorage.setItem('hours', hours);
+}
+
+function saveTimerStates(isPaused) {
+    localStorage.setItem('isPaused', isPaused);
 }
 
 function formatTime(time) {

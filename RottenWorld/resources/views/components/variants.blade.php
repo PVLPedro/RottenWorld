@@ -11,7 +11,6 @@
                 <select name="variants-dices" id="variants-select" class="flex-1 bg-bg-tertiary hover:bg-bg-tertiary-hover p-2 rounded-lg">
                     <option value="cont">Contaminação</option>
                     <option value="pesa">Pesadelo</option>
-                    <option value="azar">Azar</option>
                     <option value="custom">Personalizado</option>
                 </select>
             </section>
@@ -24,11 +23,11 @@
         </section>
         <section class="col-start-2 row-start-1 flex justify-center gap-2">
             <section>
-                <span>Quantidade:</span>
+                <span>Quantidade</span>
                 <input id="variants-dices-count" class="text-white bg-bg-tertiary disabled:text-white-muted disabled:bg-bg-secondary w-12 p-2 rounded-lg text-center font-bold" disabled/>
             </section>
             <section>
-                <span>Lados:</span>
+                <span>Lados</span>
                 <input id="variants-dices-faces" class="text-white bg-bg-tertiary disabled:text-white-muted disabled:bg-bg-secondary w-12 p-2 rounded-lg text-center font-bold" disabled/>
             </section>
         </section>
@@ -41,15 +40,14 @@
         <section id="variants-result-display" class="col-start-2 row-start-3 flex flex-wrap justify-center gap-2 *:bg-bg-secondary *:p-2 *:rounded-lg *:text-center *:block *:w-15.5">
         </section>
         <section class="col-start-1 row-start-3">
-            <span id="result-total" class="block text-white bg-bg-tertiary disabled:text-white-muted disabled:bg-bg-secondary p-2 w-full rounded-lg text-center">Total</span>
+            <span id="result-variants-total" class="block text-white bg-bg-tertiary disabled:text-white-muted disabled:bg-bg-secondary p-2 w-full rounded-lg text-center">Total</span>
         </section>
     </section>
 </section>
 
-@push('scripts')   
+@push('scripts')
 <script>
 
-const variantsComponent = document.getElementById('variants-component')
 const variantsSelect = document.getElementById('variants-select');
 
 const variantsDicesCount = document.getElementById('variants-dices-count');
@@ -58,7 +56,7 @@ const variantsDicesFaces = document.getElementById('variants-dices-faces');
 const confirmCustomVariants = document.getElementById('confirm-custom-variants');
 
 const variantsResultDisplay = document.getElementById('variants-result-display');
-const variantsTotal = document.getElementById('result-total');
+const variantsTotal = document.getElementById('result-variants-total');
 
 variantsSelect.addEventListener('change', updateDicesVariantsDisplay);
 confirmCustomVariants.addEventListener('click', ()=> {

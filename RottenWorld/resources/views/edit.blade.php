@@ -22,11 +22,11 @@
                     value="{{ old('name', $sheet->nome) }}"
                 >
                 <h2>Idade</h2>
-                <input required name="idade" type="text" placeholder="Idade"
+                <input name="idade" type="text" placeholder="Idade"
                     value="{{ old('name', $sheet->idade) }}"
                 >
                 <h2>Aniversário</h2>
-                <input required name="aniversario" type="text" placeholder="Aniversário"
+                <input name="aniversario" type="text" placeholder="Aniversário"
                     value="{{ old('name', $sheet->aniversario) }}"
                 >
                 <h2>Alcunha</h2>
@@ -34,35 +34,35 @@
                     value="{{ old('name', $sheet->alcunha) }}"
                 >
                 <h2>Profissão Atual</h2>
-                <input required name="profissao_atual" type="text" placeholder="Profissão Atual"
+                <input name="profissao_atual" type="text" placeholder="Profissão Atual"
                     value="{{ old('name', $sheet->profissao_atual) }}"
                 >
                 <h2>Ex-Profissões</h2>
-                <input required name="ex_profissoes" type="text" placeholder="Ex-Profissões"
+                <input name="ex_profissoes" type="text" placeholder="Ex-Profissões"
                     value="{{ old('name', $sheet->ex_profissoes) }}"
                 >
                 <h2>Experiências</h2>
-                <input required name="experiencias" type="text" placeholder="Experiências"
+                <input name="experiencias" type="text" placeholder="Experiências"
                     value="{{ old('name', $sheet->experiencias) }}"
                 >
                 <h2>Hobbies</h2>
-                <input required name="hobbies" type="text" placeholder="Hobbies"
+                <input name="hobbies" type="text" placeholder="Hobbies"
                     value="{{ old('name', $sheet->hobbies) }}"
                 >
                 <h2>Aparência</h2>
-                <input required name="aparencia" type="text" placeholder="Aparência"
+                <input name="aparencia" type="text" placeholder="Aparência"
                     value="{{ old('name', $sheet->aparencia) }}"
                 >
                 <h2>Resumo</h2>
-                <input required name="resumo" type="text" placeholder="Resumo"
+                <input name="resumo" type="text" placeholder="Resumo"
                     value="{{ old('name', $sheet->resumo) }}"
                 >
                 <h2>História</h2>
-                <textarea required name="historia" placeholder="História" class="h-20 text-wrap resize-none">{{ old('name', $sheet->historia) }}</textarea>
+                <textarea name="historia" placeholder="História" class="h-20 text-wrap resize-none">{{ old('name', $sheet->historia) }}</textarea>
                 <h2>Habilidade Primária</h2>
-                <textarea required name="habilidade_um" placeholder="História" class="h-20 text-wrap resize-none">{{ old('name', $sheet->habilidade_um) }}</textarea>
+                <textarea name="habilidade_um" placeholder="História" class="h-20 text-wrap resize-none">{{ old('name', $sheet->habilidade_um) }}</textarea>
                 <h2>Habilidade Secundária</h2>
-                <textarea required name="habilidade_dois" placeholder="História" class="h-20 text-wrap resize-none">{{ old('name', $sheet->habilidade_dois) }}</textarea>
+                <textarea name="habilidade_dois" placeholder="História" class="h-20 text-wrap resize-none">{{ old('name', $sheet->habilidade_dois) }}</textarea>
                 <hr class="border border-bg-tertiary mt-6 mb-8">
                 <section class="flex gap-4 *:flex-1 *:p-2 *:rounded-lg *:cursor-pointer *:flex *:gap-4 *:justify-center">
                     <button type="button" popovertarget="popover-confirm-delete" class="bg-alert hover:bg-alert-hover" >
@@ -78,7 +78,6 @@
                         Enviar
                     </button>
                 </section>
-            </form>
             </form>
             <form id="popover-confirm-delete" popover method="POST" action="{{ route('sheets.delete', $sheet) }}" class="absolute top-1/2 left-1/2 -translate-1/2 w-120 p-4 flex-col justify-center bg-bg-primary rounded-lg border-2 border-border-primary text-white">
                 @csrf

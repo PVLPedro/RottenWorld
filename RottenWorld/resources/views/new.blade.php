@@ -19,29 +19,29 @@
             <h2>Nome e Sobrenome</h2>
             <input required name="nome" type="text" placeholder="Nome e Sobrenome">
             <h2>Idade</h2>
-            <input required name="idade" type="text" placeholder="Idade">
+            <input name="idade" type="text" placeholder="Idade">
             <h2>Aniversário</h2>
-            <input required name="aniversario" type="text" placeholder="Aniversário">
+            <input name="aniversario" type="text" placeholder="Aniversário">
             <h2>Alcunha</h2>
             <input name="alcunha" type="text" placeholder="Alcunha">
             <h2>Profissão Atual</h2>
-            <input required name="profissao_atual" type="text" placeholder="Profissão Atual">
+            <input name="profissao_atual" type="text" placeholder="Profissão Atual">
             <h2>Ex-Profissões</h2>
-            <input required name="ex_profissoes" type="text" placeholder="Ex-Profissões">
+            <input name="ex_profissoes" type="text" placeholder="Ex-Profissões">
             <h2>Experiências</h2>
-            <input required name="experiencias" type="text" placeholder="Experiências">
+            <input name="experiencias" type="text" placeholder="Experiências">
             <h2>Hobbies</h2>
-            <input required name="hobbies" type="text" placeholder="Hobbies">
+            <input name="hobbies" type="text" placeholder="Hobbies">
             <h2>Aparência</h2>
-            <input required name="aparencia" type="text" placeholder="Aparência">
+            <input name="aparencia" type="text" placeholder="Aparência">
             <h2>Resumo</h2>
-            <input required name="resumo" type="text" placeholder="Resumo">
+            <input name="resumo" type="text" placeholder="Resumo">
             <h2>História</h2>
-            <textarea required name="historia" placeholder="História" class="h-20 text-wrap resize-none"></textarea>
+            <textarea name="historia" placeholder="História" class="h-20 text-wrap resize-none"></textarea>
             <h2>Habilidade Primária</h2>
-            <textarea required name="habilidade_um" placeholder="Habilidade Primária" class="h-20 text-wrap resize-none"></textarea>
+            <textarea name="habilidade_um" placeholder="Habilidade Primária" class="h-20 text-wrap resize-none"></textarea>
             <h2>Habilidade Secundária</h2>
-            <textarea required name="habilidade_dois" placeholder="Habilidade Secundária" class="h-20 text-wrap resize-none"></textarea>
+            <textarea name="habilidade_dois" placeholder="Habilidade Secundária" class="h-20 text-wrap resize-none"></textarea>
             <hr class="border border-bg-tertiary mt-6 mb-8">
             <section class="flex gap-4 *:flex-1 *:p-2 *:rounded-lg *:cursor-pointer *:flex *:gap-4 *:justify-center">
                 <button type="reset" class="bg-attention hover:bg-attention-hover">

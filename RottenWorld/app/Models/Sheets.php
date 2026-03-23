@@ -15,7 +15,7 @@ class Sheets extends Model
         'aniversario',
         'alcunha',
         'profissao_atual',
-         'ex_profissoes',
+        'ex_profissoes',
         'experiencias',
         'hobbies',
         'aparencia',

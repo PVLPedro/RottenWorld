@@ -4,19 +4,23 @@
     <main class="relative bg-bg-secondary min-h-[calc(100dvh-120px)] p-4 flex flex-col justify-center gap-4">
         <section class="relative flex gap-4 items-center justify-center">
             <section class="bg-bg-primary w-full flex justify-between h-15 p-2 rounded-lg">
-                <section class="flex justify-center *:flex *:items-center *:justify-center gap-2 *:gap-2 *:rounded-lg *:w-40">
+                <section class="flex justify-center *:flex *:items-center *:justify-center gap-2 *:gap-2 *:rounded-lg w-120 *:flex-1">
                     <button popovertarget="damage-component" class="bg-bg-tertiary hover:bg-bg-tertiary-hover cursor-pointer p-2">
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m11 19-6-6"/><path d="m5 21-2-2"/><path d="m8 16-4 4"/><path d="M9.5 17.5 21 6V3h-3L6.5 14.5"/></svg>
                         <span>Dano</span>
                     </button>
-                    <button {{-- popovertarget="mapComponent" --}} class="bg-bg-tertiary hover:bg-bg-tertiary-hover cursor-pointer p-2">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8c0 3.613-3.869 7.429-5.393 8.795a1 1 0 0 1-1.214 0C9.87 15.429 6 11.613 6 8a6 6 0 0 1 12 0"/><circle cx="12" cy="8" r="2"/><path d="M8.714 14h-3.71a1 1 0 0 0-.948.683l-2.004 6A1 1 0 0 0 3 22h18a1 1 0 0 0 .948-1.316l-2-6a1 1 0 0 0-.949-.684h-3.712"/></svg>
-                        <span>Mapa</span>
+                    <button popovertarget="heal-component" class="bg-bg-tertiary hover:bg-bg-tertiary-hover cursor-pointer p-2">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m14.479 19.374-.971.939a2 2 0 0 1-3 .019L5 15c-1.5-1.5-3-3.2-3-5.5a5.5 5.5 0 0 1 9.591-3.676.56.56 0 0 0 .818 0A5.49 5.49 0 0 1 22 9.5a5.2 5.2 0 0 1-.219 1.49"/><path d="M15 15h6"/><path d="M18 12v6"/></svg>
+                        <span>Cura</span>
+                    </button>
+                    <button popovertarget="health-component" class="bg-bg-tertiary hover:bg-bg-tertiary-hover cursor-pointer p-2">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 9.5a5.5 5.5 0 0 1 9.591-3.676.56.56 0 0 0 .818 0A5.49 5.49 0 0 1 22 9.5c0 2.29-1.5 4-3 5.5l-5.492 5.313a2 2 0 0 1-3 .019L5 15c-1.5-1.5-3-3.2-3-5.5"/><path d="M3.22 13H9.5l.5-1 2 4.5 2-7 1.5 3.5h5.27"/></svg>
+                        <span>Saúde</span>
                     </button>
                 </section>
                 <section class="flex justify-center *:flex *:items-center *:justify-center gap-2 *:rounded-lg">
-                    <span>Atributo</span>
-                    <select name="roll-attribute" id="roll-attribute" class="bg-bg-tertiary hover:bg-bg-tertiary-hover p-2 max-w-50 rounded-lg">
+                    <span class="min-w-20">Atributo</span>
+                    <select name="roll-attribute" id="roll-attribute" class="bg-bg-tertiary hover:bg-bg-tertiary-hover p-2 w-50 rounded-lg">
                         <option value="AFOR">Força</option>
                         <option value="ADES">Destreza</option>
                         <option value="ACON">Constituição</option>
@@ -24,8 +28,7 @@
                         <option value="APER">Percepção</option>
                         <option value="AVON">Força de Vontade</option>
                     </select>
-                    <span>Teste</span>
-                    <select name="roll-skill" id="roll-skill" class="bg-bg-tertiary hover:bg-bg-tertiary-hover p-2 max-w-50 rounded-lg">
+                    <select name="roll-skill" id="roll-skill" class="bg-bg-tertiary hover:bg-bg-tertiary-hover p-2 w-50 rounded-lg">
                         <optgroup label="Outros">
                             <option value="TSEM">Nenhum</option>
                             <option value="TINI">Iniciativa</option>
@@ -74,8 +77,9 @@
                             <option value="PLID">Liderança</option>
                         </optgroup>
                     </select>
+                    <span class="min-w-20">Teste</span>
                 </section>
-                <section class="flex justify-center *:flex *:items-center *:justify-center gap-2 *:gap-2 *:rounded-lg *:w-40">
+                <section class="flex justify-center *:flex *:items-center *:justify-center gap-2 *:gap-2 *:rounded-lg w-120 *:flex-1">
                     <button popovertarget="variants-component" class="bg-bg-tertiary hover:bg-bg-tertiary-hover cursor-pointer p-2">
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m11 10 3 3"/><path d="M6.5 21A3.5 3.5 0 1 0 3 17.5a2.62 2.62 0 0 1-.708 1.792A1 1 0 0 0 3 21z"/><path d="M9.969 17.031 21.378 5.624a1 1 0 0 0-3.002-3.002L6.967 14.031"/></svg>
                         <span>Variantes</span>
@@ -162,7 +166,8 @@
         </section>
     </main>
 @include('components.damage')
-{{-- @include('components.map') --}}
+@include('components.heal')
+@include('components.health')
 @include('components.variants')
 
 @endsection
@@ -234,7 +239,7 @@ function createDiceSpans(count) {
 
     for (let i = 0; i < count; i++) {
         const spanResult = document.createElement('span');
-        spanResult.classList.add('item-result-span');
+        spanResult.classList = 'item-result-span';
         spanResult.textContent = '(d20)';
         fragment.appendChild(spanResult);
     }
@@ -253,25 +258,29 @@ function updateRolls(event) {
 
     const templateSpanIcon = document.createElement('span');
     const templateSpanModifier = document.createElement('span');
+    const templateSpanBestResult = document.createElement('span');
     const templateSpanName = document.createElement('span');
     const templateSpanResultGroup = document.createElement('span');
     const templateLi = document.createElement('li');
 
+    templateSpanBestResult.classList = 'best-result';
+
     templateSpanModifier.classList = 'item-modifier flex-1 text-left';
     templateSpanModifier.textContent = '(--)';
-
+    templateSpanModifier.appendChild(templateSpanBestResult);
+    
     templateSpanIcon.classList = 'item-icon hidden';
     templateSpanIcon.appendChild(templateSvg);
-
+    
     templateSpanName.classList = 'item-name flex justify-between gap-2';
     templateSpanName.textContent = characterName;
-
+    
     templateSpanName.appendChild(templateSpanModifier);
     templateSpanName.appendChild(templateSpanIcon);
 
-    templateSpanResultGroup.classList = 'item-result-group flex gap-2';
+    templateSpanResultGroup.classList = 'item-result-group flex gap-2 *:min-w-12 *:text-center';
 
-    templateLi.classList = 'character-roll remove-character-btn bg-bg-tertiary hover:bg-bg-tertiary-hover flex flex-col justify-center p-3 gap-2 hover:*:*:last:flex';
+    templateLi.classList = 'character-roll remove-character-btn bg-bg-tertiary hover:bg-bg-tertiary-hover flex flex-col justify-center p-3 gap-2 hover:*:first:*:last:flex';
     templateLi.dataset.name = characterName;
 
     if (characterId) {
@@ -430,6 +439,8 @@ const skillModifiersMap = {
     }
 };
 
+let isAttributeZero = false;
+
 function updateDices() {
 
     const attribute = selectAttribute.value;
@@ -480,6 +491,7 @@ function updateDices() {
         modifier.textContent = `(Atri: ${attributeValue} | Peri: ${skillValue} | Total: ${2 * skillValue + qualityBonus - defectPenalty})`;
 
         let diceCount = attributeValue === 0 ? 2 : attributeValue;
+        isAttributeZero = attributeValue === 0 ? true : false;
 
         resultGroup.appendChild(createDiceSpans(diceCount));
 
@@ -528,10 +540,12 @@ rollBtn.addEventListener('click', () => {
         rollDice();
         
         async function rollDice() {
-            const resultadoFinal = Math.floor(Math.random() * 20) + 1;
-            const totalRolagens = 10;
+            const finalResult = Math.floor(Math.random() * 20) + 1;
+            display.dataset.rollValue = finalResult;
 
-            for (let i = 0; i < totalRolagens; i++) {
+            const totalRolls = 10;
+
+            for (let i = 0; i < totalRolls; i++) {
                 display.innerText = `(${Math.floor(Math.random() * 20) + 1})`;
 
                 await sleep(50 + i * 20); 
@@ -539,16 +553,17 @@ rollBtn.addEventListener('click', () => {
             
             rollBtn.disabled = false;
 
-            display.textContent = `(${resultadoFinal})`;
-            if (resultadoFinal == 20) {
+            display.textContent = `(${finalResult})`;
+            if (finalResult == 20) {
                 display.classList.add('text-green-400');
             }
-            if (resultadoFinal == 1) {
+            if (finalResult == 1) {
                 display.classList.add('text-red-400');
             }
         };
     });
 });
+
 
     </script>
 @endpush

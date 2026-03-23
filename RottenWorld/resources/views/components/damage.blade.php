@@ -30,11 +30,11 @@
         </section>
         <section class="col-start-2 row-start-1 flex justify-center gap-2">
             <section>
-                <span>Quantidade:</span>
+                <span>Dados</span>
                 <input id="damage-dices-count" class="bg-bg-tertiary disabled:text-white-muted disabled:bg-bg-secondary w-12 p-2 rounded-lg text-center font-bold" disabled/>
             </section>
             <section>
-                <span>Lados:</span>
+                <span>Lados</span>
                 <input id="damage-dices-faces" class="bg-bg-tertiary disabled:text-white-muted disabled:bg-bg-secondary w-12 p-2 rounded-lg text-center font-bold" disabled/>
             </section>
         </section>
@@ -47,7 +47,7 @@
         <section id="damage-result-display" class="col-start-2 row-start-3 flex flex-wrap justify-center gap-2 *:bg-bg-secondary *:p-2 *:rounded-lg *:text-center *:block *:w-15.5">
         </section>
         <section class="col-start-1 row-start-3">
-            <span id="result-total" class="block bg-bg-tertiary p-2 w-full rounded-lg text-center">Total</span>
+            <span id="result-damage-total" class="block bg-bg-tertiary p-2 w-full rounded-lg text-center">Total</span>
         </section>
     </section>
 </section>
@@ -55,7 +55,6 @@
 @push('scripts')
 <script>
 
-const damageComponent = document.getElementById('damage-component')
 const damageSelect = document.getElementById('damage-select');
 
 const damageDicesCount = document.getElementById('damage-dices-count');
@@ -64,19 +63,22 @@ const damageDicesFaces = document.getElementById('damage-dices-faces');
 const confirmCustomDamage = document.getElementById('confirm-custom-damage');
 
 const damageResultDisplay = document.getElementById('damage-result-display');
-const damageTotal = document.getElementById('result-total');
+const damageTotal = document.getElementById('result-damage-total');
 
 damageSelect.addEventListener('change', updateDicesDamageDisplay);
 confirmCustomDamage.addEventListener('click', ()=> {
     updateDicesDamageDisplay();
 });
 
+let countDamage = 0, facesDamage = 0;
+
 updateDicesDamageDisplay();
 
 function updateDicesDamageDisplay() {
     damageTotal.textContent = 'Total';
 
-    countDamage = 0, facesDamage = 0;
+    countDamage = 0;
+    facesDamage = 0;
     
     let option = damageSelect.value;
 
@@ -107,8 +109,6 @@ function updateDicesDamageDisplay() {
 
     damageResultDisplay.textContent = null;
     damageResultDisplay.appendChild(updateResultDamageDisplay(countDamage));
-
-    return { countDamage, facesDamage };
 }
 
 function updateResultDamageDisplay(countDamage) {
@@ -165,6 +165,9 @@ rollDamageBtn.addEventListener('click', ()=> {
             display.textContent = `(${finalResult})`;
             
             damageTotal.textContent = `Total: ${total}`;
+
+            const resultDicesTotal = document.getElementById('result-dices-total');
+            resultDicesTotal.textContent = `Dano: ${total}`;
         };
     });
 })

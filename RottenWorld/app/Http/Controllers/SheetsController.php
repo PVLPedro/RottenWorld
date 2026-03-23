@@ -17,31 +17,33 @@ class SheetsController extends Controller
         $validated = $request->validate([
             'tipo' => 'required|integer|in:1,2,3',
             'nome' => 'required|string',
-            'idade' => 'required|string',
-            'aniversario' => 'required|string',
-            'alcunha' => 'string',
-            'profissao_atual' => 'required|string',
-            'ex_profissoes' => 'required|string',
-            'experiencias' => 'required|string',
-            'hobbies' => 'required|string',
-            'aparencia' => 'required|string',
-            'resumo' => 'required|string',
-            'historia' => 'required|string',
-            'habilidade_um' => 'required|string',
-            'habilidade_dois' => 'required|string',
+            'idade' => 'nullable|string',
+            'aniversario' => 'nullable|string',
+            'alcunha' => 'nullable|string',
+            'profissao_atual' => 'nullable|string',
+            'ex_profissoes' => 'nullable|string',
+            'experiencias' => 'nullable|string',
+            'hobbies' => 'nullable|string',
+            'aparencia' => 'nullable|string',
+            'resumo' => 'nullable|string',
+            'historia' => 'nullable|string',
+            'habilidade_um' => 'nullable|string',
+            'habilidade_dois' => 'nullable|string',
         ]);
 
         Sheets::create($validated);
 
-        return redirect()->route('home')->with('success', 'Sheets adicionado com sucesso!');
+        return redirect()->route('sheets')->with('success', [
+            'text' => 'Personagem',
+            'name' => $request->nome,
+            'action' => 'adicionado!'
+        ]);
         return redirect()->back();
     }
 
     public function getDataHome(Sheets $sheet)
     {
-        $sheets = Sheets::with('caracteristicas')
-            ->orderBy('nome', 'desc')
-            ->get();
+        $sheets = Sheets::with('caracteristicas')->orderBy('nome', 'desc')->get();
 
         return view('home', compact('sheets'));
     }
@@ -51,7 +53,7 @@ class SheetsController extends Controller
         $sheets = Sheets::orderBy('nome', 'desc')->get();
         $selected = $sheet;
 
-        return view('sheets', compact('sheets', 'selected'));
+        return view('sheets', compact('sheets', 'selected'))->with('success', 'Sheets adicionado com sucesso!');
     }
 
     public function editSheet(Sheets $sheet)
@@ -65,23 +67,27 @@ class SheetsController extends Controller
         $validated = $request->validate([
             'tipo' => 'required|integer|in:1,2,3',
             'nome' => 'required|string',
-            'idade' => 'required|string',
-            'aniversario' => 'required|string',
-            'alcunha' => 'string',
-            'profissao_atual' => 'required|string',
-            'ex_profissoes' => 'required|string',
-            'experiencias' => 'required|string',
-            'hobbies' => 'required|string',
-            'aparencia' => 'required|string',
-            'resumo' => 'required|string',
-            'historia' => 'required|string',
-            'habilidade_um' => 'required|string',
-            'habilidade_dois' => 'required|string',
+            'idade' => 'nullable|string',
+            'aniversario' => 'nullable|string',
+            'alcunha' => 'nullable|string',
+            'profissao_atual' => 'nullable|string',
+            'ex_profissoes' => 'nullable|string',
+            'experiencias' => 'nullable|string',
+            'hobbies' => 'nullable|string',
+            'aparencia' => 'nullable|string',
+            'resumo' => 'nullable|string',
+            'historia' => 'nullable|string',
+            'habilidade_um' => 'nullable|string',
+            'habilidade_dois' => 'nullable|string',
         ]);
 
         $sheet->update($validated);
 
-        return redirect()->route('sheets')->with('success', 'Sheets atualizado com sucesso!');
+        return redirect()->route('sheets')->with('success', [
+            'text' => 'Personagem',
+            'name' => $sheet->nome,
+            'action' => 'atualizado!'
+        ]);
     }
 
     public function deleteSheet($id)
@@ -89,6 +95,10 @@ class SheetsController extends Controller
         $Sheets = Sheets::findOrFail($id);
         $Sheets->delete();
 
-        return redirect()->route('home')->with('success', 'Sheets excluído com sucesso!');
+        return redirect()->route('sheets')->with('success', [
+            'text' => 'Personagem',
+            'name' => $Sheets->nome,
+            'action' => 'excluído!'
+        ]);
     }
 }

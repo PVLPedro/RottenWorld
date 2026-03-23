@@ -67,24 +67,28 @@
                         <hr>
                         <h1>Profissão Atual</h1>
                         <p> {{ $selected->profissao_atual }} </p>
-                        <hr>
-                        <h1>Ex-Profissões</h1>
-                        <p> {{ $selected->ex_profissoes }} </p>
+                        @if($selected->tipo !== 2)
+                            <hr>
+                            <h1>Ex-Profissões</h1>
+                            <p> {{ $selected->ex_profissoes }} </p>
+                        @endif
                         <hr>
                         <h1>Experiências</h1>
                         <p> {{ $selected->experiencias }} </p>
-                        <hr>
-                        <h1>Hobbies</h1>
-                        <p> {{ $selected->hobbies }} </p>
-                        <hr>
-                        <h1>Aparência</h1>
-                        <p> {{ $selected->aparencia }} </p>
-                        <hr>
-                        <h1>Resumo</h1>
-                        <p> {{ $selected->resumo }} </p>
-                        <hr>
-                        <h1>História</h1>
-                        <p> {{ $selected->historia }} </p>
+                        @if($selected->tipo !== 2)
+                            <hr>
+                            <h1>Hobbies</h1>
+                            <p> {{ $selected->hobbies }} </p>
+                            <hr>
+                            <h1>Aparência</h1>
+                            <p> {{ $selected->aparencia }} </p>
+                            <hr>
+                            <h1>Resumo</h1>
+                            <p> {{ $selected->resumo }} </p>
+                            <hr>
+                            <h1>História</h1>
+                            <p> {{ $selected->historia }} </p>
+                        @endif
                     @endif
                     <hr>
                     <h1>Habilidade Primária</h1>
@@ -212,6 +216,24 @@
                 @endif
             </section>
         </section>
+        @if(session('success'))
+            <section id="toast" class="hidden absolute bottom-8 right-8 p-2 gap-2 rounded-lg bg-succes hover:bg-succes-hover text-black overflow-hidden cursor-pointer">
+                <span>
+                    {{ session('success.text') }}
+                    <b>{{ session('success.name') }}</b>
+                    {{ session('success.action') }}
+                </span>
+                <span class="absolute bottom-0 left-0 h-1 w-full bg-succes-progress animate-progress-bar"></span>
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
+            </section>
+            @endif
+            @if($errors->any())
+            <section id="toast" class="hidden absolute bottom-8 right-8 p-2 gap-2 rounded-lg bg-error hover:bg-error-hover text-black overflow-hidden cursor-pointer">
+                <span>Algo deu errado!</span>
+                <span class="absolute bottom-0 left-0 h-1 w-full bg-succes-progress animate-progress-bar"></span>
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
+            </section>
+        @endif
     </main>
 @endsection
 
@@ -221,12 +243,15 @@
 const filterList = document.getElementById('filter-list');
 const charactersList = document.querySelectorAll('#characters .character-item');
 
+filterList.value = localStorage.getItem('filter') ? localStorage.getItem('filter') : 1;
+
 function applyFilterList() {
-    console.log('oi')
-    const selectedType = filterList.value;
+    let selectedType = filterList.value;
+
+    localStorage.setItem('filter', selectedType);
 
     charactersList.forEach(item => {
-        if (item.dataset.type === selectedType) {
+        if (item.dataset.type === localStorage.getItem('filter')) {
             item.classList.remove('hidden');
         }
         else {
@@ -237,6 +262,25 @@ function applyFilterList() {
 
 filterList.addEventListener('change', applyFilterList);
 applyFilterList();
+
+const toast = document.getElementById('toast');
+let duration = 5000;
+toast?.addEventListener('click', ()=> {
+    toast.classList.remove('flex');
+    toast.classList.add('hidden');
+});
+
+if (toast) {
+    setTimeout(() => {
+        toast.classList.remove('hidden');
+        toast.classList.add('flex');
+    }, 0);
+
+    setTimeout(() => {
+        toast.classList.remove('flex');
+        toast.classList.add('hidden');
+    }, duration);
+}
 
     </script>
 @endpush

@@ -32,6 +32,12 @@
     --color-highlight-transparent-muted: hsl(0, 0%, 0%, 30%);
     --color-white-muted: hsl(0, 0%, 60%);
     --color-black-muted: hsl(0, 0%, 40%);
+    --color-succes: hsl(130, 80%, 65%);
+    --color-succes-hover: hsl(130, 70%, 55%);
+    --color-succes-progress: hsl(130, 60%, 40%);
+    --color-error: hsl(5, 80%, 65%);
+    --color-error-hover: hsl(5, 70%, 55%);
+    --color-error-progress: hsl(5, 60%, 40%);
     --color-alert: hsl(0, 100%, 60%);
     --color-alert-hover: hsl(0, 95%, 70%);
     --color-alert-muted: hsl(0, 75%, 40%);
@@ -48,6 +54,17 @@
     --color-feedback-four: hsl(130, 100%, 65%);
     --color-feedback-five: hsl(160, 100%, 65%);
     --color-feedback-six: hsl(190, 100%, 65%);
+
+    --animate-progress-bar: progress-bar 5s linear;
+
+    @keyframes progress-bar {
+        0% {
+            width: 0%;
+        }
+        100% {
+            width: 100%;
+        }
+    }
 }
 
 /* :root {
