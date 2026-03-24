@@ -11,6 +11,8 @@
                 <select name="heal-dices" id="heal-select" class="flex-1 bg-bg-tertiary hover:bg-bg-tertiary-hover p-2 rounded-lg">
                     <option value="descleve">Descanso Leve</option>
                     <option value="descprof">Descanso Profundo</option>
+                    <option value="comibebi">Comida e Bebida</option>
+                    <option value="anlgesic">Analgésico</option>
                     <option value="bandagem">Bandagem</option>
                     <option value="sparysel">Spray Selador</option>
                     <option value="ervmedic">Erva Medicinal</option>
@@ -103,12 +105,14 @@ function updateDicesHealDisplay() {
     }
 
     if (option == 'descleve') { fixedHeal = 1; countHeal = 1; facesHeal = 4; }
-    else if (option == 'descprof') { fixedHeal = 2; countHeal = 1; facesHeal = 6; }
+    else if (option == 'descprof') { fixedHeal = 2; countHeal = 1; facesHeal = 8; }
+    else if (option == 'comibebi') { fixedHeal = 3; countHeal = 1; facesHeal = 4; }
+    else if (option == 'anlgesic') { fixedHeal = 5; countHeal = 1; facesHeal = 6; }
     else if (option == 'bandagem') { fixedHeal = 2; countHeal = 2; facesHeal = 4; }
-    else if (option == 'spraysel') { fixedHeal = 2; countHeal = 2; facesHeal = 4; }
-    else if (option == 'ervmedic') { fixedHeal = 2; countHeal = 2; facesHeal = 6; }
-    else if (option == 'injetavl') { fixedHeal = 2; countHeal = 3; facesHeal = 6; }
-    else if (option == 'kitmedic') { fixedHeal = 4; countHeal = 3; facesHeal = 6; }
+    else if (option == 'spraysel') { fixedHeal = 0; countHeal = 3; facesHeal = 4; }
+    else if (option == 'ervmedic') { fixedHeal = 1; countHeal = 1; facesHeal = 4; }
+    else if (option == 'injetavl') { fixedHeal = 4; countHeal = 2; facesHeal = 6; }
+    else if (option == 'kitmedic') { fixedHeal = 4; countHeal = 4; facesHeal = 4; }
 
     healFixedCount.value = fixedHeal;
     healDicesCount.value = countHeal;

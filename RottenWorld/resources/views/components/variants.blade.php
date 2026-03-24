@@ -9,8 +9,10 @@
             <section class="flex justify-center items-center gap-2">
                 <span>Opções</span>
                 <select name="variants-dices" id="variants-select" class="flex-1 bg-bg-tertiary hover:bg-bg-tertiary-hover p-2 rounded-lg">
-                    <option value="cont">Contaminação</option>
-                    <option value="pesa">Pesadelo</option>
+                    <option value="contam">Contaminação</option>
+                    <option value="pesade">Pesadelo</option>
+                    <option value="sobrev">Sobrevivência</option>
+                    <option value="quebra">Quebra</option>
                     <option value="custom">Personalizado</option>
                 </select>
             </section>
@@ -85,9 +87,10 @@ function updateDicesVariantsDisplay() {
         facesVariants = variantsDicesFaces.value;
     }
 
-    if (option == 'cont') { countVariants = 1; facesVariants = 20; }
-    else if (option == 'pesa') { countVariants = 1; facesVariants = 20; }
-    else if (option == 'azar') { countVariants = 1; facesVariants = 100; }
+    if (option == 'contam') { countVariants = 1; facesVariants = 20; }
+    else if (option == 'pesade') { countVariants = 1; facesVariants = 20; }
+    else if (option == 'sobrev') { countVariants = 1; facesVariants = 20; }
+    else if (option == 'quebra') { countVariants = 1; facesVariants = 20; }
 
     variantsDicesCount.value = countVariants;
     variantsDicesFaces.value = facesVariants;

@@ -30,8 +30,10 @@
     --color-highlight-transparent: hsl(0, 0%, 20%, 30%);
     --color-highlight-transparent-hover: hsl(0, 0%, 40%, 30%);
     --color-highlight-transparent-muted: hsl(0, 0%, 0%, 30%);
+    --color-light-gray: hsl(0, 0%, 70%);
     --color-white-muted: hsl(0, 0%, 60%);
     --color-black-muted: hsl(0, 0%, 40%);
+    --color-dark-gray: hsl(0, 0%, 30%);
     --color-succes: hsl(130, 80%, 65%);
     --color-succes-hover: hsl(130, 70%, 55%);
     --color-succes-progress: hsl(130, 60%, 40%);

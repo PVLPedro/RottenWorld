@@ -50,7 +50,7 @@
             <span>Saúde:</span>
             <span id="health-bar" class="relative overflow-hidden flex items-center h-10 w-full bg-bg-tertiary rounded-lg">
                 <span id="health-points-display" class="absolute top-1/2 left-1/2 -translate-1/2 p-2 text-center font-bold font-mono">Saúde</span>
-                <span id="health-bar-current" class="h-full w-full"></span>
+                <span id="health-bar-current" class="h-full w-full duration-300 ease-in-out"></span>
             </span>
         </section>
         <section class="col-start-2 row-start-3 flex gap-2">

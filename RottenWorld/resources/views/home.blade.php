@@ -405,27 +405,27 @@ const skillModifiersMap = {
     },
 
     TFOR: {
-        bonus: ['AFOR'],
+        bonus: ['AFOR', 'AFOR'],
         penalty: ['']
     },
     TDES: {
-        bonus: ['ADES', 'QCNH'],
+        bonus: ['ADES', 'ADES', 'QCNH'],
         penalty: ['']
     },
     TCON: {
-        bonus: ['ACON', 'QDDM'],
+        bonus: ['ACON', 'ACON', 'QDDM'],
         penalty: ['DPCR']
     },
     TINT: {
-        bonus: ['AINT'],
+        bonus: ['AINT', 'AINT'],
         penalty: ['']
     },
     TPER: {
-        bonus: ['APER'],
+        bonus: ['APER', 'APER'],
         penalty: ['DVRU']
     },
     TVON: {
-        bonus: ['AVON'],
+        bonus: ['AVON', 'AVON'],
         penalty: ['DCOV', 'DPSI']
     },
 
@@ -436,7 +436,7 @@ const skillModifiersMap = {
     TINI: {
         bonus: ['QBRX', 'DIRR'],
         penalty: ['']
-    }
+    },
 };
 
 let isAttributeZero = false;
@@ -485,6 +485,9 @@ function updateDices() {
                 defectPenalty += Number(sheet.caracteristicas?.[code] ?? 0);
             });
         }
+        // if else (skillRule == 'AFOR' || skillRule == 'ADES' || skillRule == 'ACON' || skillRule == 'AINT' || skillRule == 'APER' || skillRule == 'AVON') {
+        //     skillValue
+        // }
 
         const totalModifier = attributeValue + skillValue + qualityBonus - defectPenalty;
 
@@ -529,7 +532,7 @@ const rollBtn = document.getElementById('roll-btn');
 rollBtn.addEventListener('click', () => {
     const result = document.querySelectorAll('.item-result-span');
 
-    rollBtn.disabled = true ? result.length : false;
+    result.length ? rollBtn.disabled = true : false;
 
     result.forEach(display => {
         const sleep = (ms) => new Promise(resolve => setTimeout(resolve, ms));
