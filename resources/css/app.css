@@ -49,13 +49,15 @@
     --color-border-primary: hsl(145, 100%, 65%);
     --color-border-primary-hover: hsl(145, 100%, 70%);
     --color-border-primary-muted: hsl(145, 50%, 40%);
-    --color-feedback-zero: hsl(10, 100%, 65%);
-    --color-feedback-one: hsl(40, 100%, 65%);
-    --color-feedback-two: hsl(70, 100%, 65%);
-    --color-feedback-three: hsl(100, 100%, 65%);
-    --color-feedback-four: hsl(130, 100%, 65%);
-    --color-feedback-five: hsl(160, 100%, 65%);
-    --color-feedback-six: hsl(190, 100%, 65%);
+    --color-feedback-zero: hsl(10, 70%, 30%);
+    --color-feedback-one: hsl(40, 70%, 30%);
+    --color-feedback-two: hsl(70, 70%, 30%);
+    --color-feedback-three: hsl(100, 70%, 30%);
+    --color-feedback-four: hsl(130, 70%, 30%);
+    --color-feedback-five: hsl(160, 70%, 30%);
+    --color-feedback-six: hsl(190, 70%, 30%);
+    --color-feedback-seven: hsl(220, 70%, 30%);
+    --color-feedback-eight: hsl(250, 70%, 30%);
 
     --animate-progress-bar: progress-bar 5s linear;
 

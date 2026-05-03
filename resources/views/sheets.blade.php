@@ -82,9 +82,11 @@
                             <hr>
                             <h1>Aparência</h1>
                             <p> {{ $selected->aparencia }} </p>
-                            <hr>
-                            <h1>Resumo</h1>
-                            <p> {{ $selected->resumo }} </p>
+                        @endif
+                        <hr>
+                        <h1>Resumo</h1>
+                        <p> {{ $selected->resumo }} </p>
+                        @if($selected->tipo !== 2)
                             <hr>
                             <h1>História</h1>
                             <p> {{ $selected->historia }} </p>
@@ -106,29 +108,29 @@
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21.174 6.812a1 1 0 0 0-3.986-3.987L3.842 16.174a2 2 0 0 0-.5.83l-1.321 4.352a.5.5 0 0 0 .623.622l4.353-1.32a2 2 0 0 0 .83-.497z"/><path d="m15 5 4 4"/></svg>
                     </a>
                     @if ($selected->caracteristicas)
-                        @php $c = $selected->caracteristicas; @endphp
+                        @php $s = $selected->caracteristicas; @endphp
                         <h1>Nome e Sobrenome</h1>
                         <p>{{ $selected->nome }}</p>
                         <hr>
                         <h1>Atributos</h1>
-                        <p>Força: <b>{{ $c->AFOR }}</b></p>
-                        <p>Destreza: <b>{{ $c->ADES }}</b></p>
-                        <p>Constituição: <b>{{ $c->ACON }}</b></p>
-                        <p>Inteligência: <b>{{ $c->AINT }}</b></p>
-                        <p>Percepção: <b>{{ $c->APER }}</b></p>
-                        <p>Força de Vontade: <b>{{ $c->AVON }}</b></p>
+                        <p>Força: <b>{{ $s->AFOR }}</b></p>
+                        <p>Destreza: <b>{{ $s->ADES }}</b></p>
+                        <p>Constituição: <b>{{ $s->ACON }}</b></p>
+                        <p>Inteligência: <b>{{ $s->AINT }}</b></p>
+                        <p>Percepção: <b>{{ $s->APER }}</b></p>
+                        <p>Força de Vontade: <b>{{ $s->AVON }}</b></p>
                         <hr>
                         @php
                             $AFORLvl6 = 0; $ADESLvl6 = 0; $ACONLvl6 = 0; $AINTLvl6 = 0; $APERLvl6 = 0; $AVONLvl6 = 0;
-                            if ($c->AFOR == 0) { $c->AFOR = 1; if ($c->AFOR == 6) { $AFORLvl6 = 2; } }
-                            if ($c->ADES == 0) { $c->ADES = 1; if ($c->ADES == 6) { $ADESLvl6 = 2; } }
-                            if ($c->ACON == 0) { $c->ACON = 1; if ($c->ACON == 6) { $ACONLvl6 = 2; } }
-                            if ($c->AINT == 0) { $c->AINT = 1; if ($c->AINT == 6) { $AINTLvl6 = 2; } }
-                            if ($c->APER == 0) { $c->APER = 1; if ($c->APER == 6) { $APERLvl6 = 2; } }
-                            if ($c->AVON == 0) { $c->AVON = 1; if ($c->AVON == 6) { $AVONLvl6 = 2; } }
-                            $ASPV = ($c->AFOR + $c->ACON) * 4 + 10 + (2 * $c->QDDM);
-                            $ASVE = ($c->ADES + $c->ACON) * 2;
-                            $ASCC = ($c->AFOR + $c->ACON) * 2;
+                            if ($s->AFOR == 0) { $s->AFOR = 1; } if ($s->AFOR == 6) { $AFORLvl6 = 2; }
+                            if ($s->ADES == 0) { $s->ADES = 1; } if ($s->ADES == 6) { $ADESLvl6 = 2; }
+                            if ($s->ACON == 0) { $s->ACON = 1; } if ($s->ACON == 6) { $ACONLvl6 = 2; }
+                            if ($s->AINT == 0) { $s->AINT = 1; } if ($s->AINT == 6) { $AINTLvl6 = 2; }
+                            if ($s->APER == 0) { $s->APER = 1; } if ($s->APER == 6) { $APERLvl6 = 2; }
+                            if ($s->AVON == 0) { $s->AVON = 1; } if ($s->AVON == 6) { $AVONLvl6 = 2; }
+                            $ASPV = ($s->AFOR + $s->ACON) * 4 + 10 + (2 * $s->QDDM);
+                            $ASVE = ($s->ADES + $s->ACON) * 2 + $s->AFOR;
+                            $ASCC = ($s->AFOR + $s->ACON) * 2;
                             $ASRE = 15 + $AFORLvl6 + $ADESLvl6 + $ACONLvl6 + $AINTLvl6 + $APERLvl6 + $AVONLvl6;
                         @endphp
                         <h1>Atributos Secundários</h1>
@@ -138,76 +140,76 @@
                         <p>Resistência: <b>{{ $ASRE }}</b></p>
                         <hr>
                         <h1>Perícias Físicas</h1>
-                        <p>Armas Brancas: <b>{{ $c->PAMB }}</b></p>
-                        <p>Armas de Fogo: <b>{{ $c->PAMF }}</b></p>
-                        <p>Acrobacia: <b>{{ $c->PACR }}</b></p>
-                        <p>Atletismo: <b>{{ $c->PATL }}</b></p>
-                        <p>Briga: <b>{{ $c->PBRI }}</b></p>
-                        <p>Esquiva: <b>{{ $c->PESQ }}</b></p>
-                        <p>Furtividade: <b>{{ $c->PFUR }}</b></p>
+                        <p>Armas Brancas: <b>{{ $s->PAMB }}</b></p>
+                        <p>Armas de Fogo: <b>{{ $s->PAMF }}</b></p>
+                        <p>Acrobacia: <b>{{ $s->PACR }}</b></p>
+                        <p>Atletismo: <b>{{ $s->PATL }}</b></p>
+                        <p>Briga: <b>{{ $s->PBRI }}</b></p>
+                        <p>Esquiva: <b>{{ $s->PESQ }}</b></p>
+                        <p>Furtividade: <b>{{ $s->PFUR }}</b></p>
                         <hr>
                         <h1>Perícias Técnicas</h1>
-                        <p>Artesanato: <b>{{ $c->PART }}</b></p>
-                        <p>Concentração: <b>{{ $c->PCOC }}</b></p>
-                        <p>Condução: <b>{{ $c->PCOD }}</b></p>
-                        <p>Exploração: <b>{{ $c->PEPL }}</b></p>
-                        <p>Investigação: <b>{{ $c->PINV }}</b></p>
-                        <p>Ladinagem: <b>{{ $c->PLAD }}</b></p>
-                        <p>Primeiros Socorros: <b>{{ $c->PPRS }}</b></p>
+                        <p>Artesanato: <b>{{ $s->PART }}</b></p>
+                        <p>Concentração: <b>{{ $s->PCOC }}</b></p>
+                        <p>Condução: <b>{{ $s->PCOD }}</b></p>
+                        <p>Exploração: <b>{{ $s->PEPL }}</b></p>
+                        <p>Investigação: <b>{{ $s->PINV }}</b></p>
+                        <p>Ladinagem: <b>{{ $s->PLAD }}</b></p>
+                        <p>Primeiros Socorros: <b>{{ $s->PPRS }}</b></p>
                         <hr>
                         <h1>Perícias Intelectuais</h1>
-                        <p>Conhecimento Acadêmico: <b>{{ $c->PCAC }}</b></p>
-                        <p>Conhecimento Informático: <b>{{ $c->PCIN }}</b></p>
-                        <p>Conhecimento Médico: <b>{{ $c->PCME }}</b></p>
-                        <p>Conhecimento Mental: <b>{{ $c->PCMA }}</b></p>
-                        <p>Conhecimento Militar: <b>{{ $c->PCMI }}</b></p>
-                        <p>Conhecimento Popular: <b>{{ $c->PCPO }}</b></p>
+                        <p>Conhecimento Acadêmico: <b>{{ $s->PCAC }}</b></p>
+                        <p>Conhecimento Informático: <b>{{ $s->PCIN }}</b></p>
+                        <p>Conhecimento Médico: <b>{{ $s->PCME }}</b></p>
+                        <p>Conhecimento Mental: <b>{{ $s->PCMA }}</b></p>
+                        <p>Conhecimento Militar: <b>{{ $s->PCMI }}</b></p>
+                        <p>Conhecimento Popular: <b>{{ $s->PCPO }}</b></p>
                         <hr>
                         <h1>Perícias Sociais</h1>
-                        <p>Blefe: <b>{{ $c->PBLE }}</b></p>
-                        <p>Carisma: <b>{{ $c->PCRI }}</b></p>
-                        <p>Diplomacia: <b>{{ $c->PDIP }}</b></p>
-                        <p>Intimidação: <b>{{ $c->PTIM }}</b></p>
-                        <p>Intuição: <b>{{ $c->PTUI }}</b></p>
-                        <p>Liderança: <b>{{ $c->PLID }}</b></p>
+                        <p>Blefe: <b>{{ $s->PBLE }}</b></p>
+                        <p>Carisma: <b>{{ $s->PCRI }}</b></p>
+                        <p>Diplomacia: <b>{{ $s->PDIP }}</b></p>
+                        <p>Intimidação: <b>{{ $s->PTIM }}</b></p>
+                        <p>Intuição: <b>{{ $s->PTUI }}</b></p>
+                        <p>Liderança: <b>{{ $s->PLID }}</b></p>
                         @if ($selected->tipo !== 3)
                             <hr>
                             <h1>Qualidades</h1>
-                            <p>Artes Marciais: <b>{{ $c->QARM }}</b></p>
-                            <p>Beleza: <b>{{ $c->QBEL }}</b></p>
-                            <p>Corajoso: <b>{{ $c->QCOR }}</b></p>
-                            <p>Casos Criminais: <b>{{ $c->QCAS }}</b></p>
-                            <p>Duro de Matar: <b>{{ $c->QDDM }}</b></p>
-                            <p>Bom Reflexo: <b>{{ $c->QBRX }}</b></p>
-                            <p>Genialidade: <b>{{ $c->QGEL }}</b></p>
-                            <p>Genética Boa: <b>{{ $c->QGEN }}</b></p>
-                            <p>Tranquilidade: <b>{{ $c->QTRA }}</b></p>
-                            <p>Sentido Aguçado: <b>{{ $c->QSEA }}</b></p>
-                            <p>Adaptabilidade: <b>{{ $c->QADA }}</b></p>
-                            <p>Filmes de Ação: <b>{{ $c->QFDA }}</b></p>
-                            <p>Jogador de Poker: <b>{{ $c->QJDP }}</b></p>
-                            <p>Lábia: <b>{{ $c->QLAB }}</b></p>
-                            <p>Malandragem: <b>{{ $c->QMAL }}</b></p>
-                            <p>Carteira de Motorista: <b>{{ $c->QCNH }}</b></p>
-                            <p>Memória Fotográfica: <b>{{ $c->QMMF }}</b></p>
+                            <p>Artes Marciais: <b>{{ $s->QARM }}</b></p>
+                            <p>Beleza: <b>{{ $s->QBEL }}</b></p>
+                            <p>Corajoso: <b>{{ $s->QCOR }}</b></p>
+                            <p>Casos Criminais: <b>{{ $s->QCAS }}</b></p>
+                            <p>Duro de Matar: <b>{{ $s->QDDM }}</b></p>
+                            <p>Bom Reflexo: <b>{{ $s->QBRX }}</b></p>
+                            <p>Genialidade: <b>{{ $s->QGEL }}</b></p>
+                            <p>Genética Boa: <b>{{ $s->QGEN }}</b></p>
+                            <p>Tranquilidade: <b>{{ $s->QTRA }}</b></p>
+                            <p>Sentido Aguçado: <b>{{ $s->QSEA }}</b></p>
+                            <p>Adaptabilidade: <b>{{ $s->QADA }}</b></p>
+                            <p>Filmes de Ação: <b>{{ $s->QFDA }}</b></p>
+                            <p>Jogador de Poker: <b>{{ $s->QJDP }}</b></p>
+                            <p>Lábia: <b>{{ $s->QLAB }}</b></p>
+                            <p>Malandragem: <b>{{ $s->QMAL }}</b></p>
+                            <p>Carteira de Motorista: <b>{{ $s->QCNH }}</b></p>
+                            <p>Memória Fotográfica: <b>{{ $s->QMMF }}</b></p>
                             <hr>
                             <h1>Defeitos</h1>
-                            <p>Antipatia: <b>{{ $c->DANT }}</b></p>
-                            <p>Azarado: <b>{{ $c->DAZA }}</b></p>
-                            <p>Feiura: <b>{{ $c->DFEI }}</b></p>
-                            <p>Problemas Crônicos: <b>{{ $c->DPCR }}</b></p>
-                            <p>Covarde: <b>{{ $c->DCOV }}</b></p>
-                            <p>Crenças Estranhas: <b>{{ $c->DCRE }}</b></p>
-                            <p>Medo de Sangue: <b>{{ $c->DMDS }}</b></p>
-                            <p>Problemas Psicológicos: <b>{{ $c->DPSI }}</b></p>
-                            <p>Pesadelos Frequentes: <b>{{ $c->DPSE }}</b></p>
-                            <p>Preguiçoso: <b>{{ $c->DPRE }}</b></p>
-                            <p>Procastinador: <b>{{ $c->DPRO }}</b></p>
-                            <p>TDAH: <b>{{ $c->DTDA }}</b></p>
-                            <p>Irresponsável: <b>{{ $c->DIRR }}</b></p>
-                            <p>Palhaço: <b>{{ $c->DPLH }}</b></p>
-                            <p>Sem Noção: <b>{{ $c->DSNO }}</b></p>
-                            <p>Visão Ruim: <b>{{ $c->DVRU }}</b></p>
+                            <p>Antipatia: <b>{{ $s->DANT }}</b></p>
+                            <p>Azarado: <b>{{ $s->DAZA }}</b></p>
+                            <p>Feiura: <b>{{ $s->DFEI }}</b></p>
+                            <p>Problemas Crônicos: <b>{{ $s->DPCR }}</b></p>
+                            <p>Covarde: <b>{{ $s->DCOV }}</b></p>
+                            <p>Crenças Estranhas: <b>{{ $s->DCRE }}</b></p>
+                            <p>Medo de Sangue: <b>{{ $s->DMDS }}</b></p>
+                            <p>Problemas Psicológicos: <b>{{ $s->DPSI }}</b></p>
+                            <p>Pesadelos Frequentes: <b>{{ $s->DPSE }}</b></p>
+                            <p>Preguiçoso: <b>{{ $s->DPRE }}</b></p>
+                            <p>Procastinador: <b>{{ $s->DPRO }}</b></p>
+                            <p>TDAH: <b>{{ $s->DTDA }}</b></p>
+                            <p>Irresponsável: <b>{{ $s->DIRR }}</b></p>
+                            <p>Palhaço: <b>{{ $s->DPLH }}</b></p>
+                            <p>Sem Noção: <b>{{ $s->DSNO }}</b></p>
+                            <p>Visão Ruim: <b>{{ $s->DVRU }}</b></p>
                         @endif
                     @endif
                     <h1>Sem Características definidas</h1>

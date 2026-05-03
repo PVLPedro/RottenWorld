@@ -117,7 +117,11 @@ class CaracteristicasController extends Controller
 
         $caracteristicas->update($validated);
 
-        return redirect()->route('sheets', $sheet)->with('success', 'Características atualizadas!');
+        return redirect()->route('sheets', $sheet)->with('success', [
+            'text' => 'Características de',
+            'name' => $sheet->nome,
+            'action' => 'atualizadas!'
+        ]);
         return redirect()->back();
     }
 }

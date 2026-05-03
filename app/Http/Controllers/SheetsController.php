@@ -43,14 +43,14 @@ class SheetsController extends Controller
 
     public function getDataHome(Sheets $sheet)
     {
-        $sheets = Sheets::with('caracteristicas')->orderBy('nome', 'desc')->get();
+        $sheets = Sheets::orderBy('nome', 'asc')->with('caracteristicas')->get();
 
         return view('home', compact('sheets'));
     }
 
     public function getDataSheets(?Sheets $sheet = null)
     {
-        $sheets = Sheets::orderBy('nome', 'desc')->get();
+        $sheets = Sheets::orderBy('nome', 'asc')->get();
         $selected = $sheet;
 
         return view('sheets', compact('sheets', 'selected'))->with('success', 'Sheets adicionado com sucesso!');

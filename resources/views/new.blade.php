@@ -11,7 +11,7 @@
         @csrf
             <h1 class="mb-8">Adição de Personagem</h1>
             <h2>Tipo</h2>
-            <select required name="tipo" class="w-50 p-2 bg-bg-tertiary rounded-lg">
+            <select required name="tipo" id="new-type-select" class="w-50 p-2 bg-bg-tertiary rounded-lg">
                 <option value="1">Jogador</option>
                 <option value="2">NPC</option>
                 <option value="3">Putrefato</option>
@@ -56,3 +56,13 @@
         </form>
     </main>
 @endsection
+
+@push('scripts')
+<script>
+
+const newTypeSelect = document.getElementById('new-type-select');
+
+newTypeSelect.value = localStorage.getItem('filter');
+
+</script>
+@endpush

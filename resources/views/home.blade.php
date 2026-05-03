@@ -80,6 +80,10 @@
                     <span class="min-w-20">Teste</span>
                 </section>
                 <section class="flex justify-center *:flex *:items-center *:justify-center gap-2 *:gap-2 *:rounded-lg w-120 *:flex-1">
+                    <button popovertarget="inventory-component" class="bg-bg-tertiary hover:bg-bg-tertiary-hover cursor-pointer p-2">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 10a4 4 0 0 1 4-4h8a4 4 0 0 1 4 4v10a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2z"/><path d="M8 10h8"/><path d="M8 18h8"/><path d="M8 22v-6a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v6"/><path d="M9 6V4a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v2"/></svg>
+                        <span>Inventário</span>
+                    </button>
                     <button popovertarget="variants-component" class="bg-bg-tertiary hover:bg-bg-tertiary-hover cursor-pointer p-2">
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m11 10 3 3"/><path d="M6.5 21A3.5 3.5 0 1 0 3 17.5a2.62 2.62 0 0 1-.708 1.792A1 1 0 0 0 3 21z"/><path d="M9.969 17.031 21.378 5.624a1 1 0 0 0-3.002-3.002L6.967 14.031"/></svg>
                         <span>Variantes</span>
@@ -168,6 +172,7 @@
 @include('components.damage')
 @include('components.heal')
 @include('components.health')
+@include('components.inventory')
 @include('components.variants')
 
 @endsection
@@ -434,7 +439,7 @@ const skillModifiersMap = {
         penalty: ['DCOV']
     },
     TINI: {
-        bonus: ['QBRX', 'DIRR'],
+        bonus: ['ADES', 'QBRX', 'DIRR', 'QCOR'],
         penalty: ['']
     },
 };
@@ -478,7 +483,15 @@ function updateDices() {
 
         if (skillRule) {
             skillRule.bonus.forEach(code => {
-                qualityBonus += Number(sheet.caracteristicas?.[code] ?? 0);
+                if (code == 'QCOR') {
+                    qualityBonus += 3;
+                }
+                else if (code == 'QARM') {
+                    qualityBonus += 3;
+                }
+                else {
+                    qualityBonus += Number(sheet.caracteristicas?.[code] ?? 0);
+                }
             });
 
             skillRule.penalty.forEach(code => {
