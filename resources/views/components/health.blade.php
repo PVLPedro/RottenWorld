@@ -74,7 +74,7 @@
             </button>
         </section>
         <section class="col-start-2 row-start-6 flex items-center gap-2">
-            <span>Resultado de Dano / Cura</span>
+            <span>Resultado Anterior</span>
             <span id="result-dices-total" class="block flex-1 bg-bg-tertiary p-2 rounded-lg text-center">Total</span>
         </section>
     </section>

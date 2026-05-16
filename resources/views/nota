@@ -1,79 +1,93 @@
-'AFOR', 'ADES', 'ACON', 'AINT', 'APER', 'AVON',
-'PAMB', 'PAMF', 'PACR', 'PATL', 'PBRI', 'PESQ', 'PFUR',
-'PART', 'PCOC', 'PCOD', 'PEPL', 'PINV', 'PLAD', 'PPRS',
-'PCAC', 'PCIN', 'PCME', 'PCMA', 'PCMI', 'PCPO',
-'PBLE', 'PCRI', 'PDIP', 'PTIM', 'PTUI', 'PLID',
-'QARM', 'QBEL', 'QCOR', 'QCAS', 'QDDM', 'QBRX', 'QGEL', 'QGEN', 'QTRA', 'QSEA', 'QADA', 'QFDA', 'QJDP', 'QLAB', 'QMAL', 'QCNH', 'QMMF',
-'DANT', 'DAZA', 'DFEI', 'DPCR', 'DCOV', 'DCRE', 'DMDS', 'DPSI', 'DPSE', 'DPRE', 'DPRO', 'DTDA', 'DIRR', 'DSNO', 'DPLH', 'DVRU',
+let AFOR = 0, ADES = 0, ACON = 0, AINT = 0, APER = 0, AVON = 0,
+PAMB = 0, PAMF = 0, PACR = 0, PATL = 0, PBRI = 0, PESQ = 0, PFUR = 0,
+PART = 0, PCOC = 0, PCOD = 0, PEPL = 0, PINV = 0, PLAD = 0, PPRS = 0,
+PCAC = 0, PCIN = 0, PCME = 0, PCMA = 0, PCMI = 0, PCPO = 0,
+PBLE = 0, PCRI = 0, PDIP = 0, PTIM = 0, PTUI = 0, PLID = 0,
+QARM = 0, QBEL = 0, QCOR = 0, QCAS = 0, QDDM = 0, QBRX = 0, QGEL = 0, QGEN = 0, QTRA = 0, QSEA = 0, QADA = 0, QFDA = 0, QJDP = 0, QLAB = 0, QMAL = 0, QCNH = 0, QMMF = 0,
+DANT = 0, DAZA = 0, DFEI = 0, DPCR = 0, DCOV = 0, DCRE = 0, DMDS = 0, DPSI = 0, DPSE = 0, DPRE = 0, DPRO = 0, DTDA = 0, DIRR = 0, DSNO = 0, DPLH = 0, DVRU = 0,
 
-AFOR
-ADES
-ACON
-AINT
-APER
-AVON
+// Atributos
 
-PAMB
-PAMF
-PACR
-PATL
-PBRI
-PESQ
-PFUR
+'AFOR' // Atributo Força
+'ADES' // Atributo Destreza
+'ACON' // Atributo Constituição
+'AINT' // Atributo Inteligência
+'APER' // Atributo Percepção
+'AVON' // Atributo Força de Vontade
 
-PART
-PCOC
-PCOD
-PEPL
-PINV
-PLAD
-PPRS
+// Perícias Físicas
 
-PCAC
-PCIN
-PCME
-PCMA
-PCMI
-PCPO
+'PAMB' // Perícia Armas Brancas
+'PAMF' // Perícia Armas de Fogo
+'PACR' // Perícia Acrobacia
+'PATL' // Perícia Atletismo
+'PBRI' // Perícia Briga
+'PESQ' // Perícia Esquiva
+'PFUR' // Perícia Furtividade
 
-PBLE
-PCRI
-PDIP
-PTIM
-PTUI
-PLID
+// Perícias Técnicas
 
-QARM
-QBEL
-QCOR
-QCAS
-QDDM
-QBRX
-QGEL
-QGEN
-QTRA
-QSEA
-QADA
-QFDA
-QJDP
-QLAB
-QMAL
-QCNH
-QMMF
+'PART' // Perícia Artesanato
+'PCOC' // Perícia Concentração
+'PCOD' // Perícia Condução
+'PEPL' // Perícia Exploração
+'PINV' // Perícia Investigação
+'PLAD' // Perícia Ladinagem
+'PPRS' // Perícia Primeiro Socorros
 
-DANT
-DAZA
-DFEI
-DPCR
-DCOV
-DCRE
-DMDS
-DPSI
-DPSE
-DPRE
-DPRO
-DTDA
-DIRR
-DSNO
-DPLH
-DVRU
+// Perícias Intelectuais
+
+'PCAC' // Perícia Conhecimento Acadêmico
+'PCIN' // Perícia Conhecimento Informático
+'PCME' // Perícia Conhecimento Médico
+'PCMA' // Perícia Conhecimento Mental
+'PCMI' // Perícia Conhecimento Militar
+'PCPO' // Perícia Conhecimento Popular
+
+// Perícias Sociais
+
+'PBLE' // Perícia Blefe
+'PCRI' // Perícia Carisma
+'PDIP' // Perícia Displomacia
+'PTIM' // Perícia Intimidação
+'PTUI' // Perícia Intuição
+'PLID' // Perícia Liderança
+
+// Qualidades
+
+'QARM' // Qualidade Artes Marciais
+'QBEL' // Qualidade Beleza
+'QCOR' // Qualidade Coragem
+'QCAS' // Qualidade Casos Criminais
+'QDDM' // Qualidade Duro de Matar
+'QBRX' // Qualidade Bons Reflexos
+'QGEL' // Qualidade Genialidde
+'QGEN' // Qualidade Genético Boa
+'QTRA' // Qualidade Tranquilidade
+'QSEA' // Qualidade Sentido Aguçado
+'QADA' // Qualidade Adaptabilidade
+'QFDA' // Qualidade Filmes de Ação
+'QJDP' // Qualidade Jogador de Poker
+'QLAB' // Qualidade Lábia
+'QMAL' // Qualidade Malandragem
+'QCNH' // Qualidade Carteira de Motorista
+'QMMF' // Qualidade Memória Fotográfica
+
+// Defeitos
+
+'DANT' // Defeito Antipatia
+'DAZA' // Defeito Azarado
+'DFEI' // Defeito Feiura
+'DPCR' // Defeito Problemas Crônicos
+'DCOV' // Defeito Covarde
+'DCRE' // Defeito Crenças Estranhas
+'DMDS' // Defeito Medo de Sangue
+'DPSI' // Defeito Problemas Psicológicos
+'DPSE' // Defeito Pesadelos Frequentes
+'DPRE' // Defeito Preguiçoso
+'DPRO' // Defeito Procastinador
+'DTDA' // Defeito TDAH
+'DIRR' // Defeito Irresponsável
+'DSNO' // Defeito Sem Noção
+'DPLH' // Defeito Palhaço
+'DVRU' // Defeito Visão Ruim

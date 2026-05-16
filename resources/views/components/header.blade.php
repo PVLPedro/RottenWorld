@@ -1,6 +1,6 @@
 <header class="flex items-center justify-between h-15 px-4 bg-highlight-primary">
     <ul class="flex items-center text-black text-2xl font-bold h-full">
-        <img src="/imgs/RottenWorld.png" class="h-12">
+        <img src="/image/RottenWorld.png" class="h-12">
     </ul>
     <ul class="flex items-center *:flex *:items-center text-black h-full *:h-full">
         <li>

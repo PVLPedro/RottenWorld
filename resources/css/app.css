@@ -113,3 +113,7 @@ main::selection {
     background-color: rgba(0, 0, 0, 0.2);
     backdrop-filter: blur(2px);
 }
+
+.checked {
+    background-image: url('/public/svg/check.svg');
+}
