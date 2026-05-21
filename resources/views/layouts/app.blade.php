@@ -8,7 +8,7 @@
         {{-- <link rel="stylesheet" href="{{ asset('css/app.css') }}"> --}}
         <title>Rotten World</title>
     </head>
-    <body class="bg-bg-dark font-poppins text-white">
+    <body class="bg-bg-dark font-poppins text-white **:[svg]:size-6">
         @include('components.header')
 
         @yield('content', 'nenhum conteúdo renderizado')

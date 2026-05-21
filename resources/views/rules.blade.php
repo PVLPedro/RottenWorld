@@ -1,9 +1,9 @@
 @extends('layouts.app')
 
 @section('content')
-    <main class="relative bg-bg-secondary h-[calc(100dvh-120px)] p-4 flex flex-col gap-4 overflow-hidden">
-        <section class="relative flex h-full gap-4 p-4 rounded-lg bg-bg-primary overflow-hidden *:relative list-none">
-            <section class="flex flex-col gap-2 h-full w-80 overflow-y-auto py-8 pl-12 *:w-full *:duration-100 [&_a]:hover:text-highlight-primary [&_span]:font-semibold [&_span]:text-light-gray [&_span]:mt-4">
+    <main class="relative bg-bg-secondary h-[calc(100dvh-120px)] p-1 lg:p-4 flex flex-col gap-4 overflow-hidden">
+        <section class="relative flex flex-col xl:flex-row h-full gap-4 p-2 lg:p-4 rounded-lg bg-bg-primary overflow-hidden *:relative list-none">
+            <section class="flex flex-col gap-2 h-50 border-b-2 border-highlight-primary xl:border-b-0 xl:h-full xl:w-80 overflow-y-auto xl:py-8 xl:pl-12 *:w-full *:duration-100 [&_a]:hover:text-highlight-primary [&_span]:font-semibold [&_span]:text-light-gray [&_span]:mt-4">
                 <a class="link" href="#introducao">Introdução</a>
                 <span>Regras Gerais</span>
                 <a class="link" href="#personagens">Personagens</a>
@@ -24,7 +24,7 @@
                 <a class="link" href="#rodadas">Rodadas e Turnos</a>
                 <a class="link" href="#acoes">Ações</a>
             </section>
-            <section class="flex-1 overflow-y-auto *:w-60/100 *:mx-auto scroll-smooth">
+            <section class="flex-1 overflow-y-auto w-full xl:*:w-6/10 xl:*:mx-auto scroll-smooth">
                 <x-title> {{ __('rules.introducao.secao') }} </x-title>
                 <section class="section" id="introducao">
                     <x-subtitle> {{ __('rules.introducao.subtitulo.um') }} </x-subtitle>

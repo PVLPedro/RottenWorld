@@ -1,14 +1,14 @@
-<section id="heal-component" popover class="relative top-1/2 left-1/2 -translate-1/2 w-250 min-h-100 p-4 flex-col items-center gap-10 bg-bg-primary rounded-lg border-2 border-border-primary text-white **:[svg]:size-6">
+<section id="heal-component" popover class="relative top-1/2 left-1/2 -translate-1/2 w-dvw max-w-250 min-h-100 px-1 py-4 md:px-4 md:p-4 flex-col items-center gap-10 bg-bg-primary rounded-lg border-2 border-border-primary text-white **:[svg]:size-6">
     <x-close-btn target="heal-component"/>
     <section class="flex py-2 gap-2 justify-center items-center">
         <x-lucide-heart-plus />
         <span class="text-lg font-medium">Cura</span>
     </section>
-    <section class="grid grid-cols-2 gap-4 justify-center justify-items-center items-center content-center w-full auto-rows-fr *:w-full p-4 *:p-2">
+    <section class="flex flex-col md:grid md:grid-cols-2 md:p-4 md:gap-4 justify-center justify-items-center items-center content-center w-full auto-rows-fr *:w-full *:p-2">
         <section class="col-start-1 row-span-6">
             <section class="flex flex-col justify-center items-center gap-2">
                 <span>Personagens</span>
-                <ul id="characters-heal" class="w-full h-100 overflow-y-auto flex flex-col p-2 gap-0.5 border-2 border-highlight-secondary rounded-lg">
+                <ul id="characters-heal" class="w-full h-50 md:h-100 overflow-y-auto flex flex-col p-2 gap-0.5 border-2 border-highlight-secondary rounded-lg">
                     @forelse ($sheets as $index => $s)
                         @php
                             @include(resource_path('views/partials/caracteristicas.php'));
@@ -75,7 +75,7 @@
                 </select>
             </section>
         </section>
-        <section class="col-start-2 row-start-4 flex justify-center gap-2">
+        <section class="col-start-2 row-start-4 scale-90 sm:scale-100 flex justify-center gap-2 *:flex-1 *:flex *:justify-center *:items-center *:gap-2">
             <section>
                 <span>Dados</span>
                 <input id="heal-dices-count" class="bg-bg-tertiary disabled:text-white-muted disabled:bg-bg-secondary w-12 p-2 rounded-lg text-center font-bold" value="0" disabled/>
@@ -94,7 +94,7 @@
         >
         </section>
         <section class="col-start-2 row-start-6 flex items-center justify-center gap-4 *:cursor-pointer">
-            <input type="checkbox" id="double-heal-input" class=" appearance-none size-14 border-2 border-bg-secondary rounded-lg bg-bg-tertiary hover:bg-bg-tertiary-hover checked:hover:bg-highlight-tertiary checked:bg-highlight-tertiary checked:bg-[url('/public/svg/check.svg')] checked:bg-center checked:border-bg-secondary-hover">
+            <input type="checkbox" id="double-heal-input" class=" appearance-none size-10 border-2 border-bg-secondary rounded-lg bg-bg-tertiary hover:bg-bg-tertiary-hover checked:hover:bg-checked checked:bg-checked bg-no-repeat checked:bg-[url('/public/svg/check.svg')] checked:bg-center checked:border-bg-secondary-hover">
             <label for="double-heal-input">Crítico</label>
         </section>
         <section class="col-start-2 row-start-7 flex gap-4">
@@ -314,23 +314,19 @@ const doubleHealInput = document.getElementById('double-heal-input');
 
 const healTotal = document.getElementById('result-heal-total');
 
-rollHealBtn.addEventListener('click', ()=> {
+rollHealBtn.addEventListener('click', async () => {
     const result = document.querySelectorAll('.heal-result-span');
 
-    rollHealBtn.disabled = true ? result.length : false;
+    rollHealBtn.disabled = true;
 
     let total = 0 + healBonus;
+    let finalResult = 0;
 
-    result.forEach(display => {
-        const sleep = (ms) => new Promise(resolve => setTimeout(resolve, ms));
+    const sleep = (ms) => new Promise(resolve => setTimeout(resolve, ms));
 
-        display.classList.remove('text-green-400');
-        display.classList.remove('text-red-400');
+    async function rollDice(display) {
 
-        rollDice();
-        
-        async function rollDice() {
-            const finalResult = Math.floor(Math.random() * healFaces) + 1;
+        finalResult = Math.floor(Math.random() * healFaces) + 1;
 
             total += finalResult;
 
@@ -349,12 +345,18 @@ rollHealBtn.addEventListener('click', ()=> {
                 display.classList.add('text-red-400');
             }
 
-            display.textContent = `(${finalResult})`;
+        display.textContent = `(${finalResult})`;
+    }
 
-            updateHealFinalResult(total, finalResult);            
-        };
+    const rollingPromises = Array.from(result).map(display => {
+        display.classList.remove('text-green-400', 'text-red-400');
+        return rollDice(display);
     });
-})
+
+    await Promise.all(rollingPromises);
+
+    updateHealFinalResult(total, finalResult);
+});
 
 function updateHealFinalResult(total, finalResult) {
     rollHealBtn.disabled = false;

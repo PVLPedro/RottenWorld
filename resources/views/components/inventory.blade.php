@@ -1,14 +1,14 @@
-<section id="inventory-component" popover class="relative top-1/2 left-1/2 -translate-1/2 w-250 min-h-100 p-4 flex-col items-center gap-10 bg-bg-primary rounded-lg border-2 border-border-primary text-white">
+<section id="inventory-component" popover class="relative top-1/2 left-1/2 -translate-1/2 w-dvw max-w-250 min-h-100 px-1 py-4 md:px-4 flex-col items-center gap-10 bg-bg-primary rounded-lg border-2 border-border-primary text-white **:[svg]:size-6">
     <x-close-btn target="inventory-component"/>
     <section class="flex py-2 gap-2 justify-center items-center">
-        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 10a4 4 0 0 1 4-4h8a4 4 0 0 1 4 4v10a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2z"/><path d="M8 10h8"/><path d="M8 18h8"/><path d="M8 22v-6a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v6"/><path d="M9 6V4a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v2"/></svg>
+        <x-lucide-backpack />
         <span class="text-lg font-medium">Inventário</span>
     </section>
-    <section class="grid grid-cols-2 gap-4 justify-center justify-items-center items-center content-center w-full auto-rows-fr *:w-full p-4 *:p-2">
+    <section class="flex flex-col md:grid md:grid-cols-2 md:p-4 md:gap-4 justify-center justify-items-center items-center content-center w-full auto-rows-fr *:w-full *:p-2">
         <section class="col-start-1 row-span-5">
             <section class="flex flex-col justify-center items-center gap-2">
                 <span>Personagens</span>
-                <ul id="characters-inventory" class="w-full h-100 overflow-y-auto flex flex-col p-2 gap-0.5 border-2 border-highlight-secondary rounded-lg">
+                <ul id="characters-inventory" class="w-full h-50 md:h-100 overflow-y-auto flex flex-col p-2 gap-0.5 border-2 border-highlight-secondary rounded-lg">
                     @forelse ($sheets as $index => $s)
                         @php
                             @include(resource_path('views/partials/caracteristicas.php'));

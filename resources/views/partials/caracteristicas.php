@@ -94,7 +94,7 @@ if ($APER == 6) { $APERLvl6 = 2; }
 if ($AVON == 0) { $AVON = 1; }
 if ($AVON == 6) { $AVONLvl6 = 2; }
 
-$ASPV = ($AFOR + $ACON) * 4 + 10 + (2 * $QDDM);
-$ASVE = ($ADES + $ACON) * 2;
+$ASPV = ($AFOR + $ACON) * 4 + 10 + (2 * $QDDM) + (2 * $AVON);
+$ASVE = ($ADES + $ACON) * 3;
 $ASCC = ($AFOR + $ACON) * 2;
-$ASRE = 15 + $AFORLvl6 + $ADESLvl6 + $ACONLvl6 + $AINTLvl6 + $APERLvl6 + $AVONLvl6;
+$ASRE = 17 + $AFORLvl6 + $ADESLvl6 + $ACONLvl6 + $AINTLvl6 + $APERLvl6 + $AVONLvl6;

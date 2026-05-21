@@ -2,7 +2,7 @@
     <ul class="flex items-center text-black text-2xl font-bold h-full">
         <img src="/image/RottenWorld.png" class="h-12">
     </ul>
-    <ul class="flex items-center *:flex *:items-center text-black h-full *:h-full">
+    {{-- <ul class="flex items-center *:flex *:items-center text-black h-full *:h-full">
         <li>
             <ul class="flex items-center justify-center *:items-center *:justify-center *:px-4 h-full *:h-full  *:hover:bg-highlight-transparent-hover">
                 <button class="flex" id="start-btn">
@@ -33,7 +33,7 @@
                 </button>
             </ul>
         </li>
-    </ul>
+    </ul> --}}
 </header>
 <nav class="flex items-center h-15 bg-bg-primary list-none *:flex-1 *:h-full">
     <li class="nav-link {{ request()->routeIs('home') ? 'bg-bg-primary-hover' : '' }} flex items-center justify-center *:h-full *:w-full *:flex *:items-center *:justify-center *:gap-2 hover:bg-bg-primary-hover">
