@@ -10,7 +10,7 @@
 @theme {
     --font-poppins: "Poppins";
     --color-bg-primary: hsl(220, 10%, 15%);
-    --color-bg-primary-variant: hsl(220, 10%, 20%);
+    --color-bg-primary-variant: hsl(220, 10%, 18%);
     --color-bg-primary-hover: hsl(220, 10%, 25%);
     --color-bg-secondary: hsl(220, 10%, 19%);
     --color-bg-secondary-variant: hsl(220, 10%, 24%);
@@ -30,12 +30,14 @@
     --color-highlight-transparent: hsl(0, 0%, 20%, 30%);
     --color-highlight-transparent-hover: hsl(0, 0%, 40%, 30%);
     --color-highlight-transparent-muted: hsl(0, 0%, 0%, 30%);
+    --color-lighter-gray: hsl(0, 0%, 90%);
     --color-light-gray: hsl(0, 0%, 70%);
     --color-white-muted: hsl(0, 0%, 60%);
     --color-checked: hsl(0, 0%, 50%);
     --color-gray: hsl(0, 0%, 50%);
     --color-black-muted: hsl(0, 0%, 40%);
     --color-dark-gray: hsl(0, 0%, 30%);
+    --color-darker-gray: hsl(0, 0%, 10%);
     --color-succes: hsl(130, 80%, 65%);
     --color-succes-hover: hsl(130, 70%, 55%);
     --color-succes-progress: hsl(130, 60%, 40%);
@@ -62,6 +64,8 @@
     --color-feedback-eight: hsl(250, 70%, 30%);
 
     --animate-progress-bar: progress-bar 5s linear;
+
+    --breakpoint-minimal: 375px;
 
     @keyframes progress-bar {
         0% {
@@ -99,7 +103,8 @@
 }
 
 main::selection {
-    background: none;
+    color: black;
+    background: var(--color-highlight-primary);
 }
 
 :focus {

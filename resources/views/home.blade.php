@@ -10,7 +10,7 @@
                 <ul class="list-decimal grow overflow-y-auto flex flex-col gap-0.5">
                     @forelse ($sheets as $index => $s)
                         @php
-                            @include(resource_path('views/partials/caracteristicas.php'));
+                            @include(resource_path('views/partials/features.php'));
                         @endphp
                         <li class="add-character-btn character-item bg-bg-tertiary hover:bg-bg-tertiary-hover flex items-center justify-start *:py-3 *:min-w-10 *:last:justify-center *:first:flex-1 *:first:px-4 hover:*:last:flex"
                             data-name="{{ $s->nome }}"
@@ -200,18 +200,13 @@
                         <span>Inventário</span>
                     </button>
                 </section>
-                <button popovertarget="variants-component" class="bg-bg-tertiary hover:bg-bg-tertiary-hover cursor-pointer p-2">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m11 10 3 3"/><path d="M6.5 21A3.5 3.5 0 1 0 3 17.5a2.62 2.62 0 0 1-.708 1.792A1 1 0 0 0 3 21z"/><path d="M9.969 17.031 21.378 5.624a1 1 0 0 0-3.002-3.002L6.967 14.031"/></svg>
-                    <span>Variantes</span>
-                </button>
             </section>
         </section>
     </main>
-@include('components.damage')
-@include('components.heal')
-@include('components.health')
-@include('components.inventory')
-@include('components.variants')
+@include('components.home.damage')
+@include('components.home.heal')
+@include('components.home.health')
+@include('components.home.inventory')
 
 @endsection
 
@@ -222,18 +217,23 @@ const filterListOne = document.getElementById('filter-list-one');
 const charactersListOne = document.querySelectorAll('#characters-one .character-item');
 const filteredListOne = document.getElementById('filtered-list-one');
 
+filterListOne.value = localStorage.getItem('filter') ? localStorage.getItem('filter') : 1;
+
 function applyFilterListOne() {
     const selectedType = filterListOne.value;
     let filteredCount = 0;
 
+    localStorage.setItem('filter', selectedType);
+
     charactersListOne.forEach(item => {
-        if (item.dataset.type === selectedType) {
+        if (item.dataset.type === localStorage.getItem('filter')) {
             item.classList.remove('hidden');
             filteredCount++;
         }
         else {
             item.classList.add('hidden');
         }
+
         filteredListOne.textContent = `Total: ${filteredCount}`;
     });
 }
@@ -294,7 +294,7 @@ function updateRolls(event) {
 
     const templateSpanResultGroup = document.createElement('span');
     templateSpanResultGroup.id = characterId;
-    templateSpanResultGroup.classList = 'item-result-group flex gap-2 *:min-w-12 *:text-center';
+    templateSpanResultGroup.classList = 'item-result-group flex flex-wrap gap-2 *:min-w-12 *:text-center';
 
     const templateLi = document.createElement('li');
     templateLi.classList = 'character-roll remove-character-btn bg-bg-tertiary hover:bg-bg-tertiary-hover flex flex-col justify-center p-3 gap-2 hover:*:first:*:last:flex';
@@ -474,16 +474,16 @@ function updateDices() {
 
         resultGroup.innerHTML = '';
 
-        if (!sheet || !sheet.caracteristicas) {
+        if (!sheet) {
             modifier.textContent = '(--)';
             return;
         }
 
-        const attributeValue = Number(sheet.caracteristicas?.[attribute] ?? 0);
+        const attributeValue = Number(sheet?.[attribute] ?? 0);
         item.dataset.attribute = attributeValue;
 
         let skillValue = 0;
-        skillValue = Number(sheet.caracteristicas?.[skill] ?? 0);
+        skillValue = Number(sheet?.[skill] ?? 0);
 
         let qualityBonus = 0;
         let defectPenalty = 0;
@@ -499,12 +499,12 @@ function updateDices() {
                     qualityBonus += 3;
                 }
                 else {
-                    qualityBonus += Number(sheet.caracteristicas?.[code] ?? 0);
+                    qualityBonus += Number(sheet?.[code] ?? 0);
                 }
             });
 
             skillRule.penalty.forEach(code => {
-                defectPenalty += Number(sheet.caracteristicas?.[code] ?? 0);
+                defectPenalty += Number(sheet?.[code] ?? 0);
             });
         }
 

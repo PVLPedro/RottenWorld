@@ -1,22 +1,86 @@
 <?php
 
-use App\Http\Controllers\SheetsController;
-use App\Http\Controllers\CaracteristicasController;
+use App\Http\Controllers\AuthController;
+use App\Http\Controllers\SheetController;
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/rules', function () {
-    return view('rules');
-})->name('rules');
+Route::middleware('guest')->group(function () {
 
-Route::get('/', [SheetsController::class, 'getDataHome'])->name('home');
-Route::get('/new', [SheetsController::class, 'addSheet'])->name('sheets.add');
-Route::post('/new', [SheetsController::class, 'confirmAdd'])->name('sheets.addUpdate');
+    Route::get('/',
+        [AuthController::class,'index'])
+        ->name('login');
 
-Route::get('/edit/{sheet}', [SheetsController::class, 'editSheet'])->name('sheets.edit');
-Route::put('/edit/{sheet}', [SheetsController::class, 'confirmEdit'])->name('sheets.update');
+    Route::get('/entrar',
+        [AuthController::class,'index'])
+        ->name('login');
 
-Route::get('/sheets/{sheet?}', [SheetsController::class, 'getDataSheets'])->name('sheets');
-Route::delete('/edit/{sheet}', [SheetsController::class, 'deleteSheet'])->name('sheets.delete');
+    Route::post('/entrar',
+        [AuthController::class,'login'])
+        ->name('auth');
 
-Route::get('/sheets/{sheet}/caracteristicas/edit', [CaracteristicasController::class, 'edit'])->name('caracteristicas.edit');
-Route::put('/sheets/{sheet}/caracteristicas', [CaracteristicasController::class, 'update'])->name('caracteristicas.update');
+    Route::get('/cadastro',
+        [UserController::class,'create'])
+        ->name('create-account');
+
+    Route::post('/cadastro',
+        [UserController::class,'store'])
+        ->name('insert-account');
+
+});
+
+Route::middleware('auth')->group(function () {
+
+    Route::get('/perfil',
+        [UserController::class, 'edit'])
+        ->name('profile');
+
+    Route::put('/perfil',
+        [UserController::class, 'update'])
+        ->name('profile.update');
+
+    Route::get('/regras', function () {
+        return view('rules');
+    })->name('rules');
+
+    Route::post('/sair',
+        [AuthController::class, 'logout'])
+        ->name('logout');
+
+    Route::get('/inicio',
+        [SheetController::class,'index'])
+        ->name('home');
+
+    Route::get('/fichas',
+        [SheetController::class, 'sheets'])
+        ->name('sheets');
+
+    Route::get('/fichas/{sheet}',
+        [SheetController::class, 'sheets'])
+        ->name('sheet.show');
+
+    Route::get('/ficha/nova',
+        [SheetController::class,'create'])
+        ->name('create-sheet');
+
+    Route::post('/ficha/nova',
+        [SheetController::class,'store'])
+        ->name('insert-sheet');
+
+    Route::get('/ficha/{sheet}/editar',
+        [SheetController::class,'edit'])
+        ->name('edit-sheet');
+
+    Route::get('/ficha/{sheet}/editar-caracteristicas',
+        [SheetController::class,'editFeatures'])
+        ->name('edit-sheet.features');
+
+    Route::put('/ficha/{sheet}',
+        [SheetController::class,'update'])
+        ->name('update-sheet');
+
+    Route::delete('/ficha/{sheet}',
+        [SheetController::class,'destroy'])
+        ->name('delete-sheet');
+
+});

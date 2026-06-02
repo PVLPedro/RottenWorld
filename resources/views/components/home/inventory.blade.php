@@ -4,19 +4,19 @@
         <x-lucide-backpack />
         <span class="text-lg font-medium">Inventário</span>
     </section>
-    <section class="flex flex-col md:grid md:grid-cols-2 md:p-4 md:gap-4 justify-center justify-items-center items-center content-center w-full auto-rows-fr *:w-full *:p-2">
+    <section class="flex flex-col md:grid md:grid-cols-2 md:p-4 md:gap-4 justify-center justify-items-center items-center content-center w-full *:w-full *:p-2">
         <section class="col-start-1 row-span-5">
             <section class="flex flex-col justify-center items-center gap-2">
                 <span>Personagens</span>
-                <ul id="characters-inventory" class="w-full h-50 md:h-100 overflow-y-auto flex flex-col p-2 gap-0.5 border-2 border-highlight-secondary rounded-lg">
+                <ul id="characters-inventory" class="w-full h-50 md:h-100 overflow-y-auto flex flex-col p-2 gap-0.5 border-2 border-highlight-secondary rounded-lg bg-bg-primary-variant">
                     @forelse ($sheets as $index => $s)
                         @php
-                            @include(resource_path('views/partials/caracteristicas.php'));
+                            @include(resource_path('views/partials/features.php'));
                         @endphp
                         <li class="inventory-item bg-bg-tertiary hover:bg-bg-tertiary-hover flex items-center justify-start *:p-2 aria-selected:bg-bg-tertiary-hover"
                             data-name="{{ $s->nome }}"
                             data-type="{{ $s->tipo }}"
-                            data-inventoryid="{{ $s->id_sheet }}"
+                            data-inventoryid="{{ $s->id }}"
                             aria-selected="false"
                             data-maxhealth="{{ $ASPV }}"
                             data-speed="{{ $ASVE }}"
@@ -26,8 +26,8 @@
                             <span class="flex-1 min-w-10"> {{ $s->nome }} </span>
                         </li>
                     @empty
-                        <li>
-                            <span>Nenhum Personagem</span>
+                        <li class="p-2 text-center">
+                            Nenhum Personagem encontrado
                         </li>
                     @endforelse
                 </ul>
@@ -55,9 +55,9 @@
         </section>
         <section class="col-start-2 row-start-3 flex items-center gap-2">
             <span>Velocidade</span>
-            <span id="inventory-display-speed" class="flex items-center font-bold p-2 gap-2 flex-1 justify-center bg-bg-tertiary rounded-lg">Velo.</span>
-            <span>Carga Máxima</span>
-            <span id="inventory-display-load" class="flex items-center font-bold p-2 gap-2 flex-1 justify-center bg-bg-tertiary rounded-lg">Carga</span>
+            <span id="inventory-display-speed" class="flex items-center font-bold p-2 gap-2 flex-1 justify-center bg-bg-tertiary rounded-lg">m/t</span>
+            <span>Carga</span>
+            <span id="inventory-display-load" class="flex items-center font-bold p-2 gap-2 flex-1 justify-center bg-bg-tertiary rounded-lg">máx.</span>
         </section>
         <section class="col-start-2 row-start-4 row-span-3 flex flex-col h-full gap-2">
             <span>Inventário</span>
@@ -113,13 +113,12 @@ inventoryItens.forEach(item => {
         let damageData = getDamageData();
         let maxHealth = parseInt(item.dataset.maxhealth);
         let currentHealth = maxHealth - (damageData[selectedInventoryId] || 0);
-        console.log(maxHealth, currentHealth)
         let isInventory = 'inventory-';
         
         updateHealthBar(currentHealth, maxHealth, isInventory);
 
         inventoryDisplayName.textContent = item.dataset.name;
-        inventoryDisplaySpeed.textContent = `${item.dataset.speed} m/t`;
+        inventoryDisplaySpeed.textContent = `${item.dataset.speed}`;
         inventoryDisplayLoad.textContent = `${item.dataset.load}`;
         
         const inventoryData = getInventoryData();
@@ -143,13 +142,22 @@ inventoryItens.forEach(item => {
 });
 
 function updateTotalLoad() {
-    const updatedInvetoryData = getInventoryData();
-    let weight = updatedInvetoryData[selectedInventoryId].match(/\d/g);
-    sum = weight ? weight.reduce((acumulador, valorAtual) => {
-        const valorReal = valorAtual === 0 ? 0.5 : valorAtual;
-        return acumulador + parseInt(valorAtual);
+    const updatedInventoryData = getInventoryData();
+    let weight = updatedInventoryData[selectedInventoryId]?.match(/\d/g);
+
+    if (!weight) {
+        updateDisplayTotalLoad(0);
+        return
+    }
+    
+    sum = weight ? weight.reduce((acc, current) => {
+
+        const actual = parseFloat(current) === 0 ? 0.5 : parseFloat(current);
+
+        return acc + actual;
     }, 0) : 0;
-    updateDisplayTotalLoad(sum);
+
+    updateDisplayTotalLoad(Math.trunc(sum));
 }
 
 const totalLoad = document.getElementById('inventory-display-total-load');

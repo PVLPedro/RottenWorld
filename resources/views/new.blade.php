@@ -3,7 +3,7 @@
 @section('content')
     <main id="main-form" class="relative bg-bg-secondary min-h-[calc(100dvh-120px)] p-1 lg:p-4 flex justify-center items-center gap-4">
         <form class=" relative bg-bg-primary flex-1 max-h-[calc(100dvh-160px)] max-w-250 rounded-lg p-4 overflow-y-auto [&_h1]:text-2xl [&_h2]:text-xl [&_h1,h2]:font-bold [&_h1]:text-center [&_h2,input,textarea]:py-2 [&_h2]:px-2 [&_input,textarea]:px-4 [&_input,textarea]:bg-bg-tertiary [&_input,textarea]:rounded-lg [&_input,textarea]:w-full [&_input,textarea]:outline-0"
-        method="POST" action="{{ route('sheets.addUpdate') }}">
+        method="POST" action="{{ route('insert-sheet') }}">
             <x-back>Voltar</x-back>
         @csrf
             <h1 class="clear-both pt-4 lg:pt-4 mb-8">Adição de Personagem</h1>

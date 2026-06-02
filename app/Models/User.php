@@ -23,6 +23,8 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
+        'role',
+        'session',
     ];
 
     /**
@@ -36,6 +38,11 @@ class User extends Authenticatable
         'two_factor_recovery_codes',
         'remember_token',
     ];
+
+    public function sheets()
+    {
+        return $this->hasMany(Sheet::class);
+    }
 
     /**
      * Get the attributes that should be cast.

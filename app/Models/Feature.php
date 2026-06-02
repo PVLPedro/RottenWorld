@@ -3,9 +3,9 @@
 namespace App\Models;
 use Illuminate\Database\Eloquent\Model;
 
-class Caracteristicas extends Model
+class Feature extends Model
 {
-    protected $table = 'caracteristicas';
+    protected $table = 'features';
     public $timestamps = false;
 
     protected $fillable = [
@@ -21,6 +21,6 @@ class Caracteristicas extends Model
 
     public function sheet()
     {
-        return $this->belongsTo(Sheets::class, 'sheet_id', 'id_sheet');
+        return $this->belongsTo(Sheet::class, 'sheet_id', 'id_sheet');
     }
 }

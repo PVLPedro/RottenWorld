@@ -4,19 +4,19 @@
         <x-lucide-heart-pulse />
         <span class="text-lg font-medium">Saúde</span>
     </section>
-    <section class="flex flex-col md:grid md:grid-cols-2 md:p-4 md:gap-4 justify-center justify-items-center items-center content-center w-full auto-rows-fr *:w-full *:p-2">
+    <section class="flex flex-col md:grid md:grid-cols-2 md:p-4 md:gap-4 justify-center justify-items-center items-center content-center w-full *:w-full *:p-2">
         <section class="col-start-1 row-span-5">
             <section class="flex flex-col justify-center items-center gap-2">
                 <span>Personagens</span>
-                <ul id="characters-health" class="w-full h-50 md:h-100 overflow-y-auto flex flex-col p-2 gap-0.5 border-2 border-highlight-secondary rounded-lg">
+                <ul id="characters-health" class="w-full h-50 md:h-100 overflow-y-auto flex flex-col p-2 gap-0.5 border-2 border-highlight-secondary rounded-lg bg-bg-primary-variant">
                     @forelse ($sheets as $index => $s)
                         @php
-                            @include(resource_path('views/partials/caracteristicas.php'));
+                            @include(resource_path('views/partials/features.php'));
                         @endphp
                         <li class="health-item bg-bg-tertiary hover:bg-bg-tertiary-hover flex items-center justify-start *:p-2 aria-selected:bg-bg-tertiary-hover"
                             data-name="{{ $s->nome }}"
                             data-type="{{ $s->tipo }}"
-                            data-healthid="{{ $s->id_sheet }}"
+                            data-healthid="{{ $s->id }}"
                             aria-selected="false"
                             >
                             <span class="flex-1 min-w-10"> {{ $s->nome }} </span>
@@ -25,8 +25,8 @@
                             <span class="text-center min-w-10">{{ $ASPV }}</span>
                         </li>
                     @empty
-                        <li>
-                            <span>Nenhum Personagem</span>
+                        <li class="p-2 text-center">
+                            Nenhum Personagem encontrado
                         </li>
                     @endforelse
                 </ul>

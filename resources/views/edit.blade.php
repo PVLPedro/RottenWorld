@@ -3,7 +3,7 @@
 @section('content')
     <main id="main-form" class="relative bg-bg-secondary min-h-[calc(100dvh-120px)] p-1 lg:p-4 flex justify-center items-center gap-4">
         <section class="relative flex flex-col gap-4 bg-bg-primary flex-1 max-h-[calc(100dvh-160px)] max-w-250 rounded-lg p-4 overflow-y-auto [&_h1]:text-2xl [&_h2]:text-xl [&_h1,h2]:font-bold [&_h1]:text-center [&_h2,input,textarea]:py-2 [&_h2]:px-2 [&_input,textarea]:px-4 [&_input,textarea]:bg-bg-tertiary [&_input,textarea]:rounded-lg [&_input,textarea]:w-full [&_input,textarea]:outline-0">
-            <form method="POST" action="{{ route('sheets.update', $sheet) }}">
+            <form method="POST" action="{{ route('update-sheet', $sheet) }}">
             @csrf
             @method('PUT')
                 <x-back>Voltar</x-back>
@@ -76,7 +76,7 @@
                     </button>
                 </section>
             </form>
-            <form id="popover-confirm-delete" popover method="POST" action="{{ route('sheets.delete', $sheet) }}" class="absolute top-1/2 left-1/2 -translate-1/2 w-full lg:w-120 p-4 flex-col justify-center bg-bg-primary rounded-lg border-2 border-border-primary text-white">
+            <form id="popover-confirm-delete" popover method="POST" action="{{ route('delete-sheet', $sheet) }}" class="absolute top-1/2 left-1/2 -translate-1/2 w-full lg:w-120 p-4 flex-col justify-center bg-bg-primary rounded-lg border-2 border-border-primary text-white">
                 @csrf
                 @method('DELETE')
                 <section class="flex-1px-4 py-2 text-lg text-center">

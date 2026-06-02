@@ -91,3 +91,18 @@ DANT = 0, DAZA = 0, DFEI = 0, DPCR = 0, DCOV = 0, DCRE = 0, DMDS = 0, DPSI = 0, 
 'DSNO', 'dsno' // Defeito Sem Noção
 'DPLH', 'dplh' // Defeito Palhaço
 'DVRU', 'dvru' // Defeito Visão Ruim
+
+'tipo'            => 'required|integer|in:1,2,3',
+'nome'            => 'required|string',
+'idade'           => 'nullable|string',
+'aniversario'     => 'nullable|string',
+'alcunha'         => 'nullable|string',
+'profissao_atual' => 'nullable|string',
+'ex_profissoes'   => 'nullable|string',
+'experiencias'    => 'nullable|string',
+'hobbies'         => 'nullable|string',
+'aparencia'       => 'nullable|string',
+'resumo'          => 'nullable|string',
+'historia'        => 'nullable|string',
+'habilidade_um'   => 'nullable|string',
+'habilidade_dois' => 'nullable|string',

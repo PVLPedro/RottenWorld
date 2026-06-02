@@ -4,19 +4,19 @@
         <x-lucide-heart-plus />
         <span class="text-lg font-medium">Cura</span>
     </section>
-    <section class="flex flex-col md:grid md:grid-cols-2 md:p-4 md:gap-4 justify-center justify-items-center items-center content-center w-full auto-rows-fr *:w-full *:p-2">
+    <section class="flex flex-col md:grid md:grid-cols-2 md:p-4 md:gap-4 justify-center justify-items-center items-center content-center w-full *:w-full *:p-2">
         <section class="col-start-1 row-span-6">
             <section class="flex flex-col justify-center items-center gap-2">
                 <span>Personagens</span>
-                <ul id="characters-heal" class="w-full h-50 md:h-100 overflow-y-auto flex flex-col p-2 gap-0.5 border-2 border-highlight-secondary rounded-lg">
+                <ul id="characters-heal" class="w-full h-50 md:h-100 overflow-y-auto flex flex-col p-2 gap-0.5 border-2 border-highlight-secondary rounded-lg bg-bg-primary-variant">
                     @forelse ($sheets as $index => $s)
                         @php
-                            @include(resource_path('views/partials/caracteristicas.php'));
+                            @include(resource_path('views/partials/features.php'));
                         @endphp
                         <li class="heal-item bg-bg-tertiary hover:bg-bg-tertiary-hover flex items-center justify-start *:p-2 aria-selected:bg-bg-tertiary-hover"
                             data-name="{{ $s->nome }}"
                             data-type="{{ $s->tipo }}"
-                            data-healid="{{ $s->id_sheet }}"
+                            data-healid="{{ $s->id }}"
                             data-acon="{{ $ACON }}"
                             data-pcoc="{{ $PCOC }}"
                             data-pprs="{{ $PPRS }}"
@@ -28,8 +28,8 @@
                             <span class="grow min-w-10"> {{ $s->nome }} </span>
                         </li>
                     @empty
-                        <li>
-                            <span>Nenhum Personagem</span>
+                        <li class="p-2 text-center">
+                            Nenhum Personagem encontrado
                         </li>
                     @endforelse
                 </ul>
@@ -55,12 +55,11 @@
             <span id="display-pcme" class="display-heal-skills">PCME 0</span>
             <span id="display-qgen" class="display-heal-skills">QGEN 0</span>
             <span id="display-qtra" class="display-heal-skills">QTRA 0</span>
-            <span id="display-rotten" class="display-heal-skills hidden">PODRE -2</span>
         </section>
         <section class="col-start-2 row-start-3">
             <section class="flex justify-center items-center gap-2">
                 <span>Ataque</span>
-                <select name="heal-dices" id="heal-select" class="flex-1 bg-bg-tertiary hover:bg-bg-tertiary-hover p-2 rounded-lg">
+                <select name="heal-dices" id="heal-select" class="flex-1 max-w-8/10 sm:max-w-full bg-bg-tertiary hover:bg-bg-tertiary-hover p-2 rounded-lg">
                     <option value="descansoLeve">Descanso Leve</option>
                     <option value="descansoProfundo">Descanso Profundo</option>
                     <option value="alimentoPodre">Alimento Podre</option>
@@ -123,12 +122,12 @@ let healMap = {
     },
     alimentoPodre: {
         count: '1',
-        faces: '4',
-        bonus: ['rotten']
+        faces: '6',
+        bonus: ['']
     },
     alimentoSaudavel: {
         count: '2',
-        faces: '4',
+        faces: '10',
         bonus: ['acon']
     },
     analgesico: {
@@ -139,15 +138,15 @@ let healMap = {
     bandagem: {
         count: '3',
         faces: '4',
-        bonus: ['pcoc', 'pprs']
+        bonus: ['pprs', 'pcme']
     },
     spraySelador: {
         count: '1',
         faces: '12',
-        bonus: ['pcoc', 'pprs']
+        bonus: ['pprs', 'pcme']
     },
     ervaMedicinal: {
-        count: '3',
+        count: '4',
         faces: '4',
         bonus: ['pprs', 'pcme']
     },
@@ -159,7 +158,7 @@ let healMap = {
     kitMedico: {
         count: '4',
         faces: '6',
-        bonus: ['pcoc', 'pprs', 'pcme']
+        bonus: ['pprs', 'pcme']
     },
 }
 
@@ -195,7 +194,6 @@ const displayPPRS = document.getElementById('display-pprs');
 const displayPCME = document.getElementById('display-pcme');
 const displayQGEN = document.getElementById('display-qgen');
 const displayQTRA = document.getElementById('display-qtra');
-const displayROTTEN = document.getElementById('display-rotten');
 
 const rollHealBtn = document.getElementById('roll-heal-btn');
 rollHealBtn.disabled = true;
@@ -239,7 +237,6 @@ updateHeal();
 
 function updateHeal() {
     let healType = healMap[healSelect.value];
-    displayROTTEN.classList.add('hidden');
 
     healDicesCount.disabled = true;
     healDicesFaces.disabled = true;
@@ -261,23 +258,13 @@ function updateHeal() {
         })
 
         healType.bonus.forEach(bonus => {
-            let value = 0;
+            let display = document.getElementById(`display-${bonus}`);
+            if (!display) return
+            let value = parseInt(display.textContent.replace(/\D/g, ""), 10);
 
-            if (bonus == 'rotten') {
-                value = -2;
-                displayROTTEN.classList.remove('hidden');
-            }
-            else {
-                let display = document.getElementById(`display-${bonus}`);
-                value = parseInt(display.textContent.replace(/\D/g, ""), 10) -1;
-
-                if (value < 0) value = 0
-
-                display.classList.remove('hidden');
-            }
+            display.classList.remove('hidden');
 
             healBonus += value;
-            
         });
 
         healDicesCount.value = healCount;
@@ -320,30 +307,29 @@ rollHealBtn.addEventListener('click', async () => {
     rollHealBtn.disabled = true;
 
     let total = 0 + healBonus;
-    let finalResult = 0;
 
     const sleep = (ms) => new Promise(resolve => setTimeout(resolve, ms));
 
     async function rollDice(display) {
 
-        finalResult = Math.floor(Math.random() * healFaces) + 1;
+        const finalResult = Math.floor(Math.random() * healFaces) + 1;
 
-            total += finalResult;
+        total += finalResult;
 
-            const totalRolls = 10;
+        const totalRolls = 10;
 
-            for (let i = 0; i < totalRolls; i++) {
-                display.innerText = `(${Math.floor(Math.random() * healFaces) + 1})`;
+        for (let i = 0; i < totalRolls; i++) {
+            display.innerText = `(${Math.floor(Math.random() * healFaces) + 1})`;
 
-                await sleep(50 + i * 20); 
-            }
+            await sleep(50 + i * 20); 
+        }
 
-            if (finalResult == healFaces) {
-                display.classList.add('text-green-400');
-            }
-            if (finalResult == 1) {
-                display.classList.add('text-red-400');
-            }
+        if (finalResult == healFaces) {
+            display.classList.add('text-green-400');
+        }
+        if (finalResult == 1) {
+            display.classList.add('text-red-400');
+        }
 
         display.textContent = `(${finalResult})`;
     }
@@ -355,10 +341,10 @@ rollHealBtn.addEventListener('click', async () => {
 
     await Promise.all(rollingPromises);
 
-    updateHealFinalResult(total, finalResult);
+    updateHealFinalResult(total);
 });
 
-function updateHealFinalResult(total, finalResult) {
+function updateHealFinalResult(total) {
     rollHealBtn.disabled = false;
 
     if (doubleHealInput.checked) total += total;
@@ -366,10 +352,7 @@ function updateHealFinalResult(total, finalResult) {
     healTotal.textContent = `Total: ${total}`;
 
     const resultDicesTotal = document.getElementById('result-dices-total');
-    if (total < 0) {
-        resultDicesTotal.textContent = `${healDisplayName.textContent.split(' ')[0]} recebeu ${total} de dano`;
-        return
-    }
+
     resultDicesTotal.textContent = `${healDisplayName.textContent.split(' ')[0]} curou ${total} de saúde`;
 }
 
