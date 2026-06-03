@@ -1136,7 +1136,7 @@
                     </section>
                 </section>
                 <hr class="border border-bg-tertiary mt-6 mb-8">
-                <section class="flex gap-4 flex-col lg:flex-row *:flex-1 *:p-2 *:rounded-lg *:cursor-pointer *:flex *:gap-4 *:justify-center">
+                <section class="sticky -bottom-4 p-4 flex gap-1 sm:gap-4 flex-col lg:flex-row bg-bg-primary font-medium *:flex-1 *:p-2 *:rounded-lg *:cursor-pointer *:flex *:gap-4 *:justify-center">
                     <button type="reset" class="bg-attention hover:bg-attention-hover">
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-broom-icon lucide-broom"><path d="m13 11 9-9"/><path d="M14.6 12.6c.8.8.9 2.1.2 3L10 22l-8-8 6.4-4.8c.9-.7 2.2-.6 3 .2Z"/><path d="m6.8 10.4 6.8 6.8"/><path d="m5 17 1.4-1.4"/></svg>
                         Formatar

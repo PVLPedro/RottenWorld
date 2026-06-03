@@ -20,7 +20,7 @@
                 type="text"
                 name="name"
                 id="name"
-                placeholder="Digie seu Nome de Usuário"
+                placeholder="Digite seu Nome de Usuário"
                 value="{{ old('name') }}"
                 autocomplete="off"
                 class="rounded-sm {{ $errors->has('name') ? 'border-2 border-alert' : 'border border-dark-gray focus:border-gray' }} "/>
@@ -41,7 +41,7 @@
                     placeholder="Digite sua Senha"
                     value="{{ old('password') }}"
                     autocomplete="off"
-                    class="flex-1 rounded-l-sm {{ $errors->has('password') ? 'border-2 border-alert' : 'border border-dark-gray focus:border-gray' }} " />
+                    class="w-full rounded-l-sm {{ $errors->has('password') ? 'border-2 border-alert' : 'border border-dark-gray focus:border-gray' }} " />
                 <label for="role" id="show-password" class="w-10 flex justify-center items-center p-2 rounded-r-sm bg-bg-secondary hover:bg-bg-secondary-hover *:last:hidden *:first:block {{ $errors->has('password') ? 'border-2 border-l-0 border-alert' : 'border border-l-0 border-dark-gray focus:border-gray' }}">
                     <x-lucide-eye class="h-full w-8" />
                     <x-lucide-eye-off class="h-full w-8" />
@@ -63,7 +63,7 @@
 
     <p class="mt-4 text-center">
         Não possui uma conta?
-        <a href="/register" class="border-b-2 border-highlight-primary">
+        <a href="/register" class="whitespace-nowrap border-b-2 border-highlight-primary">
             Registrar-se
             <x-lucide-external-link class="inline size-4" />
         </a>

@@ -596,19 +596,28 @@ function updateFinalResult() {
 
         let maxResult = Math.max(...dicesResult);
         let minResult = Math.min(...dicesResult);
-        console.log(dicesResult, maxResult, minResult);
-        
 
         let attribute = item.dataset.attribute;
 
         if (attribute > 0) {
             bestResult.textContent = `Resultado Final: ${bestValue + maxResult}`;
+            item.dataset.result = bestValue + maxResult;
         }
         else {
             bestResult.textContent = `Resultado Final: ${bestValue + minResult}`;
+            item.dataset.result = bestValue + minResult;
         }
-
     });
+
+    characterRollsArray = Array.from(characterRolls);
+
+    characterRollsArray.sort((a, b) => {
+        return Number(b.dataset.result) - Number(a.dataset.result);
+    });
+
+    characterRollsArray.forEach(item => {
+        rollListOne.appendChild(item);
+    })
 }
 
 

@@ -48,7 +48,7 @@ Route::middleware('auth')->group(function () {
         ->name('logout');
 
     Route::get('/inicio',
-        [SheetController::class,'index'])
+        [SheetController::class, 'index'])
         ->name('home');
 
     Route::get('/fichas',
@@ -60,27 +60,27 @@ Route::middleware('auth')->group(function () {
         ->name('sheet.show');
 
     Route::get('/ficha/nova',
-        [SheetController::class,'create'])
+        [SheetController::class, 'create'])
         ->name('create-sheet');
 
     Route::post('/ficha/nova',
-        [SheetController::class,'store'])
+        [SheetController::class, 'store'])
         ->name('insert-sheet');
 
     Route::get('/ficha/{sheet}/editar',
-        [SheetController::class,'edit'])
+        [SheetController::class, 'edit'])
         ->name('edit-sheet');
 
     Route::get('/ficha/{sheet}/editar-caracteristicas',
-        [SheetController::class,'editFeatures'])
+        [SheetController::class, 'editFeatures'])
         ->name('edit-sheet.features');
 
     Route::put('/ficha/{sheet}',
-        [SheetController::class,'update'])
+        [SheetController::class, 'update'])
         ->name('update-sheet');
 
     Route::delete('/ficha/{sheet}',
-        [SheetController::class,'destroy'])
+        [SheetController::class, 'destroy'])
         ->name('delete-sheet');
 
 });

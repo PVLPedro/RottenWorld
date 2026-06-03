@@ -41,7 +41,7 @@
                     <x-text>Rotten World: Um mundo moderno, cada um com sua vida, que foi devastado por um surto misterioso que transforma não só os seres humanos em criaturas loucas e insanas, mas animais também. Seus cérebros são profundamente alterados e suas visões de mundo distorcidas ao extremo.</x-text>
                     <x-text>A partir do momento em que um ser é contaminado, um simples príon começa a se multiplicar na corrente sanguínea. Torna o sangue uma espécie de ácido que corrói o cérebro e outros órgãos internos. Faz músculos terem contrações involuntariamente e cria uma fome insaciável por indivíduos de mesma espécie. Estes seres contaminados são conhecidos como Rottens (Putrefatos). Sua aparência e cheiros são podres devido ao próprio sangue, que já não é mais o mesmo.</x-text>
                     <x-text>O mundo passa pelo processo de corrosão e os humanos estão perdendo cada vez mais seu domínio para uma simples proteína infecciosa. A sobrevivência é desafiada dia após dia, tornando mais fácil ser morto por sua própria mente. será possível se manter são com a morte se espreitando em cada canto da Terra?</x-text>
-                    <x-text></x-text>
+                    <x-download source="pdf/Regras.pdf">Baixar PDF completo sobre Regras</x-download>
                 </section>
                 <x-title>Regras Gerais</x-title>
                 <section class="section" id="personagens">
@@ -101,9 +101,9 @@
                     <x-subtitle>Itens</x-subtitle>
                     <x-text>Itens são utilizáveis, equipáveis, consumíveis ou matérias-primas. Carregar Itens requer Carga (Atributo Secundário). Cada Item possui um Peso atribuído, sendo 0 Itens extremamente leves e do cotidiano, Peso 1 sendo Itens relativamente leves a peso médio, Peso 2 Itens pesados, Peso 3 muito pesados e Peso 4 extremamente pesados. O Peso também leva em consideração o espaço que o Item ocupa, sendo que um Item leve ainda pode ter Peso 2 caso seja muito volumoso, por exemplo. A soma de 2 Itens Peso 0 resulta em Peso 1 para a Capacidade de Carga (Sem Peso é diferente de Peso 0).</x-text>
                     <x-text>Itens também são obtidos através de um Teste de Exploração, onde o Jogador deve indicar o tipo de item que quer buscar e a partir daí seguir uma pequena série de rolagens para determinar o Item obtido.</x-text>
-                    <x-download source="pdf/ObtençãoDeItens.pdf">Baixar PDF de Obtenção de Itens</x-download>
+                    <x-download source="pdf/ObtencaoDeItens.pdf">Baixar PDF de Obtenção de Itens</x-download>
                     <x-text>Itens também podem ser obtidos através de um Teste de Artesanato ou Conhec. Militar, utilizando-se de Matérias-Primas para tais criações.</x-text>
-                    <x-download source="pdf/ObtençãoDeItens.pdf">Baixar PDF de Criação de Itens</x-download>
+                    <x-download source="pdf/CriacaoDeItens.pdf">Baixar PDF de Criação de Itens</x-download>
                 </section>
                 <x-title>Combate</x-title>
                 <section class="section" id="iniciativa">
@@ -132,7 +132,7 @@
                     <x-text>Dano é causado ou sofrido em vários momentos. Ataques, situações e efeitos causam danos diversos.</x-text>
                     <x-download source="pdf/Danos.pdf">Baixar PDF Sobre Danos</x-download>
                     <x-text>Armas são o principal meio para causar dano a alvos. As Armas de Fogo, em especial, possuem o próprio sistema de munição.</x-text>
-                    <x-download source="pdf/ArmasDeFogo.pdf">Baixar PDF Sobre Armas de Fogo e Munição</x-download>
+                    <x-download source="pdf/ArmasDeFogoMunicao.pdf">Baixar PDF Sobre Armas de Fogo e Munição</x-download>
                 </section>
                 <section class="section" id="curas">
                     <x-subtitle>Cura</x-subtitle>

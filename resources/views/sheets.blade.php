@@ -2,14 +2,14 @@
 
 @section('content')
     <main class="relative bg-bg-secondary h-[calc(100dvh-120px)] p-1 lg:p-4 gap-1 lg:gap-4 flex flex-col justify-center sm:grid sm:grid-cols-2 lg:flex lg:flex-row flex-wrap">
-        <section id="characters" class="h-32 sm:h-auto sm:flex-1 flex gap-2 sm:flex-col row-span-2 p-1 sm:p-2 lg:flex-2 bg-bg-primary rounded-lg">
-            <section class="flex justify-center gap-2">
+        <section id="characters" class="h-32 sm:h-auto sm:flex-1 flex gap-1 sm:gap-4 sm:flex-col row-span-2 lg:flex-2 bg-bg-secondary rounded-lg">
+            <section class="flex justify-center gap-2 p-1 sm:p-2 rounded-lg bg-bg-primary">
                 <a href="{{ route('create-sheet') }}" class="bg-bg-tertiary hover:bg-bg-tertiary-hover p-2 flex flex-col sm:flex-row items-center justify-center gap-2 rounded-sm flex-1">
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-user-plus-icon lucide-user-plus"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><line x1="19" x2="19" y1="8" y2="14"/><line x1="22" x2="16" y1="11" y2="11"/></svg>
                     <span class="hidden minimal:inline text-sm sm:text-md">Adicionar</span>
                 </a>
             </section>
-            <section class="flex-1 flex flex-col overflow-hidden rounded-sm">
+            <section class="flex-1 flex flex-col overflow-hidden rounded-lg bg-bg-primary">
                 <ul class="py-1 sm:py-2 bg-highlight-secondary flex items-center justify-center">
                     <span class="text-black text-sm sm:text-xl font-bold">Personagens</span>
                 </ul>
@@ -40,7 +40,7 @@
                 </ul>
             </section>
         </section>
-        <section class="overflow-y-auto flex-5 lg:h-[calc(100dvh-228px)] lg:flex-3 relative bg-bg-primary rounded-lg p-1 sm:p-4 *:my-4 [&_h1]:text-2xl [&_h1,h2]:font-bold [&_hr]:border [&_hr]:border-bg-tertiary">
+        <section class="overflow-y-auto flex-5 h-full lg:flex-3 relative bg-bg-primary rounded-lg p-1 sm:p-4 *:my-4 [&_h1]:text-2xl [&_h1,h2]:font-bold [&_hr]:border [&_hr]:border-bg-tertiary">
             @if($selected)
                 @php
                     if ($selected->tipo == 0) { $typeText = 'Sem Tipo'; }
@@ -100,7 +100,7 @@
                 <h1>Selecione um personagem</h1>
             @endif
         </section>
-        <section class="overflow-y-auto flex-5 lg:h-[calc(100dvh-228px)] lg:flex-3 relative bg-bg-primary rounded-lg p-1 sm:p-4 *:my-4 [&_h1]:text-2xl [&_h1,h2]:font-bold [&_hr]:border [&_hr]:border-bg-tertiary">
+        <section class="overflow-y-auto flex-5 h-full lg:flex-3 relative bg-bg-primary rounded-lg p-1 sm:p-4 *:my-4 [&_h1]:text-2xl [&_h1,h2]:font-bold [&_hr]:border [&_hr]:border-bg-tertiary">
             @if ($selected)
                 <a href="{{ route('edit-sheet.features', $selected) }}" class="w-10 sticky float-right top-4 bg-bg-tertiary hover:bg-bg-tertiary-hover cursor-pointer p-2 rounded-lg">
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21.174 6.812a1 1 0 0 0-3.986-3.987L3.842 16.174a2 2 0 0 0-.5.83l-1.321 4.352a.5.5 0 0 0 .623.622l4.353-1.32a2 2 0 0 0 .83-.497z"/><path d="m15 5 4 4"/></svg>

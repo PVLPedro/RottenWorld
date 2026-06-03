@@ -15,7 +15,7 @@ class SheetController extends Controller
             ->orderBy('nome')
             ->get();
 
-        return view('home', compact('sheets'), ['user' => Auth::user()]);
+        return view('home', compact('sheets'));
     }
 
     public function sheets(?Sheet $sheet = null)
@@ -27,7 +27,7 @@ class SheetController extends Controller
 
         $selected = $sheet;
 
-        return view('sheets', compact('sheets', 'selected'), ['user' => Auth::user()]);
+        return view('sheets', compact('sheets', 'selected'));
     }
 
     public function create()
@@ -134,7 +134,7 @@ class SheetController extends Controller
             ->create($validated);
 
         return redirect()
-            ->route('sheets', ['user' => Auth::user()])
+            ->route('sheets')
             ->with('success',[
                 'text'=>'Personagem',
                 'name'=>$request->nome,
@@ -146,14 +146,14 @@ class SheetController extends Controller
     {
         abort_if($sheet->user_id !== Auth::id(), 403);
 
-        return view('edit', compact('sheet'), ['user' => Auth::user()]);
+        return view('edit', compact('sheet'));
     }
 
     public function editFeatures(Sheet $sheet)
     {
         abort_if($sheet->user_id !== Auth::id(), 403);
 
-        return view('edit-features', compact('sheet'), ['user' => Auth::user()]);
+        return view('edit-features', compact('sheet'));
     }
 
     public function update(Request $request, Sheet $sheet)
@@ -255,7 +255,7 @@ class SheetController extends Controller
         $sheet->update($validated);
 
         return redirect()
-            ->route('sheet.show', $sheet, ['user' => Auth::user()])
+            ->route('sheet.show', $sheet)
             ->with('success', [
                 'text' => 'Personagem',
                 'name' => $sheet->nome,
@@ -270,6 +270,6 @@ class SheetController extends Controller
         $sheet->delete();
 
         return redirect()
-            ->route('sheets', ['user' => Auth::user()]);
+            ->route('sheets');
     }
 }

@@ -27,7 +27,7 @@
                 type="text"
                 name="name"
                 id="name"
-                placeholder="Digie seu Nome de Usuário"
+                placeholder="Digite seu Nome de Usuário"
                 value="{{ auth()->user()->name }}"
                 autocomplete="off"
                 class="rounded-sm {{ $errors->has('name') ? 'border-2 border-alert' : 'border border-dark-gray focus:border-gray' }} "/>
@@ -42,7 +42,7 @@
             <label for="role" class="text-md">Selecione o tipo de usuário</label>
             <select name="role" id="role" class="p-2 rounded-sm bg-bg-tertiary">
                 <option value="jogador" {{ auth()->user()->role == 'jogador' ? 'selected' : '' }} >Jogador</option>
-                <option value="mestre" {{ auth()->user()->role == 'jogador' ? 'mestre' : '' }}>Mestre</option>
+                <option value="mestre" {{ auth()->user()->role == 'mestre' ? 'selected' : '' }}>Mestre</option>
             </select>
             <input type="hidden" name="session" value="00000">
         </div>
@@ -54,6 +54,7 @@
                     type="text"
                     name="password"
                     id="password"
+                    placeholder="Digite uma Nova Senha"
                     autocomplete="off"
                     class="flex-1 rounded-l-sm {{ $errors->has('password') ? 'border-2 border-alert' : 'border border-dark-gray focus:border-gray' }} " />
                 <label for="role" id="show-password" class="w-10 flex justify-center items-center p-2 rounded-r-sm bg-bg-secondary hover:bg-bg-secondary-hover *:last:hidden *:first:block {{ $errors->has('password') ? 'border-2 border-l-0 border-alert' : 'border border-l-0 border-dark-gray focus:border-gray' }}">
@@ -67,6 +68,7 @@
                     type="text"
                     name="password_confirmation"
                     id="password_confirmation"
+                    placeholder="Confirme a Nova Senha"
                     autocomplete="off"
                     class="flex-1 rounded-l-sm {{ $errors->has('password') ? 'border-2 border-alert' : 'border border-dark-gray focus:border-gray' }} " />
                 <label for="role" id="show-password-confirmation" class="w-10 flex justify-center items-center p-2 rounded-r-sm bg-bg-secondary hover:bg-bg-secondary-hover *:last:hidden *:first:block {{ $errors->has('password') ? 'border-2 border-l-0 border-alert' : 'border border-l-0 border-dark-gray focus:border-gray' }}">

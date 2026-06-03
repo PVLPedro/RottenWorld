@@ -61,7 +61,7 @@
                 <h2>Habilidade Secundária</h2>
                 <textarea name="habilidade_dois" placeholder="História" class="h-20 text-wrap resize-none">{{ old('name', $sheet->habilidade_dois) }}</textarea>
                 <hr class="border border-bg-tertiary mt-6 mb-8">
-                <section class="flex gap-4 flex-col lg:flex-row *:flex-1 *:p-2 *:rounded-lg *:cursor-pointer *:flex *:gap-4 *:justify-center">
+                <section class="sticky -bottom-4 p-4 flex gap-1 sm:gap-4 flex-col lg:flex-row bg-bg-primary font-medium *:flex-1 *:p-2 *:rounded-lg *:cursor-pointer *:flex *:gap-4 *:justify-center">
                     <button type="button" popovertarget="popover-confirm-delete" class="bg-alert hover:bg-alert-hover" >
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-trash2-icon lucide-trash-2"><path d="M10 11v6"/><path d="M14 11v6"/><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6"/><path d="M3 6h18"/><path d="M8 6V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></svg>
                         Excluir
